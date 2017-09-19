@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>The Ribs - SteakHouse </title>
-		<link rel="stylesheet" type="text/css" href="css/estilo.css">
-		<link rel="icon" href="img/TheRibs_Logo.png">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/script_menu_lateral.js"></script>
-		<script type="text/javascript" src="js/script_menu_fixo.js"></script>
-		<script type="text/javascript" src="js/tabs.js"></script>
-		<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
-		<script type="text/javascript" src="js/script-slide-show.js"></script>
-		<script type="text/javascript" src="js/jcarousellite.js"></script>
-		
-	</head>
+	<!-- CHAMANDO HEAD -->
+		<?php
+			require_once('head.php');
+		?>
 	<body>
 		<section id="principal">
 			 <section id="main">
@@ -41,7 +32,7 @@
 								<h1>Faça sua reserva</h1>
 							</div>
 							<div class="main-content">
-							
+
 								<ul class="menu">
 									<li id="tab_1" class="active">Primeiro passo</li>
 									<li id="tab_2">Segundo passo</li>
@@ -49,7 +40,7 @@
 								</ul>
 								<div class="content tab_1 active">
 											 gnissim eget semper vitae, mollis
-											 quis enim. Suspendisse suscipit, mi 
+											 quis enim. Suspendisse suscipit, mi
 sit amet efficitur fermentum, eros tellus molestie nibh, vitae vestibulum mi nibh vel lorem. Donec venenatis cursus justo ac cursus.
 								</div>
 								<div class="content tab_2">
@@ -73,7 +64,7 @@ sit amet efficitur fermentum, eros tellus molestie nibh, vitae vestibulum mi nib
 								<button class="btn-valores">VEJA NOSSOS VALORES</button>
 							</div>
 						</div>
-						
+
 						<div id="faixa_galeria">
 							<h1>Veja algumas de nossas unidades</h1>
 							<div id="lado-direito">
@@ -102,7 +93,7 @@ sit amet efficitur fermentum, eros tellus molestie nibh, vitae vestibulum mi nib
 								<button class="btn-unidades">Conhecer nossas unidades</button>
 							</div>
 						</div>
-						
+
 						<div id="faixa_destaque">
 							<h1>Pratos mais bem avaliados</h1>
 							<div id="carrossel">
@@ -129,13 +120,13 @@ sit amet efficitur fermentum, eros tellus molestie nibh, vitae vestibulum mi nib
 								<a href="#" class="next" title="Próximo">&rsaquo;</a>
 							</nav>
 
-						
+
 						</div>
 						<script>
-						
+
 							$(function() {
 									$("#carrossel"). jCarouselLite({
-										btnPrev: '.prev', 
+										btnPrev: '.prev',
 										btnNext: '.next',
 										 visible: 4,
 										 auto: 800,
@@ -144,13 +135,16 @@ sit amet efficitur fermentum, eros tellus molestie nibh, vitae vestibulum mi nib
 										  mouseWheel: true
 									})
 								})
-						</script>						
-						 <?php
-							require_once('componentes/rodape.php');
-						?>
-			
+						</script>
+						<?php
+						 require_once('componentes/rodape.php');
+						 ?>
+
 				  </section>
+
 			</section>
+
 		</section>
+
 	</body>
 </html>
