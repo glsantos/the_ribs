@@ -1,10 +1,10 @@
 <nav id="nav">
 	<a href="#" class="toggle-nav btn-close">x</a>
 	<ul id="nav-lista">
-		<li><a href="#">Home</a></li>
+		<li><a href="../index.php">Home</a></li>
 		<li><a href="#">Sobre o the Ribs</a></li>
 		<li><a href="#">Reserve uma mesa</a></li>
-		<li><a href="#">Participe de nossa Enquete</a></li>
+		<li><a href="views/enquete_view.php">Participe de nossa Enquete</a></li>
 		<li><a href="#">Cardapios</a>
 		  <ul>
 				<li><a href="#">Cardapio Principal</a></li>

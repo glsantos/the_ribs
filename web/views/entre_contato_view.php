@@ -20,6 +20,9 @@
 							<div id="entre-contato">
 								
 								<form id="formulario" name="frm_entrecontato" action="index.php" method="post">
+									<div class="titulo">
+										<h1>Nos avalie!</h1>
+									</div>
 									<div id="caixa-formulario">
 										<input type="text" name="txt_nome" class="input_text_nome" autofocus required placeholder="Digite seu nome">
 										<input type="tel" name="txt_telefone" class="input_text_telefone" autofocus required placeholder="Digite o seu telefone">
