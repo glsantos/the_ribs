@@ -3,6 +3,7 @@
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="stylesheet" type="text/css" href="../css/estilo.css">
   <link rel="stylesheet" type="text/css" href="../css/estilo_enquete.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo_avalie.css">
   <link rel="icon" href="img/TheRibs_Logo.png">
   <link rel="icon" href="../img/TheRibs_Logo.png">
   <script type="text/javascript" src="js/jquery.js"></script>

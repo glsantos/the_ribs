@@ -12,7 +12,7 @@
 		  </ul>
 		</li>
 
-		<li><a href="#">Avalie nossos Pratos</a></li>
+		<li><a href="views/avalie_view.php">Avalie nossos Pratos</a></li>
 		<li><a href="#">Conheça nossas unidades</a></li>
 		<li><a href="views/entre_contato_view.php">Entre em contato</a></li>
 		<li><a href="#">Entrar</a></li>

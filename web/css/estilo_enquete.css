@@ -12,9 +12,9 @@
 	width:100%;
 	height:100%;
 	opacity : 0.5;
-	filter: blur(5px) contrast(2);
+	filter: blur(2px) contrast(2);
 	z-index:1;
-	
+
 }
 #titulo{
 	z-index:3;
@@ -25,58 +25,6 @@
 	color:white;
 	text-shadow: 3px 1px 2px black;
 }
-#titulo {
-  -moz-animation-duration: 3s;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -moz-animation-name: slidein;
-  -webkit-animation-name: slidein;
-  animation-name: slidein;
-  -moz-animation-iteration-count: 3;
-  -webkit-animation-iteration-count: 3;
-  animation-iteration-count: 3;
-  -moz-animation-direction: alternate;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-   animation-iteration-count: infinite;
-}
-    
-@-moz-keyframes slidein {
-  from {
-    margin-left:50%;
-    width:300%
-  }
-      
-  to {
-    margin-left:0%;
-    width:100%;
-  }
-}
-
-@-webkit-keyframes slidein {
-  from {
-    margin-left:100%;
-	margin-top:2%;
-    width:300%
-  }
-  
-  to {
-   margin-left:0%;
-   width:100%;
- }
-}
-
-@keyframes slidein {
-  from {
-    margin-left:100%;
-    width:300%
-  }
-  
-  to {
-   margin-left:0%;
-   width:100%;
- }
-}
 #corpo-enquete{
 	width:100%;
 	min-height:1000px;
@@ -84,7 +32,6 @@
 	padding:5% 6%;
 }
 #caixa-pergunta{
-	
 	width:80%;
 	height:600px;
 	margin:0 auto;
@@ -105,7 +52,7 @@
 	width:100%;
 	height:80px;
 	margin-bottom:2%;
-	
+
 }
 .btn-enquete{
     text-align:center;
