@@ -417,6 +417,7 @@ footer{
 	width:100%;
 	height:300px;
 	background-color:#DC143C;
+	float:left;
 }
 #embrulho-rodape{
 	margin:0 auto;

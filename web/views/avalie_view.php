@@ -17,332 +17,128 @@
 							require_once('componentes/cabecalho.php');
 						?>
 						<!-- AQUI VAI O SEU CONTEUDO -->
-
-            <div id="caixa">
-
-                <div id="imagem">
-                  <div id="img">
-                    <img src="img/img2.jpg">
-                  </div>
-
-                  <div id="titulo">
-                    <p><h1>Nos avalie</h1></p>
-                    <p><h5>Dê-nos seu feedback</h5></p>
-                  </div>
-                </div>
-                <div id="filtro_texto">
-                    <div id="input_busca">
-                        <input type="text" placeholder="Tente 'Steak Friday'..." name="txt_pesquisa" class="txt_pesquisa">
-                        <input type="submit"  class="btn-pesquisar">
-                    </div>
-                </div>
-                <div id="corpo">
-                    <div id="avalie">
-                      <div class="unidade">
-                          <h1>Unidade</h1>
-                          <h5>Jandira</h5>
-                          <h5>Alphaville</h5>
-                          <h5>Osasco</h5>
-
-
-                      </div>
-                      <div class="nota">
-                        <h1>Nota</h1>
-                        <h5>5.0</h5>
-                        <h5>4.0</h5>
-                        <h5>3.0</h5>
-                        <h5>2.0</h5>
-                        <h5>1.0</h5>
-                      </div>
-                      <div class="preco">
-                        <h1>Preço</h1>
-                        <div id="caixa_r">
-                          <p><input type="radio" name="radio" value="um">Até R$ 11.00</p>
-    											<p><input type="radio" name="radio" value="dois">Até R$ 25.00</p>
-    											<p><input type="radio" name="radio" value="três">Até R$ 30.00</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="produtos">
-                        <div class="caixa-produto">
-                            <div class="foto">
-                              <img src="../img/cu.jpg">
-                            </div>
-                            <div class="titulo-prato">
-                              <h1>Cuzcuz com Bife</h1>
-                            </div>
-                            <div class="nota_1">
-                              <h1><small>Nota:</small> 5.0</h1>
-                            </div>
-                            <div class="nota_1">
-                              <h1>R$ 15.00</h1>
-                            </div>
-                            <div class="descricao">
-                                <p>1kg de cuzcuz</p>
-                                  <p>1kg de cuzcuz</p>
-                                    <p>2 ovo</p>
-                            </div>
-                            <div class="caixa-produto">
-                                <div class="foto">
-                                  <img src="../img/cu.jpg">
-                                </div>
-                                <div class="titulo-prato">
-                                  <h1>Cuzcuz com Bife</h1>
-                                </div>
-                                <div class="nota_1">
-                                  <h1><small>Nota:</small> 5.0</h1>
-                                </div>
-                                <div class="nota_1">
-                                  <h1>R$ 15.00</h1>
-                                </div>
-                                <div class="descricao">
-                                    <p>1kg de cuzcuz</p>
-                                      <p>1kg de cuzcuz</p>
-                                        <p>2 ovo</p>
-                                </div>
-                                <div class="caixa-produto">
-                                    <div class="foto">
-                                      <img src="../img/cu.jpg">
-                                    </div>
-                                    <div class="titulo-prato">
-                                      <h1>Cuzcuz com Bife</h1>
-                                    </div>
-                                    <div class="nota_1">
-                                      <h1><small>Nota:</small> 5.0</h1>
-                                    </div>
-                                    <div class="nota_1">
-                                      <h1>R$ 15.00</h1>
-                                    </div>
-                                    <div class="descricao">
-                                        <p>1kg de cuzcuz</p>
-                                          <p>1kg de cuzcuz</p>
-                                            <p>2 ovo</p>
-                                    </div>
-                                    <div class="caixa-produto">
-                                        <div class="foto">
-                                          <img src="../img/cu.jpg">
-                                        </div>
-                                        <div class="titulo-prato">
-                                          <h1>Cuzcuz com Bife</h1>
-                                        </div>
-                                        <div class="nota_1">
-                                          <h1><small>Nota:</small> 5.0</h1>
-                                        </div>
-                                        <div class="nota_1">
-                                          <h1>R$ 15.00</h1>
-                                        </div>
-                                        <div class="descricao">
-                                            <p>1kg de cuzcuz</p>
-                                              <p>1kg de cuzcuz</p>
-                                                <p>2 ovo</p>
-                                        </div>
-                                        <div class="caixa-produto">
-                                            <div class="foto">
-                                              <img src="../img/cu.jpg">
-                                            </div>
-                                            <div class="titulo-prato">
-                                              <h1>Cuzcuz com Bife</h1>
-                                            </div>
-                                            <div class="nota_1">
-                                              <h1><small>Nota:</small> 5.0</h1>
-                                            </div>
-                                            <div class="nota_1">
-                                              <h1>R$ 15.00</h1>
-                                            </div>
-                                            <div class="descricao">
-                                                <p>1kg de cuzcuz</p>
-                                                  <p>1kg de cuzcuz</p>
-                                                    <p>2 ovo</p>
-                                            </div>
-                                            <div class="caixa-produto">
-                                                <div class="foto">
-                                                  <img src="../img/cu.jpg">
-                                                </div>
-                                                <div class="titulo-prato">
-                                                  <h1>Cuzcuz com Bife</h1>
-                                                </div>
-                                                <div class="nota_1">
-                                                  <h1><small>Nota:</small> 5.0</h1>
-                                                </div>
-                                                <div class="nota_1">
-                                                  <h1>R$ 15.00</h1>
-                                                </div>
-                                                <div class="descricao">
-                                                    <p>1kg de cuzcuz</p>
-                                                      <p>1kg de cuzcuz</p>
-                                                        <p>2 ovo</p>
-                                                </div>
-                                                <div class="caixa-produto">
-                                                    <div class="foto">
-                                                      <img src="../img/cu.jpg">
-                                                    </div>
-                                                    <div class="titulo-prato">
-                                                      <h1>Cuzcuz com Bife</h1>
-                                                    </div>
-                                                    <div class="nota_1">
-                                                      <h1><small>Nota:</small> 5.0</h1>
-                                                    </div>
-                                                    <div class="nota_1">
-                                                      <h1>R$ 15.00</h1>
-                                                    </div>
-                                                    <div class="descricao">
-                                                        <p>1kg de cuzcuz</p>
-                                                          <p>1kg de cuzcuz</p>
-                                                            <p>2 ovo</p>
-                                                    </div>
-                                                    <div class="caixa-produto">
-                                                        <div class="foto">
-                                                          <img src="../img/cu.jpg">
-                                                        </div>
-                                                        <div class="titulo-prato">
-                                                          <h1>Cuzcuz com Bife</h1>
-                                                        </div>
-                                                        <div class="nota_1">
-                                                          <h1><small>Nota:</small> 5.0</h1>
-                                                        </div>
-                                                        <div class="nota_1">
-                                                          <h1>R$ 15.00</h1>
-                                                        </div>
-                                                        <div class="descricao">
-                                                            <p>1kg de cuzcuz</p>
-                                                              <p>1kg de cuzcuz</p>
-                                                                <p>2 ovo</p>
-                                                        </div>
-                                                        <var>  <div class="caixa-produto">
-                                                              <div class="foto">
-                                                                <img src="../img/cu.jpg">
-                                                              </div>
-                                                              <div class="titulo-prato">
-                                                                <h1>Cuzcuz com Bife</h1>
-                                                              </div>
-                                                              <div class="nota_1">
-                                                                <h1><small>Nota:</small> 5.0</h1>
-                                                              </div>
-                                                              <div class="nota_1">
-                                                                <h1>R$ 15.00</h1>
-                                                              </div>
-                                                              <div class="descricao">
-                                                                  <p>1kg de cuzcuz</p>
-                                                                    <p>1kg de cuzcuz</p>
-                                                                      <p>2 ovo</p>
-                                                              </div>
-                                                              <div class="caixa-produto">
-                                                                  <div class="foto">
-                                                                    <img src="../img/cu.jpg">
-                                                                  </div>
-                                                                  <div class="titulo-prato">
-                                                                    <h1>Cuzcuz com Bife</h1>
-                                                                  </div>
-                                                                  <div class="nota_1">
-                                                                    <h1><small>Nota:</small> 5.0</h1>
-                                                                  </div>
-                                                                  <div class="nota_1">
-                                                                    <h1>R$ 15.00</h1>
-                                                                  </div>
-                                                                  <div class="descricao">
-                                                                      <p>1kg de cuzcuz</p>
-                                                                        <p>1kg de cuzcuz</p>
-                                                                          <p>2 ovo</p>
-                                                                  </div>
-                                                                  <div class="caixa-produto">
-                                                                      <div class="foto">
-                                                                        <img src="../img/cu.jpg">
-                                                                      </div>
-                                                                      <div class="titulo-prato">
-                                                                        <h1>Cuzcuz com Bife</h1>
-                                                                      </div>
-                                                                      <div class="nota_1">
-                                                                        <h1><small>Nota:</small> 5.0</h1>
-                                                                      </div>
-                                                                      <div class="nota_1">
-                                                                        <h1>R$ 15.00</h1>
-                                                                      </div>
-                                                                      <div class="descricao">
-                                                                          <p>1kg de cuzcuz</p>
-                                                                            <p>1kg de cuzcuz</p>
-                                                                              <p>2 ovo</p>
-                                                                      </div>
-                                                                      <div class="caixa-produto">
-                                                                          <div class="foto">
-                                                                            <img src="../img/cu.jpg">
-                                                                          </div>
-                                                                          <div class="titulo-prato">
-                                                                            <h1>Cuzcuz com Bife</h1>
-                                                                          </div>
-                                                                          <div class="nota_1">
-                                                                            <h1><small>Nota:</small> 5.0</h1>
-                                                                          </div>
-                                                                          <div class="nota_1">
-                                                                            <h1>R$ 15.00</h1>
-                                                                          </div>
-                                                                          <div class="descricao">
-                                                                              <p>1kg de cuzcuz</p>
-                                                                                <p>1kg de cuzcuz</p>
-                                                                                  <p>2 ovo</p>
-                                                                          </div>
-                                                                        <var><var><var>
-                                                                          <div class="caixa-produto">
-                                                                              <div class="foto">
-                                                                                <img src="../img/cu.jpg">
-                                                                              </div>
-                                                                              <div class="titulo-prato">
-                                                                                <h1>Cuzcuz com Bife</h1>
-                                                                              </div>
-                                                                              <div class="nota_1">
-                                                                                <h1><small>Nota:</small> 5.0</h1>
-                                                                              </div>
-                                                                              <div class="nota_1">
-                                                                                <h1>R$ 15.00</h1>
-                                                                              </div>
-                                                                              <div class="descricao">
-                                                                                  <p>1kg de cuzcuz</p>
-                                                                                    <p>1kg de cuzcuz</p>
-                                                                                      <p>2 ovo</p>
-                                                                              </div>
-                                                                              <div class="caixa-produto">
-                                                                                  <div class="foto">
-                                                                                    <img src="../img/cu.jpg">
-                                                                                  </div>
-                                                                                  <div class="titulo-prato">
-                                                                                    <h1>Cuzcuz com Bife</h1>
-                                                                                  </div>
-                                                                                  <div class="nota_1">
-                                                                                    <h1><small>Nota:</small> 5.0</h1>
-                                                                                  </div>
-                                                                                  <div class="nota_1">
-                                                                                    <h1>R$ 15.00</h1>
-                                                                                  </div>
-                                                                                  <div class="descricao">
-                                                                                      <p>1kg de cuzcuz</p>
-                                                                                        <p>1kg de cuzcuz</p>
-                                                                                          <p>2 ovo</p>
-                                                                                  </div>
-                                                                                <var><var>  <div class="caixa-produto">
-                                                                                      <div class="foto">
-                                                                                        <img src="../img/cu.jpg">
-                                                                                      </div>
-                                                                                      <div class="titulo-prato">
-                                                                                        <h1>Cuzcuz com Bife</h1>
-                                                                                      </div>
-                                                                                      <div class="nota_1">
-                                                                                        <h1><small>Nota:</small> 5.0</h1>
-                                                                                      </div>
-                                                                                      <div class="nota_1">
-                                                                                        <h1>R$ 15.00</h1>
-                                                                                      </div>
-                                                                                      <div class="descricao">
-                                                                                          <p>1kg de cuzcuz</p>
-                                                                                            <p>1kg de cuzcuz</p>
-                                                                                              <p>2 ovo</p>
-                                                                                      </div></var></var></var></var></var></var>
-                        </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+								<div id="corpo">
+									<div id="container-imagem">
+									
+										<div class="imagem-principal">
+											<img src="../img/img3.jpg">
+										</div>
+										<div class="titulo-principal">
+											Nos Avalie!
+											
+										</div>
+										<div class="subtitulo">
+											Dê-nos seu FeedBack
+										</div>
+									
+									
+									</div>
+									<div id="caixa-busca">
+											<input type="submit" name="btn_pesquisa" class="btn_pesquisa" value="Pesquisar">
+										<input type="text" name="txt_pesquisa" class="txt_pesquisa" value="Tente 'Steak Friday'...">
+									
+									</div>
+									<div id="container-produtos">
+										<div id="filtro">
+											<div class="unidades">
+												<div class="titulo">
+													Unidades
+												</div>
+												<div class="detalhes-filtro">
+													<a href="#">Alphaville</a>
+													<a href="#">Jandira</a>
+													<a href="#">Itapevi</a>
+													<a href="#">Rio de janeiro</a>
+												</div>
+											</div>
+											<div class="nota">
+												<div class="titulo">
+													Nota
+												</div>
+												<div class="detalhes-filtro">
+													<a href="#">5.0</a>
+													<a href="#">4.0</a>
+													<a href="#">3.0</a>
+													<a href="#">2.0</a>
+													<a href="#">1.0</a>
+												</div>
+											</div>
+											<div class="preco">
+												<div class="titulo">
+													Preço
+												</div>
+												<div class="detalhes-filtro">
+													<p><input type="radio" class="radio" name="radio_avaliacao">Até R$ 10.00</p>
+													<p><input type="radio" class="radio" name="radio_avaliacao">Até R$ 20.00</p>
+													<p><input type="radio" class="radio" name="radio_avaliacao">Até R$ 40.00</p>
+													<p><input type="radio" class="radio" name="radio_avaliacao">Até R$ 100.00</p>
+												</div>
+											</div>
+										</div>
+										<div id="produtos">
+										
+											<div class="faixa-produtos">
+												<div class="imagem-produtos">
+													<img src="../img/cu.jpg">
+												</div>
+												<div class="titulo-produto">
+													Cuzcuz com bife
+												</div>
+												<div class="nota-produto">
+													<small>Nota</small>: 8.7/10
+												</div>
+												<div class="preco-produto">
+													R$ 15.00
+												</div>
+												<div class="descricao-produto">
+													<p>Este prato surgiu na Paraiba, muito bom com ovo, contém 10 kg de cuzcuz</p>
+													<p>ideal para quem quer engordar</p>
+												</div>
+												
+											</div>
+											<div class="faixa-produtos">
+												<div class="imagem-produtos">
+												</div>
+												<div class="titulo-produto">
+													Cuzcuz com bife
+												</div>
+												<div class="nota-produto">
+													<small>Nota</small>: 8.7/10
+												</div>
+												<div class="preco-produto">
+													R$ 15.00
+												</div>
+												<div class="descricao-produto">
+													<p>Este prato surgiu na Paraiba, muito bom com ovo, contém 10 kg de cuzcuz</p>
+													<p>ideal para quem quer engordar</p>
+												</div>
+												
+											</div>
+											
+											
+											<div class="faixa-produtos">
+												<div class="imagem-produtos">
+													
+												</div>
+												<div class="titulo-produto">
+													Cuzcuz com bife
+												</div>
+												<div class="nota-produto">
+													<small>Nota</small>: 8.7/10
+												</div>
+												<div class="preco-produto">
+													R$ 15.00
+												</div>
+												<div class="descricao-produto">
+													<p>Este prato surgiu na Paraiba, muito bom com ovo, contém 10 kg de cuzcuz</p>
+													<p>ideal para quem quer engordar</p>
+												</div>
+												
+											</div>
+										
+										</div>
+									</div>
+								</div>
   					 <?php
   						require_once('componentes/rodape.php');
   					?>
