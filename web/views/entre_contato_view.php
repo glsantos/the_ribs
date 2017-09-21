@@ -17,26 +17,30 @@
 							require_once('componentes/cabecalho.php');
 						?>
 						<!-- AQUI VAI O SEU CONTEUDO -->
-							<div id="entre-contato">
-								
-								<form id="formulario" name="frm_entrecontato" action="index.php" method="post">
-									<div class="titulo">
-										<h1>Nos avalie!</h1>
+							<div id="corpo-contato">
+								<img src="../img/fundo-entre.jpg" alt="">
+								<div id="caixa-contato">
+									<div class="titulo"> <h1> Entre contato </h1> </div>
+									<div class="content-form">
+											<form name="frmformulario" class="frmformulario" method="post" action="entre_contato_view.php">
+													<div id="nucleo">
+															<input type="text" class="txt" name="txt_nome" placeholder="Nome">
+															<input type="text" class="txt" name="txt_telefone" placeholder="Telefone">
+															<input type="text" class="txt" name="txt_email"  placeholder="Email">
+
+															<div id="radio">
+																<input type="radio" class="radio" name="radio_avaliacao">Sugestão
+																<input type="radio" class="radio" name="radio_avaliacao">Elogio
+																<input type="radio" class="radio" name="radio_avaliacao">Critica
+															</div>
+
+
+															<textarea rows="5" cols="5" name="txt_area" class="txt_area" placeholder="Comentario..."></textarea>
+															<input type="submit" class="btn-comentario" name="btn_salvar" value="Enviar Comentario">
+													</div>
+											</form>
 									</div>
-									<div id="caixa-formulario">
-										<input type="text" name="txt_nome" class="input_text_nome" autofocus required placeholder="Digite seu nome">
-										<input type="tel" name="txt_telefone" class="input_text_telefone" autofocus required placeholder="Digite o seu telefone">
-										<p><input type="email" name="txt_email" class="input_text_email" autofocus required placeholder="Digite o seu email"></p>
-										<p><div id="cla">
-											<p><h1>Classificação</h1></p>
-											<input type="radio" name="radio" value="um">Sugestão<br>
-											<input type="radio" name="radio" value="dois">Crítica<br>
-											<input type="radio" name="radio" value="três">Elogio<br>
-										</div></p>
-										<p><textarea name="txt_area" id="txt_area" rows="8" cols="80" placeholder="Digite o seu comentario"></textarea></p>
-										<button class="btn-entre" type="submit" >Enviar Comentario</button>
-									</div>
-								</form>
+								</div>
 							</div>
 						 <?php
 							require_once('componentes/rodape.php');

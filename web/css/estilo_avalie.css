@@ -2,13 +2,14 @@
 	width:100%;
 	min-height:1000px;
 	height:auto;
+	overflow: hidden;
 }
 #container-imagem{
 	width:100%;
 	height:500px;
 	background-color:black;
 	position:relative;
-	
+
 }
 .titulo-principal{
 	width:130px;
@@ -27,14 +28,14 @@
 	height:100px;
 	position:absolute;
 	top:45%;
-	left:32%;
+	left:37%;
 	line-height:100px;
 	font-size:2.5em;
 	white-space:nowrap;
 	text-shadow:2px 2px black;
 	color:white;
-	
-	
+
+
 }
 .imagem-principal{
 	width:100%;
@@ -42,15 +43,12 @@
 	background-color:red;
 	position:absolute;
 	 filter:opacity(alpha=50);
-        -moz-opacity:0.5;
-        opacity:0.5;
-
+  -moz-opacity:0.5;
+  opacity:1;
 }
 .imagem-principal img{
 	width:100%;
 	height:100%;
-	
-	
 }
 #container-produtos{
 	width:100%;
@@ -101,28 +99,28 @@
 	text-align:left;
 	padding:3%;
 	color:black;
-	
+
 }
 .detalhes-filtro > a, p{
-	
+
 	float:left;
 	clear:left;
 	margin-bottom:2%;
 	margin-left:3%;
 	text-decoration:none;
 	color:black;
-	
+
 }
 .detalhes-filtro > a:hover{
 	text-decoration:underline;
-	
+
 }
 #produtos{
 	width:65%;
 	height:1000px;
 	float:left;
 	z-index:999;
-	
+
 }
 .faixa-produtos{
 	width:100%;
@@ -131,7 +129,7 @@
 	overflow:hidden;
 	padding:5%;
 	border-bottom:1px solid #dcdcdc;
-	
+
 }
 .imagem-produtos{
 	width:30%;
@@ -170,7 +168,7 @@
 }
 
 .nota-produto{
-	width:15%;
+	width:8%;
 	height:30px;
 	background-color:#32CD32;
 	float:left;
@@ -182,7 +180,7 @@
 	margin-top:1%;
 }
 .preco-produto{
-	width:15%;
+	width:8%;
 	height:30px;
 	background-color:red;
 	float:left;
@@ -213,4 +211,19 @@
 	text-transform:uppercase;
 	background-color:red;
 	color:white;
+}
+.estrelas{
+	width: 15%;
+	height: 30px;
+	float: left;
+	margin-top: 6%;
+	white-space: nowrap;
+}
+.estrelas input[type=radio]{
+	display: none;
+}.estrelas label img.fa:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas  input[type=radio]:checked  ~ label img.fa:before{
+	color: #CCC;
 }
