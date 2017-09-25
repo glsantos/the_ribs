@@ -21,11 +21,19 @@
 
           }
 
-          break;
+          case 'verificar_login_cms':
+              
+              switch ($modo) {
+                case 'autenticacao_cms':
 
-        default:
-          # code...
-          break;
+                  $controller_login_cms = new ControllerLogin();
+                  $controller_login_cms->Logar();
+
+                  break;
+
+              }
+                
+       
       }
 
     }
