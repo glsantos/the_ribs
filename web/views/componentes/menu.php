@@ -1,8 +1,8 @@
-<nav id="nav">
+﻿<nav id="nav">
 	<a href="#" class="toggle-nav btn-close">x</a>
 	<ul id="nav-lista">
 		<li><a href="../index.php">Home</a></li>
-		<li><a href="#">Sobre o the Ribs</a></li>
+		<li><a href="../sobre_empresa_view.php">Sobre o the Ribs</a></li>
 		<li><a href="#">Reserve uma mesa</a></li>
 		<li><a href="views/enquete_view.php">Participe de nossa Enquete</a></li>
 		<li><a href="#">Cardapios</a>

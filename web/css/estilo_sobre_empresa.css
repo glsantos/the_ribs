@@ -1,0 +1,211 @@
+*{
+	font-family:Arial;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+a{
+	text-decoration:none;
+	color: black
+}
+header{
+	width:100%;
+	height:auto;
+	min-height: 100px;
+	overflow: hidden;
+	background-color:red;
+}
+#faixa_menu{
+	width:100%;
+	height:auto;
+	min-height: 2%;
+	overflow: hidden;
+	background-color:#DCDCDC;
+}
+nav{
+	width:100%;
+	height:auto;
+	min-height:10%;
+	overflow: hidden;
+	background-color:#d2b48c;
+}
+.titulo_slide{
+	width:100%;
+	height:600px;
+	position: relative;
+}
+#img{
+	width:100%;
+	height:auto;
+	min-height: 500px;
+	opacity:0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=40);
+	background-repeat: no-repeat;
+	background-color: black;
+}
+#img img{
+	width: 100%;
+	min-height:100%;
+	height: auto;
+}
+.title{
+	width:70%;
+	min-height:100px;
+	height: auto;
+	position: absolute;
+	z-index: 999;
+	font-size:70px;
+	color: white;
+	text-shadow: 3px 3px black;
+	margin-left:300px;
+	margin-top:350px;
+	text-align: center;
+
+}
+section{
+	width:100%;
+	height:auto;
+	min-height: 1000px;
+	overflow: hidden;
+	margin-top: 5%;
+}
+.principal{
+	width:100%;
+	height: auto;
+	min-height: 400px;
+	overflow: hidden;
+	border: 1px solid black;
+
+}
+.imagem_div_principal{
+	float:left;
+	width: 300px;
+	height: auto;
+	min-height: 290px;
+	overflow: hidden;
+	background-color: yellow;
+	margin-top: 20px;
+	margin-left: 250px;
+}
+.imagem{
+	float:left;
+	width: 300px;
+	height:auto;
+	min-height:290px;
+	overflow: hidden;
+}
+.imagem_slide{
+	width: 100%;
+	height:auto;
+	min-height: 500px;
+	overflow: hidden;
+}
+/*IMAGENS QUE VÃO REPRESENTAR CADA ACCORDION*/
+.div_imagens_accordion{
+	width: 100%;
+	min-height: 400px;
+	height: auto;
+	overflow: hidden;
+	padding: 2% 2%;
+	margin-top: 5%;
+
+}
+.imagens_accordion{
+	width: 300px;
+	height:auto;
+	min-height: 250px;
+	overflow: hidden;
+	float: left;
+	margin-left: 250px;
+
+}
+.tamanho_imagem_accordion{
+	width: 300px;
+	height:auto;
+	min-height: 250px;
+	overflow: hidden;
+}
+/*FIM DAS IMAGENS */
+/*div que contem todas as accordion*/
+.div_accordion{
+		width: 100%;
+		height:auto;
+		min-height: 200px;
+		overflow: hidden;
+}
+.div_principal_titulo{
+	width:300px;
+	height:auto;
+	min-height: 40px;
+	overflow: hidden;
+	margin-top: 5px;
+	background-color:	#000000;
+	text-align: center;
+}
+.div_conteudo_titulo{
+	width:300px;
+	height:auto;
+	min-height: 100px;
+	overflow: hidden;
+}
+h1{
+	color:white	;
+}
+.conteudo{
+	width:500px;
+	height:300px;
+	background-color:#FFEFD5;
+	display: none;
+	margin-top: 5px;
+	text-align: justify;
+}
+.div_principal_titulo1{
+	display: none;
+	background-color:white;
+}
+
+.div_historia{
+	margin-top: 300px
+	width: 100%;
+	height:500px;
+	background-image: url('../imagens/foto_nossa_historia.jpg');
+	/*background-color: #7B68EE;*/
+	margin-top: 0px;
+	padding: 2% 2%;
+	color: yellow;
+}
+
+.titulo{
+	width: 250px;
+	height: 40px;
+	z-index: 2;
+	margin-left: 800px;
+	z-index: 2;
+	font-size: 1.5em;
+	white-space: nowrap;
+	color: white;
+	text-shadow: 2px 2px #000;
+}
+.sla{
+	width: 900px;
+	height:auto;
+	min-height: 300px;
+	overflow: hidden;
+	margin-left:500px;
+	margin-top: 50px;
+	background-color: black;
+	opacity:0.50;
+	-moz-opacity: 0.50;
+	filter: alpha(opacity=50);
+	font-size: 17px;
+	color: white;
+}
+footer{
+	width:100%;
+	height:300px;
+	background-color: #FFE4C4;
+}
+/* overflow: hidden;
+transition: all .3s linear;
+display: none;*/
