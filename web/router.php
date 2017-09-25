@@ -27,7 +27,7 @@
                 case 'autenticacao_cms':
 
                   $controller_login_cms = new ControllerLogin();
-                  $controller_login_cms->Logar();
+                  $controller_login_cms->Autenticar();
 
                   break;
 
