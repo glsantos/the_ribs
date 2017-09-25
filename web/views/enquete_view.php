@@ -13,16 +13,7 @@
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="js/script_menu_lateral.js"></script>
 		<script type="text/javascript" src="../js/script_menu_lateral.js"></script>
-		<script type="text/javascript" src="js/script_menu_fixo.js"></script>
-		<script type="text/javascript" src="../js/script_menu_fixo.js"></script>
-		<script type="text/javascript" src="js/tabs.js"></script>
-		<script type="text/javascript" src="../js/tabs.js"></script>
-		<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
-		<script type="text/javascript" src="../js/jquery.cycle.all.js"></script>
-		<script type="text/javascript" src="js/script-slide-show.js"></script>
-		<script type="text/javascript" src="../js/script-slide-show.js"></script>
-		<script type="text/javascript" src="js/jcarousellite.js"></script>
-		<script type="text/javascript" src="../js/jcarousellite.js"></script>
+		
 	</head>
 	<body>
 		<section id="principal">
