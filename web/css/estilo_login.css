@@ -1,0 +1,113 @@
+/* CSS - LOGIN */
+
+*{
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.section_login{
+
+  width: 50%;
+  min-height: 500px;
+  height: auto;
+  overflow: hidden;
+  padding: 20px;
+  /*background-color: #F0E68C;*/
+  border: 2px solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form_login{
+
+  width: 80%;
+  min-height: 100px;
+  height: auto;
+  overflow: hidden;
+  margin-top: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulos_login{
+
+  text-align: center;
+  width: 250px;
+  padding-top: 10px;
+  min-height: 40px;
+  height: auto;
+  overflow: hidden;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input_login{
+
+  width: 310px;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.input_login input{
+
+  width: 300px;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #696969;
+}
+
+.div_botoes_login{
+
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+.input_botao input{
+
+  width: 250px;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #696969;
+}
+
+.txt_entre_botao_login{
+
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 30px;
+  color: #000;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.txt_index_cliente{
+
+  width: 80%;
+  min-height: 100px;
+  height: auto;
+  overflow: hidden;
+  background-color: #DEB887;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+}

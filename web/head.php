@@ -4,6 +4,8 @@
   <link rel="stylesheet" type="text/css" href="../css/estilo.css">
   <link rel="stylesheet" type="text/css" href="../css/estilo_enquete.css">
   <link rel="stylesheet" type="text/css" href="../css/estilo_avalie.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo_login.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo_cadastro.css">
   <link rel="icon" href="img/logo_folha.png">
   <link rel="icon" href="../img/logo_folha.png">
   <script type="text/javascript" src="js/jquery.js"></script>

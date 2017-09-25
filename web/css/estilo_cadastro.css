@@ -1,0 +1,88 @@
+/* CSS - CADASTRO CLIENTE */
+
+*{
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.section_cadastro{
+
+  width: 50%;
+  min-height: 500px;
+  height: auto;
+  overflow: hidden;
+  padding: 20px;
+  /*background-color: #F0E68C;*/
+  border: 2px solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form_cadastro{
+
+  width: 80%;
+  padding: 20px;
+  min-height: 150px;
+  height: auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dados_cadastro{
+
+  float: left;
+  width: 20%;
+  padding-top: 10px;
+  min-height: 40px;
+  height: auto;
+  overflow: hidden;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.dados_cadastro_input{
+
+  float: left;
+  width: 75%;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.dados_cadastro_input input{
+
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #696969;
+}
+
+.dados_cadastro_caixa{
+
+  width: 100%;
+  min-height: 50px;
+  clear: both;
+}
+
+.dados_cadastro_caixa #botao{
+
+  margin-top: 20px;
+  width: 350px;
+  min-height: 60px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 30px;
+  color: #696969;
+}
