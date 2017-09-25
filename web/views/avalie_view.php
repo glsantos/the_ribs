@@ -13,9 +13,14 @@
 					?>
 				  <section id="conteudo">
 						<!-- CHAMANDO CABECALHO -->
-						<?php
-							require_once('componentes/cabecalho.php');
-						?>
+						<header id="cabecalho">
+										<div id="img-menu">
+											<a href="#" class="toggle-nav btn-nav"><img src="../img/menu_icon.png" title="MENU" alt="Menu"></a>
+										</div>
+										<div id="logo">
+											<img src="../img/logo.png" alt="Logo">
+										</div>
+						</header>
 						<!-- AQUI VAI O SEU CONTEUDO -->
 								<div id="corpo">
 									<div id="container-imagem">
@@ -167,7 +172,7 @@
 																<input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
 
 												</div>
-												
+
 
 
 
