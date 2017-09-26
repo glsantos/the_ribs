@@ -37,7 +37,7 @@
             //seleciona o database, caso contrário mostra uma msg de erro e mata a conexao
             if($conexao=mysql_connect($this->server,$this->user,$this->password))
             {
-                mysql_select_db("db_theribsws");
+                mysql_select_db("dbtheribs_ws");
             }else
             {
                 echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador");
@@ -45,10 +45,8 @@
             }
 
         }
-
         //Metodo para Fechar a conexao com o Bando de Dados
         public function desconectar(){
-          
             mysql_close($conexao);
         }
 

@@ -1,12 +1,12 @@
 <?php
 
-  if(isset($_POST['controller'])){
+  if(isset($_GET['controller'])){
 
-    $controller = $_POST['controller'];
+    $controller = $_GET['controller'];
 
-    if(isset($_POST['modo'])){
+    if(isset($_GET['modo'])){
 
-      $modo = $_POST['modo'];
+      $modo = $_GET['modo'];
 
       switch ($controller) {
         case 'cliente':
@@ -22,9 +22,10 @@
           }
 
           case 'verificar_login_cms':
-              require('controllers/controller_login_cms');
-              require('models/login_cms_class.php');
-              switch ($modo) {
+              echo "eee";
+              //require('controllers/controller_login_cms');
+            //  require('models/login_cms_class.php');
+              /*switch ($modo) {
                 case 'autenticacao_cms':
 
                   $controller_login_cms = new ControllerLogin();
@@ -32,13 +33,11 @@
 
                   break;
 
-              }
+              }*/
 
-
+              break;
           }
-
-    }
-
+        }
   }
 
 ?>
