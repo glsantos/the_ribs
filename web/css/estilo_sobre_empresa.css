@@ -8,27 +8,6 @@ a{
 	text-decoration:none;
 	color: black
 }
-header{
-	width:100%;
-	height:auto;
-	min-height: 100px;
-	overflow: hidden;
-	background-color:red;
-}
-#faixa_menu{
-	width:100%;
-	height:auto;
-	min-height: 2%;
-	overflow: hidden;
-	background-color:#DCDCDC;
-}
-nav{
-	width:100%;
-	height:auto;
-	min-height:10%;
-	overflow: hidden;
-	background-color:#d2b48c;
-}
 .titulo_slide{
 	width:100%;
 	height:600px;
@@ -63,7 +42,7 @@ nav{
 	text-align: center;
 
 }
-section{
+.caixa-sobre{
 	width:100%;
 	height:auto;
 	min-height: 1000px;
@@ -149,8 +128,9 @@ section{
 	min-height: 100px;
 	overflow: hidden;
 }
-h1{
-	color:white	;
+.classh1{
+	color:white;
+	font-size: 30px;
 }
 .conteudo{
 	width:500px;
@@ -169,7 +149,7 @@ h1{
 	margin-top: 300px
 	width: 100%;
 	height:500px;
-	background-image: url('../imagens/foto_nossa_historia.jpg');
+	background-image: url('../img/foto_nossa_historia.jpg');
 	/*background-color: #7B68EE;*/
 	margin-top: 0px;
 	padding: 2% 2%;
@@ -177,12 +157,11 @@ h1{
 }
 
 .titulo{
-	width: 250px;
+	width: 400px;
 	height: 40px;
-	z-index: 2;
 	margin-left: 800px;
 	z-index: 2;
-	font-size: 1.5em;
+	
 	white-space: nowrap;
 	color: white;
 	text-shadow: 2px 2px #000;
@@ -190,7 +169,7 @@ h1{
 .sla{
 	width: 900px;
 	height:auto;
-	min-height: 300px;
+	min-height: 250px;
 	overflow: hidden;
 	margin-left:500px;
 	margin-top: 50px;
@@ -201,11 +180,3 @@ h1{
 	font-size: 17px;
 	color: white;
 }
-footer{
-	width:100%;
-	height:300px;
-	background-color: #FFE4C4;
-}
-/* overflow: hidden;
-transition: all .3s linear;
-display: none;*/
