@@ -13,7 +13,7 @@
 
           switch ($modo) {
             case 'logar':
-            
+
               $controller_cliente = new controllerCliente();
               $controller_cliente->Logar();
 
@@ -22,7 +22,8 @@
           }
 
           case 'verificar_login_cms':
-              
+              require('controllers/controller_login_cms');
+              require('models/login_cms_class.php');
               switch ($modo) {
                 case 'autenticacao_cms':
 
@@ -32,9 +33,9 @@
                   break;
 
               }
-                
-       
-      }
+
+
+          }
 
     }
 
