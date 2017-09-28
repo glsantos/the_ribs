@@ -1,60 +1,8 @@
-
-<!DOCTYPE html>
-<html>
-<!-- CHAMANDO HEAD -->
-	<head>
-		<title>The Ribs - SteakHouse </title>
-		<link rel="stylesheet" type="text/css" href="css/estilo.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilo.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilo_enquete.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilo_avalie.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilo_sobre_empresa.css">
-		<link rel="icon" href="img/logo_folha.png">
-		<link rel="icon" href="../img/logo_folha.png">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="js/script_menu_lateral.js"></script>
-		<script type="text/javascript" src="../js/script_menu_lateral.js"></script>
-		<script type="text/javascript" src="js/jquery.js"></script>
- 		<script>
-	     $(document).ready(function(){
-
-	    $("a").click(function(event){
-	    var link = $(this);
-
-	    if(link.attr("class").match("esconder"))
-	    	$(".conteudo").hide("slow");
-
-	    else
-	    	$(".conteudo").show("slow");
-				$(".div_principal_titulo1").show("slow");
-
-
-
-	    event.preventDefault();
-
-	    });
-
-	    })
- 		</script>
-	</head>
-	<body>
-		<section id="principal">
+<section id="principal">
 			 <section id="main">
-				<!-- CHAMANDO MENU LATERAL -->
-				  <?php
-						require_once('componentes/menu.php');
-					?>
+
 				  <section id="conteudo">
-						<!-- CHAMANDO CABECALHO -->
-						<header id="cabecalho">
-										<div id="img-menu">
-											<a href="#" class="toggle-nav btn-nav"><img src="../img/menu_icon.png" title="MENU" alt="Menu"></a>
-										</div>
-										<div id="logo">
-											<img src="../img/logo.png" alt="Logo">
-										</div>
-						</header>
+
 						<!-- AQUI VAI O SEU CONTEUDO -->
 						<div class="titulo_slide">
 							<div class="title">
@@ -62,14 +10,14 @@
 									criam sua experiência inesquecível.
 							</div>
 							<div id="img">
-									<img src="../img/sobre_empresa.jpg" alt="sobre_empresa">
+									<img src="img/sobre_empresa.jpg" alt="sobre_empresa">
 							</div>
 						</div>
 						<!-- section conteúdo principal-->
 						<section class="caixa-sobre">
 							<div class="div_imagens_accordion">
 									<div class="imagens_accordion">
-											<img class="tamanho_imagem_accordion"src="../img/icone-missao.png">
+											<img class="tamanho_imagem_accordion" src="img/icone-missao.png" alt="Missão">
 											<div class="div_principal_titulo"><a class="exibir"><h1 class="classh1">Missão</h1></a></div>
 											<div class="conteudo">
 												<br>"Conquistar a plena</br>
@@ -83,7 +31,7 @@
 									</div>
 
 									<div class="imagens_accordion">
-											<img class="tamanho_imagem_accordion"src="../img/icone-valores.png">
+											<img class="tamanho_imagem_accordion"src="img/icone-valores.png" alt="Valores">
 											<div class="div_principal_titulo"><a class="exibir"><h1 class="classh1" >Valores</h1></a></div>
 											<div class="conteudo"><br>• Ética Profissional</br>
 																						<br>• Respeito</br>
@@ -94,7 +42,7 @@
 									</div>
 
 									<div class="imagens_accordion">
-											<img class="tamanho_imagem_accordion"src="../img/icone-visao.png">
+											<img class="tamanho_imagem_accordion"src="img/icone-visao.png" alt="Visão">
 											<div class="div_principal_titulo"><a class="exibir"><h1 class="classh1">Objetivo</h1></a></div>
 											<div class="conteudo">
 												<br>"Ser uma empresa</br>
@@ -135,12 +83,7 @@
 							</div>
 
 						</section>
-						 <?php
-							require_once('componentes/rodape.php');
-						?>
+
 				  </section>
 			</section>
 		</section>
-
-	</body>
-</html>

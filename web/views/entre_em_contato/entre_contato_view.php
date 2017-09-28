@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html>
-<!-- CHAMANDO HEAD -->
-	<?php
-		require_once('../head.php');
-	?>
-	<body>
-		<section id="principal">
+<section id="principal">
 			 <section id="main">
-				<!-- CHAMANDO MENU LATERAL -->
-				  <?php
-						require_once('componentes/menu.php');
-					?>
+
 				  <section id="conteudo">
-						<!-- CHAMANDO CABECALHO -->
-						<header id="cabecalho">
-										<div id="img-menu">
-											<a href="#" class="toggle-nav btn-nav"><img src="../img/menu_icon.png" title="MENU" alt="Menu"></a>
-										</div>
-										<div id="logo">
-											<img src="../img/logo.png" alt="Logo">
-										</div>
-						</header>
+
 						<!-- AQUI VAI O SEU CONTEUDO -->
 							<div id="corpo-contato">
 								<img src="../img/fundo-entre.jpg" alt="">
@@ -47,12 +29,7 @@
 									</div>
 								</div>
 							</div>
-						 <?php
-							require_once('componentes/rodape.php');
-						?>
 
 				  </section>
 			</section>
 		</section>
-	</body>
-</html>

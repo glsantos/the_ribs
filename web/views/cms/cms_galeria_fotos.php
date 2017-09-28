@@ -1,15 +1,4 @@
-<?php
-sleep(2);
-?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Sistema Gerenciador do Site</title>
-    <link rel="stylesheet" type="text/css" href="../css/estilo_galeria_principal_cms.css">
-  </head>
-  <body>
-
-        <section id="conteudo-galeria">
+<section id="conteudo-galeria">
 
           <div id="foto">
           </div>
@@ -34,8 +23,3 @@ sleep(2);
           </div>
 
         </section>
-
-
-
-  </body>
-</html>
