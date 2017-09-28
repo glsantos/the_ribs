@@ -15,8 +15,10 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_login.css">
     <link rel="stylesheet" type="text/css" href="css/estilo_pagina_principal_cms.css">
     <link rel="stylesheet" type="text/css" href="css/estilo_sobre_empresa.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo_faq.css">
 
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery_faq.js"></script>
     <script type="text/javascript" src="js/script_menu_lateral.js"></script>
     <script type="text/javascript" src="js/script_menu_fixo.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
@@ -87,6 +89,10 @@
 
                     case 'cadastro_cliente':
                       require_once('views/cadastro_cliente/cadastro_cliente_view.php');
+                      break;
+
+                    case 'faq':
+                      require_once('views/faq/faq_view.php');
                       break;
 
                   }
