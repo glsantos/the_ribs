@@ -9,6 +9,8 @@
 			<h3>Participe de nossa enquete</h3>
 			<h3>FAQ The Ribs</h3>
 			<h3>Avalie uma unidade</h3>
+			<a href="index.php?pagina=login_cms"><h3>CMS</h3></a>
+			<h3>Área restrita</h3>
 		</div>
 
 		<div id="ajuda_suporte">

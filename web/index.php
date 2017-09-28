@@ -15,11 +15,9 @@
     <link rel="stylesheet" type="text/css" href="css/estilo_login.css">
     <link rel="stylesheet" type="text/css" href="css/estilo_pagina_principal_cms.css">
     <link rel="stylesheet" type="text/css" href="css/estilo_sobre_empresa.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo_faq.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo_adquirir_reserva.css">
+    
 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery_faq.js"></script>
     <script type="text/javascript" src="js/script_menu_lateral.js"></script>
     <script type="text/javascript" src="js/script_menu_fixo.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
@@ -92,17 +90,13 @@
                       require_once('views/cadastro_cliente/cadastro_cliente_view.php');
                       break;
 
-                    case 'faq':
-                      require_once('views/faq/faq_view.php');
+                    case 'login_cms':
+                      require_once('views/login_cms/login_cms_view.php');
                       break;
-
-                  case 'adquirir_reserva':
-                    require_once('views/adquirir_reserva/adquirir_reserva_view.php');
-                    break;
 
                   }
 
-              } else {
+              }else {
 
                 require_once('views/home.php');
               }
