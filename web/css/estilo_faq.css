@@ -10,11 +10,6 @@ main{
 	background-color:white;
 }
 
-#conteudoFAQ{
-	width:300px;
-	height:500px;
-	margin-left: 100px;
-}
 
 #faq{
 	width:100%;
@@ -24,85 +19,106 @@ main{
 #txtFaq{
 	width:100%;
 	height:80px;
+	padding-top: 25px;
 	text-align:center;
-	margin-top:0px;
-	font-size: 20;
+	font-size: 25px;
 	border:0px solid;
 	background-color:#FFDAB9;
 }
 
+#container_perguntas{
+	width:1200px;
+	height:1000px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
 #duvidas{
-	width:250px;
-	height:50px;
+	width:330px;
+	height:300px;
 	background-color:white;
-	margin-left:1500px;
+	float: right;
+	margin-top: auto;
 }
 
 #txtDuvidas{
-	width:230px;
+	width:330px;
 	height:60px;
-	font-size:20;
-	margin-left:10px;
-	margin-top:55px;
+	font-size:23px;
+	margin-top: 20px;
+	background-color: white;
+	text-align: center;
+
 }
 
 #imagemFaq{
 	width:120px;
 	height:120px;
-	margin-left:1568px;
+	margin-left:100px;
 	margin-top:5px;
+	background-color: white;
 }
 
 #contatosFaq{
-	width:160px;
+	width:180px;
 	height:50px;
 	text-align:center;
 	border:0px solid;
 	background-color:white;
-	margin-left:1546px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top:5;
+	font-size: 19px;
 }
 
 #perguntas{
-	width:200px;
-	height:500px;
-	margin-top: -500px;
-	margin-left: 200px;
+	width:600px;
+	height:700px;
+	float: left;
+	background-color: white;
+
 }
 
 .alinhamento{
-	width:500px;
+	width:600px;
 	height:500px;
 	border: 0px solid ;
 	float:left;
 }
 
 .pergunta{
-	width:350px;
-	height:40px;
-	border:0px solid;
-	background-color:white;
+	width:100%;
+	height:30px;
+	background-color:#FFDAB9;
 	text-align:center;
-	margin-top: 20px;
+	margin-top: 15px;
+	font-size: 20px;
+	border-radius: 10px 20px;
 }
 
 .resposta{
-	width:350px;
+	width:100%;
 	height:40px;
 	border:0px solid;
-	background-color:black;
-	color:pink;
+	background-color:white;
+	color:black;
 	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
 	display: none;
+	font-size: 20px;
+
 }
 
 .fechar_resposta{
 	width:100px;
 	height:40px;
-	border:0px solid black;
+	border:0px solid;
 	display: none;
-	background-color:pink;
+	padding-top: 10px;
+	background-color:#FFDAB9;
 	text-align: center;
-	margin-top: 5px;
-	text-align: center;
+	font-size: 20px;
+	border-radius: 10px 20px;
 }
