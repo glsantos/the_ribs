@@ -26,6 +26,7 @@ main{
 	height:80px;
 	text-align:center;
 	margin-top:0px;
+	font-size: 20;
 	border:0px solid;
 	background-color:#FFDAB9;
 }
@@ -58,7 +59,7 @@ main{
 	text-align:center;
 	border:0px solid;
 	background-color:white;
-	margin-left:1546;
+	margin-left:1546px;
 	margin-top:5;
 }
 
@@ -66,15 +67,14 @@ main{
 	width:200px;
 	height:500px;
 	margin-top: -500px;
-	margin-left: 200px
+	margin-left: 200px;
 }
 
 .alinhamento{
 	width:500px;
 	height:500px;
 	border: 0px solid ;
-	margin-left:300px;
-	margin-bottom:300px;
+	float:left;
 }
 
 .pergunta{

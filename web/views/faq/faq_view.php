@@ -2,21 +2,21 @@
 			<main>
 					<div id = "faq">
 						<div id = "txtFaq">
-								<h1>FAQ</h1>
-								<p><h3>Dúvidas Frequentes</h3></p>
+								Dúvidas Frequentes
 						</div>
 					</div>
 						<div id = "conteudoFAQ">
 								<div id = "duvidas">
 									<div id = "txtDuvidas">
-										Ainda ficou com dúvidas?
+										<h1>Ainda ficou com dúvidas?</h1>
 									</div>
 								</div >
-								<div > <img id="imagemFaq" src="imagens/faq.png"> </div>
+								<div > <img id="imagemFaq" src="img/faq.png"> </div>
 								<div id = "contatosFaq">
 									<p>faq@theribs.com.br</p>
 										11 4141-8922 </div>
-						</div>
+								</div>
+					</div>
 				<!-- Div Accordion -->
 				<div id="perguntas">
 					<div class = "alinhamento">
