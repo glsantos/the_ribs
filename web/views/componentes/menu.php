@@ -22,8 +22,6 @@
 
 		<li><a href="index.php?pagina=entre_em_contato">Entre em contato</a></li>
 
-		<li><a href="index.php?pagina=faq">FAQ</a></li>
-
 		<li><a href="index.php?pagina=login_cliente">Entrar</a></li>
 
 		<li><a href="#">Cadastre-se</a></li>
