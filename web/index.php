@@ -93,9 +93,10 @@
                       break;
 
                     case 'login_cms':
-                      break;
-                      require_once('views/login_cms/login_cms_view.php');
-
+                      
+						require_once('views/login_cms/login_cms_view.php');
+						break;
+						
                     case 'adquirir_reserva':
                       require_once('views/adquirir_reserva/adquirir_reserva_view.php');
                       break;
