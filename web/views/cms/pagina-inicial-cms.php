@@ -44,14 +44,14 @@
             <span id="loader" style="display:none"><img src="img/ajax-loader.gif"></span>
             <div id="menu-cms">
                 <li>
-                    <ul><a href="../views/cms_galeria_fotos.php">Gerenciar galeria de fotos</a></ul>
+                    <ul><a href="cms_galeria_fotos.php">Gerenciar galeria de fotos</a></ul>
                     <ul></ul>
                     <ul></ul>
                     <ul></ul>
                 </li>
             </div>
             <div id="conteudo-cms">
-              uuiu
+              Pagina  Principal CMS
             </div>
         </section>
         <footer>

@@ -39,9 +39,9 @@ class Login
 
     //Metodo para Selecionar Registro pelo ID
     public function Verificar($login_class){
-        //echo "cheguei";
+        echo "cheguei";
         $sql="select * from tbl_funcionarios where usuario_funcionario=".$login_class->login."and senha=".$login_class->senha;
-        //echo($sql);
+        echo($sql);
         $select = mysql_query($sql);
 
         if(mysql_num_rows($select) > 0){

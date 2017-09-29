@@ -26,7 +26,7 @@
         public function __construct(){
             $this->server="localhost";
             $this->user="root";
-            $this->password="bcd127";
+            $this->password="";
 
         }
 
@@ -38,8 +38,7 @@
             if($conexao=mysql_connect($this->server,$this->user,$this->password))
             {
                 mysql_select_db("dbtheribs_ws");
-            }else
-            {
+            }else{
                 echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador");
                 die();
             }

@@ -1,18 +1,22 @@
 <?php
 
-class controllerCliente{
+class controllerCliente(){
 
   public function Logar(){
 
-    $nome_usuario = $_POST['txtnome'];
-    $senha = $_POST['txtsenha'];
+    if ($_SERVER['REQUEST_METHOD']==['POST']) {
 
-    $cliente_login = new ClienteLogar();
+      $nome_usuario = $_POST['txtnome'];
+      $senha = $_POST['senha'];
 
-    $cliente_login->nome_usuario=$nome_usuario;
-    $cliente_login->senha=$senha;
+      $cliente_login = new ClienteLogar();
 
-    $cliente_login->Login($cliente_login);
+      $cliente_login->nome_usuario=$nome_usuario;
+      $cliente_login->senha=$senha;
+
+      $cliente_login->Login($cliente_login);
+
+    }
 
   }
 

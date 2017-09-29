@@ -26,7 +26,7 @@
 
 		<li><a href="index.php?pagina=login_cliente">Entrar</a></li>
 
-		<li><a href="index.php?pagina=cadastro">Cadastre-se</a></li>
+		<li><a href="#">Cadastre-se</a></li>
 
 	</ul>
 
