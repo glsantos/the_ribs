@@ -1,45 +1,55 @@
-<?php
+<!DOCTYPE html>
+<html>
 
-  if(isset($_GET['controller'])){
+  <?php require_once('head.php'); ?>
+  <body>
+    <?php
 
-    $controller = $_GET['controller'];
+    if(isset($_GET['controller'])){
 
-    if(isset($_GET['modo'])){
+      $controller = $_GET['controller'];
 
-      $modo = $_GET['modo'];
+      if(isset($_GET['modo'])){
 
-      switch ($controller) {
-        case 'cliente':
+        $modo = $_GET['modo'];
 
-          switch ($modo) {
-            case 'logar':
+        switch ($controller) {
+          case 'cliente':
+            //echo('clienteeee');
+            require_once('controllers/controller_cliente.php');
+            require_once('models/cliente_class.php');
 
-              $controller_cliente = new controllerCliente();
-              $controller_cliente->Logar();
+            switch($modo) {
+              case 'logar':
 
-              break;
+                $controller_cliente = new controllerCliente();
+                $controller_cliente->Logar();
 
+                break;
+
+            }
+
+            case 'verificar_login_cms':
+                  //echo "login cms";
+                  require('controllers/controller_login_cms.php');
+                  require('models/login_cms_class.php');
+
+                switch ($modo) {
+
+                  case 'autenticacao_cms':
+
+                    $controller_login_cms = new ControllerLogin();
+                    $controller_login_cms->Autenticar();
+
+                    break;
+
+                }
+
+                break;
+            }
           }
+    }
 
-          case 'verificar_login_cms':
-                echo "eee";
-                require('controllers/controller_login_cms.php');
-                require('models/login_cms_class.php');
-
-              switch ($modo) {
-
-                case 'autenticacao_cms':
-
-                  $controller_login_cms = new ControllerLogin();
-                  $controller_login_cms->Autenticar();
-
-                  break;
-
-              }
-
-              break;
-          }
-        }
-  }
-
-?>
+    ?>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <section>
-      <div id="div_faca_sua_reserva"><div id="div_titulo">Faça Sua Reserva</div></div>
+      <div class="titulo_faixa_padrao">Faça Sua Reserva</div>
       <!--div que cuida do formulario-->
       <div class="div_principal_form">
           <form name="frmFacasuareserva" method="get" action="#">

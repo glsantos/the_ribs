@@ -1,8 +1,8 @@
 
 			<main>
 				<div >
-						<div id = "faq">
-							<div id = "txtFaq">
+						<div id="faq">
+							<div class="titulo_faixa_padrao">
 									Dúvidas Frequentes
 							</div>
 						</div>

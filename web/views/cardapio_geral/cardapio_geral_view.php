@@ -1,17 +1,16 @@
 	<section id="principal">
 			 <section id="main">
-
 				  <section id="conteudo">
 
 						<!-- AQUI VAI O SEU CONTEUDO -->
-							<div id="faixa-1">
-								<div id="img">
-									<img src="img/01.jpg">
-								</div>
-								<div id="titulo">
-									<h1>Cardapio Geral</h1>
-								</div>
+						<div class="container-foto-titulo">
+							<div class="imagem-titulo">
+								<img src="img/img4.jpg">
 							</div>
+							<div class="titulo_imagem">
+									<h3>Cardápio Geral</h3>
+							</div>
+						</div>
 							<div id="faixas-filtro">
 								<div class="button-filtro-cardapio">steak</div>
 								<div class="button-filtro-cardapio">bebidas</div>

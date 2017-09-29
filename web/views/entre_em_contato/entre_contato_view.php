@@ -4,10 +4,11 @@
 				  <section id="conteudo">
 
 						<!-- AQUI VAI O SEU CONTEUDO -->
+							<div class="titulo_faixa_padrao">Entre em contato</div>
 							<div id="corpo-contato">
-								<img src="../img/fundo-entre.jpg" alt="">
+								<img src="img/fundo-entre.jpg" alt="">
 								<div id="caixa-contato">
-									<div class="titulo"> <h1> Entre contato </h1> </div>
+
 									<div class="content-form">
 											<form name="frmformulario" class="frmformulario" method="post" action="entre_contato_view.php">
 													<div id="nucleo">

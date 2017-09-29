@@ -7,6 +7,40 @@
   box-sizing: border-box;
 
 }
+
+.container-foto-titulo{
+		background-color: black;
+		width: 100%;
+		height: 500px;
+		position: relative;
+}
+.imagem-titulo{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0.5;
+}
+.imagem-titulo img{
+
+	width: 100%;
+	height: 100%;
+
+}
+.titulo_imagem{
+	width: 80%;
+	height: 40%;
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 8%;
+}
+.titulo_imagem h3{
+	margin-left:38%;
+ 	color: white;
+	font-size: 2.5em;
+
+}
+
 #principal{
 
   width: 100%;
@@ -123,6 +157,17 @@ ul li a {
 	line-height:30px;
 	text-align:center;
 }
+
+#proximo img{
+
+  opacity: 0.7;
+}
+
+#antes img{
+
+  opacity: 0.7;
+}
+
 #antes{
 	width:80px;
 	height:30px;

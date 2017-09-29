@@ -5,14 +5,14 @@ Class Unidade{
 
 
 
-	public $id_unidade;
+	public $id;
 	public $nome_unidade;
 
 	//Construtor da Classe
     public function __construct(){
 
         //Inclui o arquivo de conexao com o BD
-        require_once('../../models/banco_classe.php');
+        require_once('../models/banco_classe.php');
 
         //Instancia a Classe Mysql_db
         $conexao_bd = new Mysql_db();
@@ -31,7 +31,7 @@ Class Unidade{
         $sql="select * from tbl_unidades";
 
 				$select = mysql_query($sql);
-			
+
         $cont=0;
 
         //repetição para guardar os registros do BD em um Array de objetos
@@ -50,7 +50,7 @@ Class Unidade{
 
         }
 
-
+			echo $listUnidades;
         return $listUnidades;
 
     }

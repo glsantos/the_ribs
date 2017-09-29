@@ -1,58 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title> LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="../../css/estilo_login.css">
-  </head>
-  <body>
-    <section class="section_login">
 
-      <div class="form_login">
+<section class="section_login">
 
-        <form action="router.php?controller=cliente&modo=logar" method="post">
+  <div class="form_login">
 
-            <div class="titulos_login">
-                Nome de usuário
-            </div>
+    <form action="router.php?controller=cliente&modo=logar" method="post">
 
-            <div class="input_login">
+        <div class="titulos_login">
+            Nome de usuário
+        </div>
 
-              <input type="text" name="txtnome" placeholder="" required>
+        <div class="input_login">
 
-            </div>
+          <input type="text" name="txtnome" placeholder="" required>
 
-            <div class="titulos_login">
-                Senha
-            </div>
+        </div>
 
-            <div class="input_login">
+        <div class="titulos_login">
+            Senha
+        </div>
 
-              <input type="password" name="txtsenha" placeholder="" required>
+        <div class="input_login">
 
-            </div>
+          <input type="password" name="txtsenha" placeholder="" required>
 
-            <div class="div_botoes_login">
+        </div>
 
-              <div class="input_botao">
+        <div class="div_botoes_login">
 
-                <input title="Entrar" type="submit" name="btnentrar" value="Entrar" placeholder="" required>
+          <div class="input_botao">
 
-                <span class="txt_entre_botao_login"> ou </span>
+            <input title="Entrar" type="submit" name="btnentrar" value="Entrar" placeholder="" required>
 
-                <a href="cadastro_cliente.php" title="Cadastrar-se">
-                    <input type="button" name="btncadastrar" value="Tornar-se um Ribs" placeholder="" required>
-                </a>
+            <span class="txt_entre_botao_login"> ou </span>
 
-              </div>
+            <a href="cadastro_cliente.php" title="Cadastrar-se">
+                <input type="button" name="btncadastrar" value="Tornar-se um Ribs" placeholder="" required>
+            </a>
 
-            </div>
+          </div>
 
-        </form>
+        </div>
 
-      </div>
+    </form>
 
-    </section>
+  </div>
 
-  </body>
-</html>
+</section>

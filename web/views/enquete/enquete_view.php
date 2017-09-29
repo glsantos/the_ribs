@@ -4,16 +4,16 @@
 				  <section id="conteudo">
 
 						<!-- AQUI VAI O SEU CONTEUDO -->
-							<div id="faixa-1">
-								<div id="img">
+							<div class="container-foto-titulo">
+								<div class="imagem-titulo">
 									<img src="img/img4.jpg">
 								</div>
-								<div id="titulo">
-									<h1>Enquete Ribs</h1>
+								<div class="titulo_imagem">
+										<h3>Enquete Ribs</h3>
 								</div>
 							</div>
 							<div id="corpo-enquete">
-								<div id="caixa-pergunta">
+								<!--<div id="caixa-pergunta">
 									<div class="pergunta">
 										<h1>1) O site do The Ribs Está:</h1>
 									</div>
@@ -34,7 +34,7 @@
 									Votar
 									</div>
 
-								</div>
+								</div>-->
 
 							</div>
 
