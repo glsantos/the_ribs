@@ -33,21 +33,28 @@
             $login_class->senha=$senha;
 
 
-
-            header('location:views/cms/pagina-inicial-cms.php');
-            /*
-			try{
-            	$retornoNome = $login_class->Verificar($login_class);
-				$_SESSION['nome_funcionario']= $retornoNome;
-				//echo $retornoNome;
-				header('location:views/pagina-inicial-cms.php');
-            }catch(Exception $e){
-				echo $e;
-				header('location:views/cms_login.php');
-			}
+            	$retorno = $login_class->Verificar($login_class);
 
 
-          }*/
+              if($retorno == 'null'){
+
+                    header('location:views/login_cms/login_cms_view.php?status=erro');
+
+              }else{
+
+                session_start();
+                 $_SESSION['nome'] = $login_class->login;
+                 $_SESSION['id'] = $login_class->idLogin;
+                 $_SESSION['login'] = 'true';
+
+
+                header('location:views/cms/pagina-inicial-cms.php');
+
+              }
+
+
+
+
 
     }
   }
