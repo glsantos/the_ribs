@@ -38,7 +38,7 @@
 
               if($retorno == 'null'){
 
-                    header('location:views/login_cms/login_cms_view.php?status=erro');
+                    header('location:index.php?pagina=login_cms');
 
               }else{
 

@@ -66,9 +66,10 @@ class ControllerGaleria{
 
        public function DeletarImagem(){
 
-
+			
            require_once('models/galeria_class.php');
-           $id_foto=$_GET['id'];
+           $id_foto=$_POST['id'];
+		  
            $galeria_class = new Galeria();
            $galeria_class->id_foto=$id_foto;
            $galeria_class->ApagarImagem($galeria_class);

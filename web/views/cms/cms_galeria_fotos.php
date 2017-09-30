@@ -40,7 +40,7 @@
   </head>
   <body>
 
-<form method="post" name="frmgaleria" action="../../router.php?controller=controller_galeria&modo=<?php echo($action); echo($idEditar); ?>" enctype="multipart/form-data">
+<form method="post" name="frmgaleria" action="../../router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
 <section id="conteudo-galeria">
   <div id="caixa-ver-imagem">
     aqui vai a foto

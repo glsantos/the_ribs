@@ -80,10 +80,15 @@ class Galeria{
 
 
          public function ApagarImagem($galeria_class){
+			 
+			 
+			 
+			 
            $sql="delete from tbl_galeria_fotos where id_foto=".$galeria_class->id_foto;
-
+			
           if(mysql_query($sql)){
-              echo("deletado");
+			  
+              header('location:views/cms/cms_galeria_fotos.php');
           }else{
             echo("erro no script do metodo Apagar Imagem no banco de dados <br> Erro: </br>".mysql_error());
           }
