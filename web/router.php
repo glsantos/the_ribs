@@ -54,8 +54,8 @@
 
                 switch ($modo) {
                   case 'salvar':
-
-				
+					
+					echo "aqui";
                   $controller_galeria = new ControllerGaleria();
                   $controller_galeria->SalvarFoto();
 

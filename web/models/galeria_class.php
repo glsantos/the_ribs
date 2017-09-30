@@ -31,15 +31,14 @@ class Galeria{
       $sql="insert into tbl_galeria_fotos (id_unidade, imagem_unidade)values('".$cadastro_foto->id_unidade."',
                                                                                 '".$cadastro_foto->imagem_unidade."')";
 
-            //echo($sql);
-          //mysql_query($sql);
+           
+          
           if(mysql_query($sql)){
-              echo "salvei";
-                //header('location:views/cms/cms_galeria_fotos.php');
+             return 'ok';
           }else{
               echo("erro no script de insert no banco de dados <br> Erro: </br>".mysql_error());
           }
-        }
+      }
 
 
 
