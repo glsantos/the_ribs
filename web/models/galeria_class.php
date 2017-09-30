@@ -11,7 +11,7 @@ class Galeria{
       public function __construct(){
 
           //Inclui o arquivo de conexao com o BD
-          require_once('models/banco_classe.php');
+          require_once('../../models/banco_classe.php');
 
           //Instancia a Classe Mysql_db
           $conexao_bd = new Mysql_db();
