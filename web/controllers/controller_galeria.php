@@ -16,7 +16,7 @@ class ControllerGaleria{
 
     public function SalvarFoto(){
         require_once('models/galeria_class.php');
-
+			
            //Resgatando os dados do form
            $id_unidade=$_POST['sltunidade'];
            /*CAMINHO DA PASTA ARQUIVO*/
@@ -68,7 +68,7 @@ class ControllerGaleria{
 
 			
            require_once('models/galeria_class.php');
-           $id_foto=$_POST['id'];
+           $id_foto=$_GET['id'];
 		  
            $galeria_class = new Galeria();
            $galeria_class->id_foto=$id_foto;

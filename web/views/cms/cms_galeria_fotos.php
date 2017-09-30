@@ -46,6 +46,7 @@
     aqui vai a foto
   </div>
           <div id="caixa-inputs">
+		  
             <div id="unidade">
                 <select name="sltunidade">
 
