@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `dbtheribs_ws` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `dbtheribs_ws`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dbtheribs_ws
@@ -254,7 +256,7 @@ CREATE TABLE `tbl_cargos` (
   PRIMARY KEY (`id_cargo`),
   KEY `fk_cargo_departamento_idx` (`id_departamento`),
   CONSTRAINT `fk_cargo_departamento` FOREIGN KEY (`id_departamento`) REFERENCES `tbl_departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,6 +265,7 @@ CREATE TABLE `tbl_cargos` (
 
 LOCK TABLES `tbl_cargos` WRITE;
 /*!40000 ALTER TABLE `tbl_cargos` DISABLE KEYS */;
+INSERT INTO `tbl_cargos` VALUES (1,1,'Garçom');
 /*!40000 ALTER TABLE `tbl_cargos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -361,7 +364,7 @@ CREATE TABLE `tbl_clientes` (
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`id_cliente`),
   UNIQUE KEY `nome_usuario_UNIQUE` (`nome_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,6 +373,7 @@ CREATE TABLE `tbl_clientes` (
 
 LOCK TABLES `tbl_clientes` WRITE;
 /*!40000 ALTER TABLE `tbl_clientes` DISABLE KEYS */;
+INSERT INTO `tbl_clientes` VALUES (2,'Giovanna','Silva Resende','585106691','32931588890','gi','123');
 /*!40000 ALTER TABLE `tbl_clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -493,7 +497,7 @@ CREATE TABLE `tbl_departamento` (
   `id_departamento` int(11) NOT NULL AUTO_INCREMENT,
   `nome_departamento` varchar(50) NOT NULL,
   PRIMARY KEY (`id_departamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -502,6 +506,7 @@ CREATE TABLE `tbl_departamento` (
 
 LOCK TABLES `tbl_departamento` WRITE;
 /*!40000 ALTER TABLE `tbl_departamento` DISABLE KEYS */;
+INSERT INTO `tbl_departamento` VALUES (1,'Atendimento');
 /*!40000 ALTER TABLE `tbl_departamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -638,7 +643,7 @@ CREATE TABLE `tbl_enderecos` (
   `uf` varchar(45) NOT NULL,
   `numero` varchar(10) NOT NULL,
   PRIMARY KEY (`id_endereco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -647,6 +652,7 @@ CREATE TABLE `tbl_enderecos` (
 
 LOCK TABLES `tbl_enderecos` WRITE;
 /*!40000 ALTER TABLE `tbl_enderecos` DISABLE KEYS */;
+INSERT INTO `tbl_enderecos` VALUES (1,'06720','Rua: Ciro Monteiro','A','Parque Mirante da Mata','Xablau','SP','1024');
 /*!40000 ALTER TABLE `tbl_enderecos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -759,7 +765,7 @@ CREATE TABLE `tbl_funcionarios` (
   CONSTRAINT `fk_cargo_funcionario` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargos` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_endereco_funcionario` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_enderecos` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_unidade_funcionario` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidades` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -768,6 +774,7 @@ CREATE TABLE `tbl_funcionarios` (
 
 LOCK TABLES `tbl_funcionarios` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionarios` DISABLE KEYS */;
+INSERT INTO `tbl_funcionarios` VALUES (1,1,1,1,'Giovanna','Resende','2000-03-25','gi','123',10);
 /*!40000 ALTER TABLE `tbl_funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1587,7 +1594,7 @@ CREATE TABLE `tbl_unidades` (
   `id_unidade` int(11) NOT NULL AUTO_INCREMENT,
   `nome_unidade` varchar(45) NOT NULL,
   PRIMARY KEY (`id_unidade`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1596,6 +1603,7 @@ CREATE TABLE `tbl_unidades` (
 
 LOCK TABLES `tbl_unidades` WRITE;
 /*!40000 ALTER TABLE `tbl_unidades` DISABLE KEYS */;
+INSERT INTO `tbl_unidades` VALUES (1,'Jandira');
 /*!40000 ALTER TABLE `tbl_unidades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1616,4 +1624,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-01 16:40:28
+-- Dump completed on 2017-10-01 17:43:46
