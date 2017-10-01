@@ -10,10 +10,13 @@ session_start();
      * ************************************************************************************************
    */
 
-
-  class ClienteLogar{
+  class Cliente{
 
     public $nome_usuario;
+    public $sobrenome;
+    public $rg;
+    public $cpf;
+    public $usuario;
     public $senha;
 
     //Construtor da Classe
@@ -37,9 +40,7 @@ session_start();
 
         $exec = mysql_query($sql_select);
 
-        $position = 0;
-
-        while($rs = mysql_fetch_array($exec)){
+        if($rs = mysql_fetch_array($exec)){
 
           $_SESSION['id_cliente'] = $rs['id_cliente'];
           $_SESSION['nome_cliente'] = $rs['nome_cliente'];
@@ -49,10 +50,26 @@ session_start();
           $_SESSION['nome_usuario'] = $rs['nome_usuario'];
           $_SESSION['senha'] = $rs['senha'];
 
-          $position .= 1;
         }
 
         require_once('views/cliente/index_cliente_view.php');
+
+    }
+
+    function Cadastro($dados_cadastrais){
+
+      $valores = ("'$dados_cadastrais->nome_usuario', '$dados_cadastrais->sobrenome', '$dados_cadastrais->rg', '$dados_cadastrais->cpf', '$dados_cadastrais->usuario', '$dados_cadastrais->senha'");
+
+      $sql_insert = "insert into tbl_clientes(nome_cliente, sobrenome_cliente, rg, cpf, nome_usuario, senha) values($valores);";
+
+    if(mysql_query($sql_insert)){
+
+        return true;
+
+      }else {
+
+        return false;
+      }
 
     }
 

@@ -51,7 +51,7 @@
                 </li>
             </div>
             <div id="conteudo-cms">
-              uuiu
+              <a href="sair.php"> Sair </a>
             </div>
         </section>
         <footer>

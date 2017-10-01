@@ -27,12 +27,18 @@
 
                 break;
 
+              case 'cadastrar':
+
+                $controller_cliente = new controllerCliente();
+                $controller_cliente->Cadastrar();
+                break;
+
             }
 
-            case 'verificar_login_cms':
-                  //echo "login cms";
-                  require('controllers/controller_login_cms.php');
-                  require('models/login_cms_class.php');
+            case 'cms':
+
+                require('controllers/controller_login_cms.php');
+                require('models/login_cms_class.php');
 
                 switch ($modo) {
 

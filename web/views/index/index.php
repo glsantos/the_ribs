@@ -28,9 +28,9 @@
        <div class="main-content">
 
          <ul class="menu">
-           <li id="tab_1" class="active">Primeiro passo</li>
-           <li id="tab_2">Segundo passo</li>
-           <li id="tab_3">Terceiro passo</li>
+           <li id="tab_1" class="active">Primeiro Passo</li>
+           <li id="tab_2">Segundo Passo</li>
+           <li id="tab_3">Terceiro Passo</li>
          </ul>
          <div class="content tab_1 active">
                 gnissim eget semper vitae, mollis
@@ -49,6 +49,7 @@
          </div>
        </div>
      </div>
+     
      <div id="faixa_valores">
        <div id="imagem-valores">
          <img src="img/banner2.jpg" alt="">

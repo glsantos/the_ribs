@@ -1,7 +1,5 @@
 <?php
 
-  require_once('conexao_db.php');
-
   if (isset($_POST['btncadastrar'])) {
 
     $nome = $_POST['txtnome'];

@@ -84,7 +84,7 @@
                       break;
 
                     case 'cadastro':
-                      require_once('views/cadastro_cliente/home.php');
+                      require_once('views/cadastro_cliente/cadastro_cliente_view.php');
                       break;
                   }
 

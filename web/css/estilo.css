@@ -268,7 +268,9 @@ ul li a {
 /*ESTILIZAÇÃO TABS*/
 #faixa_reserva{
 	width: 100%;
-	height: 600px;
+	min-height: 200px;
+  height: auto;
+  overflow: hidden;
 	background-color:white;
 	text-align:center;
 	padding:1% 6%;
@@ -277,9 +279,19 @@ ul li a {
 #faixa_reserva h1{
 	font-size:1.5em;
 }
+
 .main-content {
 	width: 100%;
-	height: 600px;
+	min-height: 200px;
+  height: auto;
+  overflow: hidden;
+}
+
+.main-content div{
+
+  color: #000;
+  text-align: justify;
+  font-size: 20px;
 }
 
 .main-content .menu{
@@ -292,12 +304,13 @@ ul li a {
 .main-content .menu li {
 	width: 150px;
 	height: 40px;
-	color: black;
+	color: #000;
 	text-align: center;
 	line-height: 30px;
 	display: inline-block;
 	font-family: "Arial";
 	cursor: pointer;
+  font-size: 18px;
 }
 
 .main-content .menu li.active {
@@ -313,16 +326,20 @@ ul li a {
 
 .main-content .content.active {
 	display: block;
-}
 
+}
 
 #faixa_valores{
 	width: 100%;
-	height: 500px;
+	min-height: 500px;
+  height: auto;
+  overflow: hidden;
+
+  background-color: green;
 }
 #imagem-valores{
 	width: 100%;
-	height:500px;
+	height: 600px;
 	z-index:1;
 	position:absolute;
 }
@@ -332,8 +349,10 @@ ul li a {
 }
 #texto-valores{
 	width: 50%;
-	height: 300px;
-	border:1px solid white;
+	min-height: 100px;
+  height: auto;
+  overflow: hidden;
+  padding: 20px;
 	z-index:3;
 	position:absolute;
 	margin-left:25%;
