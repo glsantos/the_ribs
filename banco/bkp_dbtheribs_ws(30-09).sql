@@ -27,15 +27,16 @@ DROP TABLE IF EXISTS `tbl_avaliacao_garcom`;
 CREATE TABLE `tbl_avaliacao_garcom` (
   `id_avaliacao_garcom` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario` int(11) NOT NULL,
+  `id_nota_garcom` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `id_nota` int(11) DEFAULT NULL,
+  `dt_avaliacao` date DEFAULT NULL,
   PRIMARY KEY (`id_avaliacao_garcom`),
   KEY `fk_nota_funcionario_idx` (`id_funcionario`),
   KEY `fk_nota_cliente_idx` (`id_cliente`),
-  KEY `fk_avaliacao_nota_idx` (`id_nota`),
-  CONSTRAINT `fk_avaliacao_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_avaliacao_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionarios` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_avaliacao_nota` FOREIGN KEY (`id_nota`) REFERENCES `tbl_notas` (`id_nota`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_avaliacao_nota_idx` (`id_nota_garcom`),
+  CONSTRAINT `fk_avaliacao_garcom_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_avaliacao_garcom_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionarios` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_avaliacao_garcom_nota` FOREIGN KEY (`id_nota_garcom`) REFERENCES `tbl_nota_garcom` (`id_nota_garcom`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -46,6 +47,35 @@ CREATE TABLE `tbl_avaliacao_garcom` (
 LOCK TABLES `tbl_avaliacao_garcom` WRITE;
 /*!40000 ALTER TABLE `tbl_avaliacao_garcom` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_avaliacao_garcom` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_avaliacao_produto`
+--
+
+DROP TABLE IF EXISTS `tbl_avaliacao_produto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_avaliacao_produto` (
+  `id_avaliacao_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produto` int(11) NOT NULL,
+  `id_nota_produto` int(11) NOT NULL,
+  `dt_avaliacao_prato` date DEFAULT NULL,
+  PRIMARY KEY (`id_avaliacao_produto`),
+  KEY `fk_id_produto_avaliacao_idx` (`id_produto`),
+  KEY `fk_id_avaliacao_produto_idx` (`id_nota_produto`),
+  CONSTRAINT `fk_id_avaliacao_produto` FOREIGN KEY (`id_nota_produto`) REFERENCES `tbl_nota_produto` (`id_nota_prato`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_id_produto_avaliacao` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_avaliacao_produto`
+--
+
+LOCK TABLES `tbl_avaliacao_produto` WRITE;
+/*!40000 ALTER TABLE `tbl_avaliacao_produto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_avaliacao_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -804,14 +834,17 @@ CREATE TABLE `tbl_itens_pedido` (
   `id_pedido` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `id_funcionario` int(11) NOT NULL,
-  `quantidade_item` int(11) NOT NULL,
+  `qtd_produto` int(11) NOT NULL,
+  `id_status_pedido` int(11) NOT NULL,
   PRIMARY KEY (`id_item_pedido`),
   KEY `fk_iten_pedido_idx` (`id_pedido`),
   KEY `fk_iten_produto_idx` (`id_produto`),
   KEY `fk_iten_funcionario_idx` (`id_funcionario`),
-  CONSTRAINT `fk_iten_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionarios` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_iten_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_iten_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_id_status_pedido_idx` (`id_status_pedido`),
+  CONSTRAINT `fk_id_status_pedido` FOREIGN KEY (`id_status_pedido`) REFERENCES `tbl_status_pedido` (`id_status_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_item_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionarios` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_item_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_item_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -833,9 +866,10 @@ DROP TABLE IF EXISTS `tbl_mesa`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_mesa` (
   `id_mesa` int(11) NOT NULL AUTO_INCREMENT,
-  `id_status_mesa` int(11) NOT NULL,
   `id_unidade` int(11) NOT NULL,
   `nome_mesa` varchar(50) NOT NULL,
+  `qtd_pessoas` int(11) NOT NULL,
+  `id_status_mesa` int(11) NOT NULL,
   PRIMARY KEY (`id_mesa`),
   KEY `fk_status_mesa_idx` (`id_status_mesa`),
   KEY `fk_unidade_mesa_idx` (`id_unidade`),
@@ -854,26 +888,49 @@ LOCK TABLES `tbl_mesa` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_notas`
+-- Table structure for table `tbl_nota_garcom`
 --
 
-DROP TABLE IF EXISTS `tbl_notas`;
+DROP TABLE IF EXISTS `tbl_nota_garcom`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_notas` (
-  `id_nota` int(11) NOT NULL AUTO_INCREMENT,
-  `desc_nota` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_nota`)
+CREATE TABLE `tbl_nota_garcom` (
+  `id_nota_garcom` int(11) NOT NULL AUTO_INCREMENT,
+  `nota_garcom` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_nota_garcom`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_notas`
+-- Dumping data for table `tbl_nota_garcom`
 --
 
-LOCK TABLES `tbl_notas` WRITE;
-/*!40000 ALTER TABLE `tbl_notas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_notas` ENABLE KEYS */;
+LOCK TABLES `tbl_nota_garcom` WRITE;
+/*!40000 ALTER TABLE `tbl_nota_garcom` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_nota_garcom` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_nota_produto`
+--
+
+DROP TABLE IF EXISTS `tbl_nota_produto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_nota_produto` (
+  `id_nota_prato` int(11) NOT NULL AUTO_INCREMENT,
+  `nota_prato` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_nota_prato`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nota_produto`
+--
+
+LOCK TABLES `tbl_nota_produto` WRITE;
+/*!40000 ALTER TABLE `tbl_nota_produto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_nota_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -907,7 +964,7 @@ DROP TABLE IF EXISTS `tbl_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_pedido` (
-  `id_pedido` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `id_mesa` int(11) NOT NULL,
   `data` date NOT NULL,
   PRIMARY KEY (`id_pedido`),
@@ -1039,10 +1096,10 @@ DROP TABLE IF EXISTS `tbl_processo_home`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_processo_home` (
   `id_processo_home` int(11) NOT NULL AUTO_INCREMENT,
-  `slt_unidade` varchar(105) DEFAULT NULL,
-  `slt_periodo` varchar(105) DEFAULT NULL,
-  `slt_convidados` varchar(105) DEFAULT NULL,
-  `slt_pronto` varchar(105) DEFAULT NULL,
+  `slt_unidade` varchar(105) NOT NULL,
+  `slt_periodo` varchar(105) NOT NULL,
+  `slt_convidados` varchar(105) NOT NULL,
+  `slt_pronto` varchar(105) NOT NULL,
   PRIMARY KEY (`id_processo_home`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1066,7 +1123,6 @@ DROP TABLE IF EXISTS `tbl_produto`;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipo_produto` int(11) NOT NULL,
-  `quantidade_disponivel` int(11) NOT NULL,
   `nome_produto` varchar(50) NOT NULL,
   PRIMARY KEY (`id_produto`),
   KEY `fk_tipo_produto_idx` (`id_tipo_produto`),
@@ -1094,20 +1150,17 @@ CREATE TABLE `tbl_reserva` (
   `id_reserva` int(11) NOT NULL AUTO_INCREMENT,
   `id_status_reserva` int(11) NOT NULL,
   `id_periodo` int(11) NOT NULL,
-  `id_mesa` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `data_requisicao` date NOT NULL,
-  `data_agendada` int(11) DEFAULT NULL,
+  `data_agendada` date DEFAULT NULL,
   `id_nota` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_reserva`),
   KEY `fk_cliente_reserva_idx` (`id_cliente`),
-  KEY `fk_mesa_reserva_idx` (`id_mesa`),
   KEY `fk_periodo_reserva_idx` (`id_periodo`),
   KEY `fk_status_reserva_idx` (`id_status_reserva`),
   KEY `fk_nota_reserva_idx` (`id_nota`),
   CONSTRAINT `fk_cliente_reserva_idcliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_mesa_reserva` FOREIGN KEY (`id_mesa`) REFERENCES `tbl_mesa` (`id_mesa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_nota_reserva` FOREIGN KEY (`id_nota`) REFERENCES `tbl_notas` (`id_nota`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_nota_reserva` FOREIGN KEY (`id_nota`) REFERENCES `tbl_nota_garcom` (`id_nota_garcom`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_periodo_reserva` FOREIGN KEY (`id_periodo`) REFERENCES `tbl_periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_reserva` FOREIGN KEY (`id_status_reserva`) REFERENCES `tbl_status_reserva` (`id_status_reserva`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1131,7 +1184,7 @@ DROP TABLE IF EXISTS `tbl_slider`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_slider` (
   `id_slider` int(11) NOT NULL AUTO_INCREMENT,
-  `imagem` varchar(100) DEFAULT NULL,
+  `imagem` varchar(100) NOT NULL,
   PRIMARY KEY (`id_slider`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1186,6 +1239,9 @@ CREATE TABLE `tbl_sobre_empresa` (
   `valores` text NOT NULL,
   `objetivos` text NOT NULL,
   `historia` varchar(45) NOT NULL,
+  `img_missao` varchar(105) NOT NULL,
+  `img_valores` varchar(105) NOT NULL,
+  `img_objetivo` varchar(45) NOT NULL,
   `img_historia` varchar(105) NOT NULL,
   `img_sobre` varchar(105) NOT NULL,
   `status` int(11) DEFAULT NULL,
@@ -1223,6 +1279,29 @@ CREATE TABLE `tbl_status_mesa` (
 LOCK TABLES `tbl_status_mesa` WRITE;
 /*!40000 ALTER TABLE `tbl_status_mesa` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_status_mesa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_status_pedido`
+--
+
+DROP TABLE IF EXISTS `tbl_status_pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_status_pedido` (
+  `id_status_pedido` int(11) NOT NULL AUTO_INCREMENT,
+  `status_pedido` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_status_pedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_status_pedido`
+--
+
+LOCK TABLES `tbl_status_pedido` WRITE;
+/*!40000 ALTER TABLE `tbl_status_pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_status_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1303,7 +1382,7 @@ DROP TABLE IF EXISTS `tbl_unidades`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_unidades` (
   `id_unidade` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_unidade` varchar(45) DEFAULT NULL,
+  `nome_unidade` varchar(45) NOT NULL,
   PRIMARY KEY (`id_unidade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1334,4 +1413,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-30 13:24:21
+-- Dump completed on 2017-09-30 23:16:35

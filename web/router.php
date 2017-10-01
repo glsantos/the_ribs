@@ -50,11 +50,51 @@
                     break;
 
                 }
+				
+			
+          case 'controller_galeria':
 
-                break;
+
+                require('controllers/controller_galeria.php');
+                require('models/galeria_class.php');
+
+                switch ($modo) {
+                  case 'salvar':
+					
+					echo "aqui";
+                  $controller_galeria = new ControllerGaleria();
+                  $controller_galeria->SalvarFoto();
+
+                    break;
+
+                  case 'apagar':
+                        $controller_galeria = new ControllerGaleria();
+                        $controller_galeria->DeletarImagem();
+                    break;
+                  case 'alterar':
+                     $controller_galeria = new ControllerGaleria();
+
+
+                     //chamada para o metodo de buscar um registro no banco de dados
+                     $controller_galeria->Buscar();
+                   break;
+
+                }
+
+
+              break;
+          }	
+				
+				
+			
+
+               
+				
+				
+				
             }
           }
-    }
+    
 
     ?>
 </body>

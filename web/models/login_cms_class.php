@@ -13,10 +13,9 @@
 
 */
 
+class Login{
 
-class Login
-{
-
+    public $id_usuario;
     public $login;
     public $senha;
 
@@ -35,23 +34,22 @@ class Login
 
     }
 
-
     //Metodo para Selecionar Registro pelo ID
     public function Verificar($login_class){
+        $sql="select * from tbl_funcionarios where usuario_funcionario='".$login_class->login."'and senha=".$login_class->senha;
 
-        $sql="select * from tbl_funcionarios where usuario_funcionario=".$login_class->login."and senha=".$login_class->senha;
-
-        $select = mysql_query($sql);
-
-        if($rs = mysql_fetch_array($select)){
-
-			      $_SESSION['nome_funcionario']=$rs['nome_funcionario'];
-            require_once('views/pagina-inicial-cms.php');
-        }else {
-          echo "error";
+         echo($sql);
+        if($select = mysql_query($sql)){
+             if($resultado=mysql_fetch_array($select)){
+                 $login_class->login=$resultado['usuario_funcionario'];
+                 $login_class->id_usuario=$resultado['id_funcionario'];
+                 $login_class->senha=$resultado['senha'];
+             }
+               return $login_class;
+             }
+        else{
+               return 'null';
         }
-
-
     }
 }
 ?>
