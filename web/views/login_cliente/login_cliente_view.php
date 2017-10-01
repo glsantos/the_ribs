@@ -1,4 +1,3 @@
-
 <section class="section_login">
 
   <div class="form_login">
@@ -11,7 +10,7 @@
 
         <div class="input_login">
 
-          <input type="text" name="txtnome" placeholder="" required>
+          <input type="text" name="txtnome" placeholder="Digite seu nome" required>
 
         </div>
 
@@ -21,7 +20,7 @@
 
         <div class="input_login">
 
-          <input type="password" name="txtsenha" placeholder="" required>
+          <input type="password" name="txtsenha" placeholder="Digite sua senha" required />
 
         </div>
 
@@ -31,7 +30,7 @@
 
             <input title="Entrar" type="submit" name="btnentrar" value="Entrar" placeholder="" required>
 
-            <span class="txt_entre_botao_login"> ou </span>
+            <span class="txt_entre_botao_login"> <Br> OU <br></span>
 
             <a href="cadastro_cliente.php" title="Cadastrar-se">
                 <input type="button" name="btncadastrar" value="Tornar-se um Ribs" placeholder="" required>

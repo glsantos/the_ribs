@@ -11,7 +11,7 @@ class Galeria{
       public function __construct(){
 
           //Inclui o arquivo de conexao com o BD
-          require_once('models/banco_classe.php');
+          require_once('banco_classe.php');
 
           //Instancia a Classe Mysql_db
           $conexao_bd = new Mysql_db();
@@ -31,8 +31,8 @@ class Galeria{
       $sql="insert into tbl_galeria_fotos (id_unidade, imagem_unidade)values('".$cadastro_foto->id_unidade."',
                                                                                 '".$cadastro_foto->imagem_unidade."')";
 
-           
-          
+
+
           if(mysql_query($sql)){
              return 'ok';
           }else{
@@ -46,8 +46,6 @@ class Galeria{
 
          public function SelecionarTodasImagens(){
 
-
-
              $sql="select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_foto
                   from tbl_unidades as uni
                   inner join tbl_galeria_fotos as gal
@@ -57,10 +55,7 @@ class Galeria{
 
              $cont=0;
 
-
              while($rs=mysql_fetch_array($select)){
-
-
 
                  $listImagens[] = new Galeria();
 
@@ -79,14 +74,14 @@ class Galeria{
 
 
          public function ApagarImagem($galeria_class){
-			 
-			 
-			 
-			 
+
+
+
+
            $sql="delete from tbl_galeria_fotos where id_foto=".$galeria_class->id_foto;
-			
+
           if(mysql_query($sql)){
-			  
+
               header('location:views/cms/cms_galeria_fotos.php');
           }else{
             echo("erro no script do metodo Apagar Imagem no banco de dados <br> Erro: </br>".mysql_error());

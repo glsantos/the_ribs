@@ -19,42 +19,32 @@
 
         public function Autenticar(){
 
-            require_once('models/login_cms_class.php');
-
-
-
             $login=$_POST['txtlogin'];
             $senha=$_POST['txtsenha'];
 
             $login_class = new Login();
 
-
             $login_class->login=$login;
             $login_class->senha=$senha;
 
+          	$retorno = $login_class->Verificar($login_class);
 
-            	$retorno = $login_class->Verificar($login_class);
+            if($retorno == 'null'){
 
+                  header('location:index.php?pagina=login_cms');
 
-              if($retorno == 'null'){
+            }else{
 
-                    header('location:index.php?pagina=login_cms');
+              session_start();
 
-              }else{
-
-                session_start();
-                 $_SESSION['nome'] = $login_class->login;
-                 $_SESSION['id'] = $login_class->idLogin;
-                 $_SESSION['login'] = 'true';
-
-
-                header('location:views/cms/pagina-inicial-cms.php');
-
-              }
+               $_SESSION['nome'] = $login_class->login;
+               $_SESSION['id'] = $login_class->id_usuario;
+               $_SESSION['login'] = 'true';
 
 
+              require_once('views/cms/pagina-inicial-cms.php');
 
-
+            }
 
     }
   }

@@ -8,62 +8,59 @@
 
 .section_login{
 
-  width: 50%;
-  min-height: 500px;
+  width: 55%;
+  min-height: 700px;
   height: auto;
   overflow: hidden;
   padding: 20px;
-  /*background-color: #F0E68C;*/
   border: 2px solid;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .form_login{
 
-  width: 80%;
-  min-height: 100px;
+  width: 50%;
+  min-height: 200px;
   height: auto;
-  overflow: hidden;
-  margin-top: 130px;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
 .titulos_login{
 
+  width: 100%;
+  min-height: 60px;
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+#titulo_login_cms{
+
+  width: 100%;
+  min-height: 100px;
+  padding-top: 30px;
+  font-size: 30px;
   text-align: center;
-  width: 250px;
-  padding-top: 10px;
-  min-height: 40px;
-  height: auto;
-  overflow: hidden;
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .input_login{
 
-  width: 310px;
-  min-height: 50px;
+  width: 100%;
+  min-height: 60px;
   height: auto;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
+  overflow: auto;
 }
 
 .input_login input{
 
-  width: 300px;
+  width: 100%;
   min-height: 50px;
   height: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  font-size: 25px;
-  color: #696969;
+  font-size: 20px;
 }
 
 .div_botoes_login{
@@ -71,20 +68,24 @@
   width: 100%;
   min-height: 50px;
   height: auto;
-  overflow: hidden;
-  margin-top: 20px;
-  padding-left: 50px;
+  overflow: auto;
 }
 
 .input_botao input{
 
-  width: 250px;
-  min-height: 50px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input_botao{
+
+  width: 50%;
+  min-height: 80px;
   height: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  font-size: 25px;
-  color: #696969;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .txt_entre_botao_login{
@@ -94,8 +95,9 @@
   border-radius: 10px;
   font-size: 30px;
   color: #000;
-  margin-left: 50px;
+  margin-left: 80px;
   margin-right: 50px;
+  font-weight: bold;
 }
 
 .txt_index_cliente{

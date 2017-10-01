@@ -40,7 +40,7 @@
                 require('controllers/controller_login_cms.php');
                 require('models/login_cms_class.php');
 
-                switch ($modo) {
+                switch ($modo){
 
                   case 'autenticacao_cms':
 
@@ -50,8 +50,8 @@
                     break;
 
                 }
-				
-			
+
+
           case 'controller_galeria':
 
 
@@ -60,7 +60,7 @@
 
                 switch ($modo) {
                   case 'salvar':
-					
+
 					echo "aqui";
                   $controller_galeria = new ControllerGaleria();
                   $controller_galeria->SalvarFoto();
@@ -83,18 +83,18 @@
 
 
               break;
-          }	
-				
-				
-			
+          }
 
-               
-				
-				
-				
+
+
+
+
+
+
+
             }
           }
-    
+
 
     ?>
 </body>
