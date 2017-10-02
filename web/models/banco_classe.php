@@ -36,11 +36,11 @@
             //Estabelece a conexao com o BD, caso a conexao seja realizada com sucesso
             //seleciona o database, caso contrário mostra uma msg de erro e mata a conexao
             try{
-				$conexao = mysql_connect($this->server,$this->user,$this->password);
+				        $conexao = mysql_connect($this->server,$this->user,$this->password);
                 mysql_select_db("dbtheribs_ws");
             }catch(Exception $e){
                 echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador". $e);
-				die();
+				        die();
             }
 
         }
