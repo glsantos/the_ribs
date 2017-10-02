@@ -146,7 +146,10 @@
             <tr>
 
                <td class="tblcadastro_td"><?php echo($rsImagens[$cont]->nome_unidade) ?></td>
-                <td class="tblcadastro_td"><?php echo($rsImagens[$cont]->imagem_unidade) ?></td>
+                <td class="tblcadastro_td">
+				<?php echo($rsImagens[$cont]->imagem_unidade) ?>
+				<img <?php echo("src = '".$rsImagens[$cont]->imagem_unidade."'") ?>>
+				</td>
 
                 <td class="tblcadastro_td"><a href="../../router.php?controller=controller_galeria&modo=apagar&id=<?php echo($rsImagens[$cont]->id_foto)?>">excluir</a></td>
                 <td class="tblcadastro_td"><a href="../../router.php?controller=controller_galeria&modo=alterar&id=<?php echo($rsImagens[$cont]->id_foto)?>">editar</a></td></a></td>

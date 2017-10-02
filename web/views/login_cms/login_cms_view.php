@@ -1,3 +1,11 @@
+<?php
+
+	$mensagem = '';
+    if(isset($_GET['alerta'])=="erro"){
+        $mensagem= 'Usuário e/ou senha incorretos.';
+    }
+
+?>
 <section class="section_login">
 
   <div id="titulo_login_cms"> <h1> LOGIN CMS </h1> </div>
@@ -5,7 +13,9 @@
   <div class="form_login">
 
     <form name="frmcms" method="post" action="router.php?controller=cms&modo=autenticacao_cms">
-
+		<tr>
+            <td><?php echo $mensagem; ?></td>
+        </tr>
         <div class="titulos_login">
             Nome de usuário
         </div>

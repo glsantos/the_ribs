@@ -31,8 +31,8 @@
 
             if($retorno == 'null'){
 
-                  header('location:index.php?pagina=login_cms');
-
+                  header('location:index.php?pagina=login_cms?alerta=erro');
+					
             }else{
 
               session_start();

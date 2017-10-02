@@ -11,7 +11,7 @@ class Galeria{
       public function __construct(){
 
           //Inclui o arquivo de conexao com o BD
-          require_once('banco_classe.php');
+          require_once('../../models/banco_classe.php');
 
           //Instancia a Classe Mysql_db
           $conexao_bd = new Mysql_db();
@@ -46,12 +46,12 @@ class Galeria{
 
          public function SelecionarTodasImagens(){
 
-             $sql="select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_foto
+             $sql="select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_galeria_fotos
                   from tbl_unidades as uni
                   inner join tbl_galeria_fotos as gal
                   on uni.id_unidade = gal.id_unidade;";
 
-     				$select = mysql_query($sql);
+     		$select = mysql_query($sql);
 
              $cont=0;
 
@@ -59,7 +59,7 @@ class Galeria{
 
                  $listImagens[] = new Galeria();
 
-                 $listImagens[$cont]->id_foto=$rs['id_foto'];
+                 $listImagens[$cont]->id_foto=$rs['id_galeria_fotos'];
                  $listImagens[$cont]->id_unidade=$rs['id_unidade'];
                  $listImagens[$cont]->nome_unidade=$rs['nome_unidade'];
                  $listImagens[$cont]->imagem_unidade=$rs['imagem_unidade'];
