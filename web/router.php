@@ -84,21 +84,22 @@
 
 
               break;
-          }
 
-          case 'controller_faq':
+              case 'controller_faq':
 
-            require('controllers/controller_faq.php');
-            require('models/faq_class.php');
+                require('controllers/controller_faq.php');
+                require('models/faq_class.php');
 
-            switch ($modo) {
-              case 'salvar':
-                  $controller_faq = new ControllerFaq();
-                  $controller_faq->SalvarFaq();
+                switch ($modo) {
+                  case 'salvar':
+                      $controller_faq = new ControllerFaq();
+                      $controller_faq->SalvarFaq();
+                  break;
               break;
-          break;
 
-      }
+              }
+          } // fechando if $controller
+        } // fechando isset $controller
 
       if($controller == "contato_cliente"){
 

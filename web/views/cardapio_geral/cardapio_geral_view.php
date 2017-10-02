@@ -262,7 +262,7 @@
 											Costela Furiosa
 										</div>
 										<div class="imagem_produto">
-											<img src=img/costela.jpg">
+											<img src="img/costela.jpg">
 										</div>
 										<div class="avaliacao">
 											<div class="estrelas_cardapio">

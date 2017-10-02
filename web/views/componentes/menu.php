@@ -10,13 +10,13 @@
 
 		<li><a href="index.php?pagina=enquete">Enquete</a></li>
 
-		<li><a href="index.php?pagina=cardapio_geral">Cardapio Geral</a></li>
+		<li><a href="index.php?pagina=cardapio_geral">Cardápio Geral</a></li>
 
-		<li><a href="#">Cardapio Principal</a></li>
+		<li><a href="index.php?pagina=cardapio_individual">Cardapio Individual</a></li>
 
 		<li><a href="index.php?pagina=avaliacao_prato">Avalie nossos Pratos</a></li>
 
-		<li><a href="#">Conheça nossas unidades</a></li>
+		<li><a href="#">Nossas unidades</a></li>
 
 		<li><a href="index.php?pagina=galeria">Galeria de Fotos</a></li>
 

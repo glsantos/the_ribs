@@ -38,8 +38,9 @@
                       require_once('views/cardapio_geral/cardapio_geral_view.php');
                       break;
 
-                    case 'cardapio_principal':
-                      # code...
+                    case 'cardapio_individual':
+
+                      require_once('views/cardapio_individual/cardapio_individual_view.php');
                       break;
 
                     case 'avaliacao_prato':
