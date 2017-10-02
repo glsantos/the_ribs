@@ -6,9 +6,11 @@
           <div class="container-foto-titulo">
             <div class="imagem-titulo">
               <img src="img/img4.jpg">
+
             </div>
             <div class="titulo_imagem">
-                <h3>Cardápio Geral</h3>
+                <h3>Cardápio Individual</h3>
+                <h2>Jandira - Rua Elton Silva, 905</h2>
             </div>
           </div>
             <div id="faixas-filtro">
