@@ -107,6 +107,25 @@ class Galeria{
         }
 
 
+        public function Update($galeria_class){
+            $sql="
+            UPDATE tbl_galeria_fotos
+            SET id_unidade = '".$galeria_class->id_unidade."',
+            imagem_unidade = '".$galeria_class->imagem_unidade."',
+
+            where id_galeria_fotos= ".$galeria_class->id_foto;
+
+            if(mysql_query($sql)){
+                  require_once('views/cms/cms_galeria_fotos.php');
+            }else{
+              echo("erro no script de insert no banco de dados <br> Erro: </br>".mysql_error());
+            }
+
+
+
+          }
+
+
 
 
 

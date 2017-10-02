@@ -24,11 +24,11 @@
 
       if (isset($_GET["modo"])=='alterar') {
 
-          $modo = "alterar";
-          $id_foto=$listGaleria->id_foto;
-          $nome_unidade=$listGaleria->nome_unidade;
-          $imagem_unidade=$listGaleria->imagem_unidade;
-          $id_unidade=$listGaleria->id_unidade;
+          @$modo = "alterar";
+          @$id_foto=$listGaleria->id_foto;
+          @$nome_unidade=$listGaleria->nome_unidade;
+        @$imagem_unidade=$listGaleria->imagem_unidade;
+        @$id_unidade=$listGaleria->id_unidade;
 
           echo "aqui e a view".$nome_unidade;
 
@@ -51,7 +51,6 @@
           <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
-
                   <img <?php echo("src = '".$imagem_unidade."'") ?>>
             </div>
                     <div id="caixa-inputs">

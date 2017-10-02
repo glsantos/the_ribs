@@ -105,13 +105,14 @@ class ControllerGaleria{
          require_once('models/galeria_class.php');
 
 
-
+              $id=$_POST['sltunidade'];
+              $caminho=$_POST['flefotos'];
 
               $galeria_class = new Galeria();
 
 
-              $galeria_class->id_unidade=$id_unidade;
-              $galeria_class->imagem_unidade=$uploadfile;
+              $galeria_class->id_unidade=$id;
+              $galeria_class->imagem_unidade=$caminho;
 
 
 
