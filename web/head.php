@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/estilo_avalie.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_cadastro.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_cardapio.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_cardapio_individual.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_enquete.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_galeria_fotos.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_galeria_principal_cms.css">
