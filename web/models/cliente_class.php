@@ -62,15 +62,54 @@ session_start();
 
       $sql_insert = "insert into tbl_clientes(nome_cliente, sobrenome_cliente, rg, cpf, nome_usuario, senha) values($valores);";
 
-    if(mysql_query($sql_insert)){
+      if(mysql_query($sql_insert)){
 
-        return true;
+          return true;
 
-      }else {
+        }else {
 
-        return false;
-      }
+          return false;
+        }
 
+    }
+
+  }
+
+  class ContatoCliente{
+
+    public $nome_cliente;
+    public $telefone;
+    public $email;
+    public $id_classificacao;
+    public $comentario;
+
+    //Construtor da Classe
+    public function __construct(){
+
+        //Inclui o arquivo de conexao com o BD
+        require_once('models/banco_classe.php');
+
+        //Instancia a Classe Mysql_db
+        $conexao_bd = new Mysql_db();
+
+        //Chama o metodo conectar para estabelecer a conexão como BD
+        $conexao_bd->conectar();
+
+    }
+
+    public function Contato($dados_contato){
+
+      $valores = ("'$dados_contato->nome_cliente', '$dados_contato->telefone', '$dados_contato->email', '$dados_contato->id_classificacao', '$dados_contato->comentario'");
+
+      $sql_insert = "insert into tbl_entre_contato(nome, telefone, email, id_classificacao, comentario) values($valores);";
+
+      if(mysql_query($sql_insert)){
+
+          return true;
+        }else {
+
+          return false;
+        }
     }
 
   }

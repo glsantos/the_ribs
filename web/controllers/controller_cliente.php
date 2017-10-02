@@ -53,6 +53,42 @@ class controllerCliente{
 
   }
 
+  public function EntrarEmContato(){
+
+    $nome_cliente = $_POST['txtnome'];
+    $telefone = $_POST['txttelefone'];
+    $email = $_POST['txtemail'];
+    $id_classificacao = 1; //TODO: MUDAR ISSO! A PESSOA TEM QUE ESCOLHER CONFORME O ID QUE VIER DO BANCO
+    $comentario = $_POST['txtcomentario'];
+
+    $dados_contato = new ContatoCliente();
+
+    $dados_contato->nome_cliente=$nome_cliente;
+    $dados_contato->telefone=$telefone;
+    $dados_contato->email=$email;
+    $dados_contato->id_classificacao=$id_classificacao;
+    $dados_contato->comentario=$comentario;
+
+    if($dados_contato->Contato($dados_contato)==true){
+
+        ?>
+        <script type="text/javascript">
+          alert('Comentário enviado com sucesso!!!');
+        </script>
+        <?php
+        require_once('index.php');
+    }else{
+
+      ?>
+        <script type="text/javascript">
+            alert('Erro ao enviar comentário!! :(');
+        </script>
+      <?php
+      require_once('index.php');
+    }
+
+  }
+
 }
 
 ?>

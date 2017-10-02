@@ -26,7 +26,7 @@
         public function __construct(){
             $this->server="localhost";
             $this->user="root";
-            $this->password="";
+            $this->password="bcd127";
 
         }
 

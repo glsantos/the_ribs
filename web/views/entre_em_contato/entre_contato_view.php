@@ -19,7 +19,7 @@
 
 															<Br>
 
-															<select class="option_entre_em_contato" name="select_entre_contato">
+															<select class="option_entre_em_contato" name="select_id_classificacao">
 
 																<option value="sugestao"> Sugestão </option>
 																<option value="elogio" selected> Elogio </option>

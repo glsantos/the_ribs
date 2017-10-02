@@ -335,7 +335,7 @@ CREATE TABLE `tbl_classificacao_contato` (
   `id_classificacao` int(11) NOT NULL AUTO_INCREMENT,
   `classificacao` varchar(45) NOT NULL,
   PRIMARY KEY (`id_classificacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -344,6 +344,7 @@ CREATE TABLE `tbl_classificacao_contato` (
 
 LOCK TABLES `tbl_classificacao_contato` WRITE;
 /*!40000 ALTER TABLE `tbl_classificacao_contato` DISABLE KEYS */;
+INSERT INTO `tbl_classificacao_contato` VALUES (1,'Sugestão'),(2,'Elogio'),(3,'Crítica'),(4,'Outro');
 /*!40000 ALTER TABLE `tbl_classificacao_contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -702,7 +703,7 @@ CREATE TABLE `tbl_entre_contato` (
   PRIMARY KEY (`id_entre_contato`),
   KEY `fk_classificacao_contato_idx` (`id_classificacao`),
   CONSTRAINT `fk_classificacao_contato` FOREIGN KEY (`id_classificacao`) REFERENCES `tbl_classificacao_contato` (`id_classificacao`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -711,6 +712,7 @@ CREATE TABLE `tbl_entre_contato` (
 
 LOCK TABLES `tbl_entre_contato` WRITE;
 /*!40000 ALTER TABLE `tbl_entre_contato` DISABLE KEYS */;
+INSERT INTO `tbl_entre_contato` VALUES (1,'Giovanna','956472663','giovanna@xablau',1,'Melhor site');
 /*!40000 ALTER TABLE `tbl_entre_contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1624,4 +1626,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-01 17:43:46
+-- Dump completed on 2017-10-01 23:37:07

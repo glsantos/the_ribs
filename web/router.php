@@ -62,6 +62,7 @@
                   case 'salvar':
 
 					echo "aqui";
+
                   $controller_galeria = new ControllerGaleria();
                   $controller_galeria->SalvarFoto();
 
@@ -86,14 +87,19 @@
           }
 
 
+      }
 
+      if($controller == "contato_cliente"){
 
+        require_once('controllers/controller_cliente.php');
+        require_once('models/cliente_class.php');
 
+        $controller_cliente = new controllerCliente();
+        $controller_cliente->EntrarEmContato();
 
+      }
 
-
-            }
-          }
+}
 
 
     ?>
