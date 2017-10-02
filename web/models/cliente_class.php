@@ -77,6 +77,7 @@ session_start();
 
   class ContatoCliente{
 
+    public $id_contato;
     public $nome_cliente;
     public $telefone;
     public $email;
@@ -110,6 +111,11 @@ session_start();
 
           return false;
         }
+    }
+
+    public function ApagarContato($id_contato){
+
+      //TODO:$delete = "delete from tbl_entre_contato where id";
     }
 
   }

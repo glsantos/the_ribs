@@ -42,4 +42,13 @@ if(isset($_GET['pagina_cms'])){
 
 }
 
+if (isset($_GET['modo'])=="apagar"){
+
+    $id = $_GET['id'];
+    require_once('controllers/controller_cliente.php');
+    require_once('models/cliente_class.php');
+
+    
+}
+
 ?>
