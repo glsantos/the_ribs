@@ -3,7 +3,7 @@
 // SE A SESSÃO NÃO FOR TRUE, ELE É REDIRECIONADO PARA A PÁGINA DE LOGIN
 if($_SESSION['login'] != 'true'){
 
-	header('location: login_cms_view.php');
+	header('location:login_cms_view.php');
 }else{
 
 	$nome_usuario = $_SESSION['nome'];

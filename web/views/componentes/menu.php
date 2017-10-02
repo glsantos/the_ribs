@@ -16,7 +16,14 @@
 
 		<li><a href="index.php?pagina=avaliacao_prato">Avalie nossos Pratos</a></li>
 
-		<li><a href="#">Nossas unidades</a></li>
+		<li><a href="index.php?pagina=nossas_unidades">Nossas unidades</a>
+			<ul class="sub-menu">
+					<li><a href="#">Item</a></li>
+					<li><a href="#">Item</a></li>
+					<li><a href="#">Item</a></li>
+					<li><a href="#">Item</a></li>
+			</ul>
+		</li>
 
 		<li><a href="index.php?pagina=galeria">Galeria de Fotos</a></li>
 

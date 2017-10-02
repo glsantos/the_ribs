@@ -11,6 +11,9 @@
     **************************************************************
 -->
 <?php
+
+      session_start();
+
       $modo="";
       $nome_unidade="";
       $imagem_unidade="";
@@ -20,6 +23,7 @@
       $idEditar="";
 
       if (isset($_GET["modo"])=='alterar') {
+
           $id_foto=$listGaleria->id_foto;
           $nome_unidade=$listGaleria->nome_unidade;
           $imagem_unidade=$listGaleria->imagem_unidade;
@@ -32,15 +36,15 @@
 
 <div id="container-cms">
 
-    <?php require_once('views/cms/header.php'); ?>
+    <?php require_once('header.php'); ?>
 
     <section>
 
-        <?php require_once('views/cms/menu.php'); ?>
+        <?php require_once('menu.php'); ?>
 
         <div id="conteudo-cms">
 
-          <form method="post" name="frmgaleria" action="../../router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
+          <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
               aqui vai a foto
@@ -102,10 +106,7 @@
                     <div id="escolha">
                     <p>Escolha a foto da unidade<input type="file" name="flefotos" value="<?php $imagem_unidade ?>"></p>
 
-
-
                       <input type='submit' autofocus required name="btnimagem">
-
 
                     </div>
 
@@ -121,7 +122,7 @@
                        </tr>
                        <?php
                        //incluindo o arquivo da controller para fazer o select
-                       require_once('../../controllers/controller_galeria.php');
+                       require_once('controllers/controller_galeria.php');
 
                         //Instancia do objeto da controller
                        $controller_galeria = new ControllerGaleria();

@@ -28,6 +28,7 @@ if(isset($_GET['pagina_cms'])){
       require_once('views/cms/cms_galeria_fotos.php');
       break;
     case 'fale_conosco':
+    
       require_once('views/cms/entre_em_contato.php');
       break;
 
