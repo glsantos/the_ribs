@@ -89,6 +89,16 @@ class controllerCliente{
 
   }
 
+  public function ApagarContato(){
+
+    $id_contato = $_POST['id'];
+
+    $id_contato = new ContatoCliente();
+
+    $id_contato->ApagarContato($id_contato);
+
+  }
+
 }
 
 ?>

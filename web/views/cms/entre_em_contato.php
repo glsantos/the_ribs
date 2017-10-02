@@ -18,7 +18,7 @@
 
     $excluir = "delete from tbl_entre_contato where id_entre_contato = $id";
     mysql_query($excluir);
-    header('entre_em_contato.php');
+    require_once('entre_em_contato.php');
 
   }
 ?>
@@ -35,7 +35,7 @@
 
       <table id = "tbl_entre_em_contato">
         <tr>
-          
+
           <td><b><h1>Nome</h1></b></td>
           <td><b><h1>Telefone</h1></b></td>
           <td><b><h1>Email</h1></b></td>
@@ -60,7 +60,7 @@ on tbl_entre.id_classificacao = class.id_classificacao;";
           <td><?php echo($rs['email']); ?></td>
           <td><?php echo($rs['classificacao']); ?></td>
           <td><?php echo($rs['comentario']); ?></td>
-          <td><a href="entre_em_contato.php?id=<?php echo($rs['id_entre_contato']); ?>">Excluir</a></td>
+          <td><a href="router_cms.php?modo=apagar_contato&id=<?php echo($rs['id_entre_contato']); ?>">Excluir</a></td>
         </tr>
 
 <?php } ?>
