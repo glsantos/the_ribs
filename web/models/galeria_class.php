@@ -39,7 +39,7 @@ class Galeria{
              $sql="select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_galeria_fotos
                   from tbl_unidades as uni
                   inner join tbl_galeria_fotos as gal
-                  on uni.id_unidade = gal.id_unidade;";
+                  on uni.id_unidade = gal.id_unidade";
 
      		$select = mysql_query($sql);
 
@@ -82,11 +82,11 @@ class Galeria{
         public function SelecionarPorId($galeria_class){
 
             $sql="
-            select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_foto
+            select uni.nome_unidade, gal.imagem_unidade, uni.id_unidade, gal.id_galeria_fotos
             from tbl_unidades as uni
             inner join tbl_galeria_fotos as gal
             on uni.id_unidade = gal.id_unidade
-            where id_foto=".$galeria_class->id_foto;
+            where id_galeria_fotos=".$galeria_class->id_foto;
 
             $select = mysql_query($sql);
 
@@ -95,7 +95,7 @@ class Galeria{
 
                 $listGaleria = new Galeria;
 
-                $listGaleria->id_foto=$rs['id_foto'];
+                $listGaleria->id_foto=$rs['id_galeria_fotos'];
                 $listGaleria->id_unidade=$rs['id_unidade'];
                 $listGaleria->imagem_unidade=$rs['imagem_unidade'];
                 $listGaleria->nome_unidade=$rs['nome_unidade'];

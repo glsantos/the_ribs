@@ -61,7 +61,7 @@
                 switch ($modo) {
                   case 'salvar':
 
-					echo "aqui";
+
 
                   $controller_galeria = new ControllerGaleria();
                   $controller_galeria->SalvarFoto();
@@ -74,11 +74,14 @@
                     break;
                   case 'alterar':
                      $controller_galeria = new ControllerGaleria();
-
-
                      //chamada para o metodo de buscar um registro no banco de dados
                      $controller_galeria->Buscar();
                    break;
+                  case 'editar':
+                        $controller_galeria = new ControllerGaleria();
+
+                        $controller_galeria->Atualizar();
+                      break;
 
                 }
 
