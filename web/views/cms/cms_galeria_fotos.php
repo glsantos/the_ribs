@@ -24,10 +24,14 @@
 
       if (isset($_GET["modo"])=='alterar') {
 
+          $modo = "alterar";
           $id_foto=$listGaleria->id_foto;
           $nome_unidade=$listGaleria->nome_unidade;
           $imagem_unidade=$listGaleria->imagem_unidade;
           $id_unidade=$listGaleria->id_unidade;
+
+          echo "aqui e a view".$nome_unidade;
+
           $action="editar";
           $idEditar="&id=".$id_foto;
       }
@@ -47,7 +51,8 @@
           <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
-              aqui vai a foto
+
+                  <img <?php echo("src = '".$imagem_unidade."'") ?>>
             </div>
                     <div id="caixa-inputs">
 
@@ -104,14 +109,14 @@
                     </div>
 
                     <div id="escolha">
-                    <p>Escolha a foto da unidade<input type="file" name="flefotos" value="<?php $imagem_unidade ?>"></p>
+                    <p>Escolha a foto da unidade<input type="file" name="flefotos"></p>
 
                       <input type='submit' autofocus required name="btnimagem">
 
                     </div>
 
                     <div id="consulta">
-                   <table id="tblconsulta" border="1" colspan="5">
+                   <table id="tblconsulta" colspan="5" border="1">
                        <tr>
                          <td colspan="5" class="titulo_tabela">Consulta da Galeria de fotos</td>
                        </tr>

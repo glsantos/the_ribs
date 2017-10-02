@@ -86,7 +86,7 @@ class ControllerGaleria{
             require_once('models/galeria_class.php');
 
             $id_foto = $_GET['id'];
-            echo $id_foto;
+            echo "id é".$id_foto;
             $galeria_class = new Galeria;
 
 
@@ -98,6 +98,29 @@ class ControllerGaleria{
 
 
         }
+
+
+        //Metodo Atualizar um Registro
+       public function Atualizar(){
+         require_once('models/galeria_class.php');
+
+
+
+
+              $galeria_class = new Galeria();
+
+
+              $galeria_class->id_unidade=$id_unidade;
+              $galeria_class->imagem_unidade=$uploadfile;
+
+
+
+              $galeria_class->Update($galeria_class);
+
+
+
+
+       }
 
 
 
