@@ -13,22 +13,11 @@ if($_SESSION['login'] != 'true'){
 
 <div id="container-cms">
 
-    <header>
-      <h1>Cabeçalho CMS</h1>
-      Bem vindo, <?php echo $nome_usuario ?>
-    </header>
+    <?php require_once('header.php'); ?>
 
     <section>
 
-        <div id="menu-cms">
-            <ul>
-
-                <li><a href="views/cms/cms_galeria_fotos.php">Gerenciar galeria de fotos</a></li>
-								<li><a href="views/cms/entre_em_contato.php">Fale Conosco</a></li>
-								<li><a href="views/cms/faq.php">FAQ</a></li>
-
-            </ul>
-        </div>
+        <?php require_once('menu.php'); ?>
 
         <div id="conteudo-cms">
 
@@ -37,6 +26,8 @@ if($_SESSION['login'] != 'true'){
         </div>
     </section>
     <footer>
-        <h1>rodape</h1>
+        <?php require_once('rodape.php'); ?>
     </footer>
+
+
 </div>
