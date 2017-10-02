@@ -1,0 +1,11 @@
+*{
+	font-family:Arial;
+	margin:0;
+	padding:0;
+}
+
+.section_fale_conosco{
+	width: 200px;
+	height: 300px;
+	border: 1px solid red;
+}
