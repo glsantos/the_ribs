@@ -10,22 +10,29 @@
 								<div id="caixa-contato">
 
 									<div class="content-form">
-											<form name="frmformulario" class="frmformulario" method="post" action="entre_contato_view.php">
+											<form name="frmformulario" class="frmformulario" method="post" action="router.php?controller=contato_cliente">
 													<div id="nucleo">
-															<input type="text" class="txt" name="txt_nome" placeholder="Nome">
-															<input type="text" class="txt" name="txt_telefone" placeholder="Telefone">
-															<input type="text" class="txt" name="txt_email"  placeholder="Email">
 
-															<div id="radio">
-																<input type="radio" class="radio" name="radio_avaliacao">Sugestão
-																<input type="radio" class="radio" name="radio_avaliacao">Elogio
-																<input type="radio" class="radio" name="radio_avaliacao">Critica
-															</div>
+															<input required type="text" class="txt" name="txtnome" placeholder="Nome">
+															<input required type="text" class="txt" name="txttelefone" placeholder="Telefone">
+															<input required type="text" class="txt" name="txtemail"  placeholder="Email">
 
+															<Br>
 
-															<textarea rows="5" cols="5" name="txt_area" class="txt_area" placeholder="Comentario..."></textarea>
-															<input type="submit" class="btn-comentario" name="btn_salvar" value="Enviar Comentario">
+															<select class="option_entre_em_contato" name="select_entre_contato">
+
+																<option value="sugestao"> Sugestão </option>
+																<option value="elogio" selected> Elogio </option>
+																<option value="critica"> Crítica </option>
+																<option value="outro"> Outro </option>
+
+															</select>
+
+															<textarea required rows="5" cols="5" name="txtcomentario" class="txt_area" placeholder="Comentário..."></textarea>
+
 													</div>
+
+													<div class="btn-comentario"> <input type="submit" name="btn_salvar" value="Enviar Comentario"> </div>
 											</form>
 									</div>
 								</div>
