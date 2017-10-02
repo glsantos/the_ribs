@@ -1,12 +1,21 @@
 #principal{
-  width:1000px;
-  height:600px;
-  background-color: red;
+  width:100%;
+  height:100%;
   margin:auto;
+  background-color: #c0c0c0;
 }
 .formulario{
+  height:auto;
+  width:200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: magenta;
+}
+.formulario select{
+  font-size: 15px;
+}
+.consulta_faq{
+  height:20px;
   width:100%;
-  height: 400px;
-  margin:auto;
-  background-color: blue;
+  background-color: magenta;
 }

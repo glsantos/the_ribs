@@ -26,21 +26,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
 
     <section class="section_fale_conosco">
 
-      <table>
+      <table id = "tbl_entre_em_contato">
         <tr>
-          <td>Nome</td>
-          <td>Telefone</td>
-          <td>Email</td>
-          <td>Classificação</td>
-          <td>Comentário</td>
-          <td></td>
+          
+          <td><b><h1>Nome</h1></b></td>
+          <td><b><h1>Telefone</h1></b></td>
+          <td><b><h1>Email</h1></b></td>
+          <td><b><h1>Classificação</h1></b></td>
+          <td><b><h1>Comentário</h1></b></td>
+          <td><b><h1></h1></b></td>
+
         </tr>
 
 <?php

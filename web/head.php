@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/estilo_cardapio.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_cardapio_individual.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_enquete.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_entre_em_contato.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_galeria_fotos.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_galeria_principal_cms.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_login.css">

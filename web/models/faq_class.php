@@ -28,7 +28,7 @@
 
           if(mysql_query($sql)){
 
-              header('location:views/cms/faq.php');
+              header('location:router_cms.php?pagina_cms=faq');
           }else {
             echo('deu ruim');
           }
