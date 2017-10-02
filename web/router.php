@@ -92,9 +92,13 @@
 
                 switch ($modo) {
                   case 'salvar':
-                      $controller_faq = new ControllerFaq();
-                      $controller_faq->SalvarFaq();
+
+                      $controller_faq = new controllerFaq();
+                      $controller_faq->Cadastrar();
+
                   break;
+
+
               break;
 
               }
