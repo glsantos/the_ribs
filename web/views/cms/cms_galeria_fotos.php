@@ -11,6 +11,9 @@
     **************************************************************
 -->
 <?php
+
+session_start();
+
       $modo="";
       $nome_unidade="";
       $imagem_unidade="";
@@ -121,7 +124,7 @@
                        </tr>
                        <?php
                        //incluindo o arquivo da controller para fazer o select
-                       require_once('../../controllers/controller_galeria.php');
+                       require_once('controllers/controller_galeria.php');
 
                         //Instancia do objeto da controller
                        $controller_galeria = new ControllerGaleria();

@@ -1,26 +1,25 @@
 #conteudo-galeria{
   width: 100%;
   height: 100%;
-  background-color: red;
 }
 #foto{
   width: 200px;
   height: 200px;
-  background-color: yellow;
+  border: 1px solid;
   float: left;
   margin-left: 30px;
 }
 #caixa-inputs{
   width: 500px;
   height: 300px;
-  background-color: yellow;
+  border: 1px solid;
   float: left;
   margin-left: 30px;
 }
 #escolha{
   width: 500px;
   height: 100px;
-  background-color: yellow;
+  border: 1px solid;
   float: left;
 
   margin-left: 20px;
@@ -29,7 +28,7 @@
 #caixa-ver-imagem{
   width: 700px;
   height: 300px;
-  background-color: yellow;
+  border: 1px solid;
   float: left;
   margin-left: 20px;
   margin-top: 10px;

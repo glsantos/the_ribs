@@ -6,7 +6,7 @@ class ControllerGaleria{
     public function ListarUnidades(){
 
         //Inclui a model da classe Unidade
-        require_once('../../models/unidade_class.php');
+        require_once('models/unidade_class.php');
 
 		      $unidade_class = new Unidade();
 
@@ -16,10 +16,7 @@ class ControllerGaleria{
 
     public function SalvarFoto(){
         require_once('models/galeria_class.php');
-			echo "aa";
-			
-			
-			
+
            //Resgatando os dados do form
            $id_unidade=$_POST['sltunidade'];
 		   //echo $id_unidade;
@@ -34,31 +31,27 @@ class ControllerGaleria{
            $extensao = strtolower(substr($nome_imagem, strlen($nome_imagem)-3,3));
 
            /*VERIFICANDO A EXTENSAO DA IMAGEM*/
-           
+
                if(move_uploaded_file ($_FILES['flefotos']['tmp_name'],$uploadfile)){
-				
+
                  //Instancia da classe Galeria
                  $galeria_class = new Galeria();
-					
+
 
                  $galeria_class->id_unidade=$id_unidade;
                  $galeria_class->imagem_unidade=$uploadfile;
 
                  $retorno_ = $galeria_class->Insert($galeria_class);
-					
-				if($retorno_ == 'ok'){
-					header('location:views/cms/cms_galeria_fotos.php');
-					
-				  }else {
-					echo "erro";
-				  }	
-					
 
+				if($retorno_ == 'ok'){
+
+          header('location:views/cms/cms_galeria_fotos.php');
+
+				}else {
+					echo "erro";
+				}
 
                }
-           
-
-
 
        }
 
@@ -66,7 +59,7 @@ class ControllerGaleria{
        public function ListarImagens(){
 
 
-           require_once('../../models/galeria_class.php');
+           require_once('models/galeria_class.php');
 
            $galeria_class = new Galeria();
 
@@ -77,10 +70,10 @@ class ControllerGaleria{
 
        public function DeletarImagem(){
 
-			
+
            require_once('models/galeria_class.php');
            $id_foto=$_GET['id'];
-		  
+
            $galeria_class = new Galeria();
            $galeria_class->id_foto=$id_foto;
            $galeria_class->ApagarImagem($galeria_class);
