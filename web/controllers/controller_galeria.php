@@ -45,7 +45,7 @@ class ControllerGaleria{
 
 				if($retorno_ == 'ok'){
 
-          header('location:views/cms/cms_galeria_fotos.php');
+          require_once('views/cms/cms_galeria_fotos.php');
 
 				}else {
 					echo "erro";

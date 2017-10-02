@@ -19,11 +19,7 @@ class Galeria{
           //Chama o metodo conectar para estabelecer a conexão como BD
           $conexao_bd->conectar();
 
-
       }
-
-
-
 
       //Metodo para Inserir um Novo Registro
       public function Insert($cadastro_foto){
@@ -31,18 +27,12 @@ class Galeria{
       $sql="insert into tbl_galeria_fotos (id_unidade, imagem_unidade)values('".$cadastro_foto->id_unidade."',
                                                                                 '".$cadastro_foto->imagem_unidade."')";
 
-
-
           if(mysql_query($sql)){
              return 'ok';
           }else{
               echo("erro no script de insert no banco de dados <br> Erro: </br>".mysql_error());
           }
       }
-
-
-
-
 
          public function SelecionarTodasImagens(){
 
@@ -75,14 +65,11 @@ class Galeria{
 
          public function ApagarImagem($galeria_class){
 
-
-
-
-           $sql="delete from tbl_galeria_fotos where id_foto=".$galeria_class->id_foto;
+           $sql="delete from tbl_galeria_fotos where id_galeria_fotos=".$galeria_class->id_foto;
 
           if(mysql_query($sql)){
 
-              header('location:views/cms/cms_galeria_fotos.php');
+              require_once('views/cms/cms_galeria_fotos.php');
           }else{
             echo("erro no script do metodo Apagar Imagem no banco de dados <br> Erro: </br>".mysql_error());
           }
@@ -107,7 +94,6 @@ class Galeria{
             if($rs=mysql_fetch_array($select)){
 
                 $listGaleria = new Galeria;
-
 
                 $listGaleria->id_foto=$rs['id_foto'];
                 $listGaleria->id_unidade=$rs['id_unidade'];
