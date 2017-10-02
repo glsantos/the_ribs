@@ -12,8 +12,13 @@ a{
   width: 1000px;
   height: 1000px;
   margin: 0 auto;
-  background-color: red;
 }
+
+#container-cms header{
+
+  background-color:#B22222;
+}
+
 section{
 
     width: 100%;
@@ -25,13 +30,13 @@ section{
 
   width: 200px;
   height: 1000px;
-  background-color: blue;
   float: left;
+  background-color: #000;
 }
+
 #conteudo-cms{
   width: 800px;
   height: 1000px;
-  background-color: green;
   text-decoration: none;
   float: left;
 }

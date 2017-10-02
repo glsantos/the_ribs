@@ -24,6 +24,8 @@ if($_SESSION['login'] != 'true'){
             <ul>
 
                 <li><a href="views/cms/cms_galeria_fotos.php">Gerenciar galeria de fotos</a></li>
+								<li><a href="views/cms/entre_em_contato.php">Fale Conosco</a></li>
+								<li><a href="views/cms/faq.php">FAQ</a></li>
 
             </ul>
         </div>
