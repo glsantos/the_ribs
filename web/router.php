@@ -86,6 +86,17 @@
               break;
           }
 
+          case 'controller_faq':
+
+            require('controllers/controller_faq.php');
+            require('models/faq_class.php');
+
+            switch ($modo) {
+              case 'salvar':
+                  $controller_faq = new ControllerFaq();
+                  $controller_faq->SalvarFaq();
+              break;
+          break;
 
       }
 
