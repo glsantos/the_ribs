@@ -24,7 +24,7 @@
         //O construtor ou metodo mágico é criado
         //utilizando dois __construct
         public function __construct(){
-            $this->server="localhost";
+            $this->server="10.107.134.33";
             $this->user="root";
             $this->password="bcd127";
 
