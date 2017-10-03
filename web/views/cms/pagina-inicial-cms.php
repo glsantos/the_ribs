@@ -3,7 +3,7 @@
 // SE A SESSÃO NÃO FOR TRUE, ELE É REDIRECIONADO PARA A PÁGINA DE LOGIN
 if($_SESSION['login'] != 'true'){
 
-	header('location:login_cms_view.php');
+	header('location:views/cms/login_cms_view.php');
 }else{
 
 	$nome_usuario = $_SESSION['nome'];
@@ -21,13 +21,14 @@ if($_SESSION['login'] != 'true'){
 
         <div id="conteudo-cms">
 
-          <a href="sair.php"> sair </a><Br>
+					
 
         </div>
-    </section>
+
+		</section>
+
     <footer>
         <?php require_once('rodape.php'); ?>
     </footer>
-
 
 </div>
