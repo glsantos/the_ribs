@@ -5,7 +5,7 @@
 				  <section id="conteudo">
 
 						<!-- AQUI VAI O SEU CONTEUDO -->
-            <div class="principal">
+            <div class="principal_galeria">
                 <div class="primeira_faixa">
                     <div class="selecao_unidade">
                       <div class="filtre_unidade">
@@ -14,7 +14,6 @@
                       <div class="busque_unidade">
                         <select class="cbo_unidade" name="cbo_unidade">
                             <option value="#" selected><a href="#">Selecione algum restaurante </a></option>
-
                             <option value="#">SP Capital</option>
                             <option value="#">Jandira City</option>
                         </select>

@@ -21,16 +21,15 @@
       $id_unidade="";
       $action="salvar";
       $idEditar="";
-
+      
       if (isset($_GET["modo"])=='alterar') {
 
           @$modo = "alterar";
           @$id_foto=$listGaleria->id_foto;
           @$nome_unidade=$listGaleria->nome_unidade;
-        @$imagem_unidade=$listGaleria->imagem_unidade;
-        @$id_unidade=$listGaleria->id_unidade;
+          @$imagem_unidade=$listGaleria->imagem_unidade;
+          @$id_unidade=$listGaleria->id_unidade;
 
-          echo "aqui e a view".$nome_unidade;
 
           $action="editar";
           $idEditar="&id=".$id_foto;
@@ -48,7 +47,7 @@
 
         <div id="conteudo-cms">
 
-          <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
+          <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=<?php echo($action); echo($idEditar); ?>" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
                   <img <?php echo("src = '".$imagem_unidade."'") ?>>
@@ -71,11 +70,11 @@
                         ?>
                           <option value="" selected>Escolha uma unidade</option>
 
-                          <?php
+                        <?php
 
                              }
 
-                           ?>
+                         ?>
                         <?php
                             //incluindo o arquivo da controller para fazer o select
                             require_once('controllers/controller_galeria.php');

@@ -79,7 +79,6 @@
                    break;
                   case 'editar':
                         $controller_galeria = new ControllerGaleria();
-
                         $controller_galeria->Atualizar();
                       break;
 
