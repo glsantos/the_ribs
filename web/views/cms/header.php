@@ -1,5 +1,8 @@
 <header>
-  <h1>Cabeçalho CMS</h1>
+  <img src="img/logo.png" alt="Imagem Logo"/>
+
+  <span></span>
+
   Bem vindo,
   <?php
       echo($_SESSION['nome']);
