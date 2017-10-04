@@ -12,6 +12,7 @@ class controllerCliente{
     $cliente_login->nome_usuario=$nome_usuario;
     $cliente_login->senha=$senha;
 
+    //$cliente_login->Login($cliente_login);
     $cliente_login->Login($cliente_login);
 
   }
