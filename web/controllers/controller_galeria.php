@@ -86,10 +86,7 @@ class ControllerGaleria{
             require_once('models/galeria_class.php');
 
             $id_foto = $_GET['id'];
-            
-           
-            
-            
+
             $galeria_class = new Galeria;
 
 
@@ -105,21 +102,21 @@ class ControllerGaleria{
 
         //Metodo Atualizar um Registro
        public function Atualizar(){
-           
+
          require_once('models/galeria_class.php');
 
-              $id_foto=$_GET['id'];    
+              $id_foto=$_GET['id'];
               $id_unidade=$_POST['sltunidade'];
-              
+
               if(isset($_FILES['flefotos'])){
                   $caminho_arquivo = "arquivos_enviados/";
                   $foto = basename($_FILES['flefotos']['name']);
                   $up = $caminho_arquivo . $foto;
               }
-                  
+
               $galeria_class = new Galeria();
 
-              $galeria_class->id_foto=$id_foto;    
+              $galeria_class->id_foto=$id_foto;
               $galeria_class->id_unidade=$id_unidade;
               $galeria_class->imagem_unidade=$up;
 
