@@ -23,6 +23,7 @@
         //O construtor ou metodo mágico é criado
         //utilizando dois __construct
         public function __construct(){
+
             /*$this->server="10.107.134.33";*/
             $this->server="localhost";
             $this->user="root";
@@ -39,7 +40,7 @@
 				        $conexao = mysql_connect($this->server,$this->user,$this->password);
                 mysql_select_db("dbtheribs_ws");
             }catch(Exception $e){
-                echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador". $e);
+                echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador!<br> ERRO:". $e);
 				        die();
             }
 

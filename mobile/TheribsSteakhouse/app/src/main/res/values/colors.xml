@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c48b2e</color> <!-- COR DA BARRA DO APP -->
+    <color name="colorPrimaryDark">#d6d6d6</color> <!-- COR DA BARRA DE NOTIFICAÇÕES -->
+    <color name="colorAccent">#dab983</color> <!-- COR DAS BORDAS -->
+</resources>
