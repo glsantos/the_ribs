@@ -4,13 +4,12 @@
     *Objetivo: Estabecer uma conexão com o Banco de Dados (Mysql)
     *Autor: Marcos Ricardo
     *Data: 25/09/2017
-    *Ultima Modificação: 25/09/2017
-    *Modificações:
+    *Ultima Modificação: 03/10/2017
+    *Modificações: Sempre deixar dois valores para a $this->server. Um fica comentado... Será o localhost
+    *Para uso doméstico e o IP da máquina servidora do Banco de Dados.
     *Arquivos relacionados: qualquer arquivo da model
     *
     **************************************************************
-
-
 */
 
 
@@ -24,7 +23,8 @@
         //O construtor ou metodo mágico é criado
         //utilizando dois __construct
         public function __construct(){
-            $this->server="10.107.134.33";
+            /*$this->server="10.107.134.33";*/
+            $this->server="localhost";
             $this->user="root";
             $this->password="bcd127";
 

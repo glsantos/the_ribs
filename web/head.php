@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <title>The Ribs - SteakHouse </title>
-  <link rel="icon" href="img/logo_folha.png">
+  <link rel="icon" href="img/logo_folha.ico">
 
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_avalie.css">

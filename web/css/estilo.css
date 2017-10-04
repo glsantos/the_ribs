@@ -483,9 +483,10 @@ ul li a {
 footer{
 	width:100%;
 	height:300px;
-	background-color:#B22222;
+  background-color:#B22222;
   float: left;
 }
+
 #embrulho-rodape{
 	margin:0 auto;
 	width:1000px;

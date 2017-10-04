@@ -1,1 +1,5 @@
-<h1>rodape</h1>
+<footer class="footer_cms">
+
+  rodape
+
+</footer>

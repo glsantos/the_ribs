@@ -21,14 +21,12 @@ if($_SESSION['login'] != 'true'){
 
         <div id="conteudo-cms">
 
-					
+
 
         </div>
 
 		</section>
 
-    <footer>
-        <?php require_once('rodape.php'); ?>
-    </footer>
+		<?php require_once('rodape.php'); ?>
 
 </div>
