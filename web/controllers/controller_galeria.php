@@ -81,7 +81,7 @@ class ControllerGaleria{
        }
 
 
-        //Metodo Buscar um Registro pelo ID
+        
         public function Buscar(){
             require_once('models/galeria_class.php');
 

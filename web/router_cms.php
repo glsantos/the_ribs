@@ -38,6 +38,13 @@ if(isset($_GET['pagina_cms'])){
       require_once('views/cms/sobre_view.php');
       break;
 
+    case 'gerenciar_home':
+        require_once('views/cms/gerenciar_home.php');
+        break;
+
+
+
+
   }
 
 }
@@ -48,7 +55,7 @@ if (isset($_GET['modo'])=="apagar"){
     require_once('controllers/controller_cliente.php');
     require_once('models/cliente_class.php');
 
-    
+
 }
 
 ?>

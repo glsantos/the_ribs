@@ -24,7 +24,8 @@
         //utilizando dois __construct
         public function __construct(){
             /*$this->server="10.107.134.33";*/
-            $this->server="localhost";
+            /*$this->server="10.107.134.11";*/
+            $this->server="10.107.134.11";
             $this->user="root";
             $this->password="bcd127";
 

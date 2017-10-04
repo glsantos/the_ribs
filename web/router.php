@@ -99,7 +99,34 @@
                       $controller_faq->Cadastrar();
 
                   break;
+                }
 
+                  case 'controller_home':
+
+                    require('controllers/controller_home.php');
+                    require('models/home_class.php');
+
+                    switch ($modo) {
+                      case 'salvar':
+
+                          $controller_home = new ControllerHome();
+                          $controller_home->SalvarPassoApasso();
+
+                      break;
+
+                      case 'excluir':
+                            $controller_home = new ControllerHome();
+                            $controller_home->Deletar();
+                        break;
+
+                      case 'alterar':
+                              $controller_home = new ControllerHome();
+                              $controller_home->Buscar();
+                          break;
+                      case 'editar':
+                              $controller_home = new ControllerHome();
+                              $controller_home->Atualizar();
+                          break;
 
               break;
 
