@@ -18,7 +18,7 @@
   <link rel="stylesheet" type="text/css" href="css/estilo_sobre_empresa.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_faq.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_adquirir_reserva.css">
-
+  <link rel="stylesheet" type="text/css" href="css/estilo_historico_de_reservas.css">
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/script_menu_lateral.js"></script>

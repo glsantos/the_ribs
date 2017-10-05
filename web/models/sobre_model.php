@@ -1,7 +1,7 @@
 <!-- Models class cms_sobre -->
-	<?php 
+	<?php
 		class cadastro_conteudo_sobre{
-			
+
 			public $id_sobre_empresa;
 			public $missao;
 			public $valores;
@@ -12,19 +12,19 @@
 			public $img_objetivo;
 			public $img_historia;
 			public $img_sobre;
-			
+
 			public function__construct(){
 				require_once('models/#.php');
-				
-				
+
+
 			$conexao_bd = new Mysql_db();
-			
+
 			$conexao_bd->conectar();
 			}
 		}
-		
+
 		public function Insert($sobre_empresa){
-			
+
 		$sql="insert into tbl_sobre_empresa(missao, valores, objetivos, historia, img_missao, img_valores, img_objetivo, img_historia, img_sobre)
 		values('".$sobre_empresa->missao."',
 			'".$sobre_empresa->valores."',
@@ -36,16 +36,17 @@
             '".$sobre_empresa->img_historia."'
 			'".$sobre_empresa->img_sobre."'
             );";
-			
-			
+
+
 			if(mysql_query($sql)){
 
-                ?><script>alert('Inserido'); window.location="index.php";</script><?php
+                ?><script>alert('Inserido'); window.location="index.php";</script>
+								<?php
             }else{
                 echo("Erro no Script de insert do banco de dados");
             }
-			
-			
+
+
 		}
 
         public function Delete($deleteCadastro){
@@ -86,7 +87,7 @@
 				$sobre_empresa[$cont]->img_objetivo=$rs['img_objetivo'];
 				$sobre_empresa[$cont]->img_historia=$rs['img_historia'];
 				$sobre_empresa[$cont]->img_sobre=$rs['img_sobre'];
-				
+
 
                 $cont+=1;
             }
@@ -115,10 +116,10 @@
 				$listCadastro->img_objetivo=$rs['img_objetivo'];
 				$listCadastro->img_historia=$rs['img_historia'];
 				$listCadastro->img_sobre=$rs['img_sobre'];
-				
+
 
                 return $listCadastro;
             }
         }
-    }		
+    }
 	?>

@@ -35,6 +35,8 @@
 
 		<li><a href="index.php?pagina=cadastro">Cadastre-se</a></li>
 
+		<li><a href="index.php?pagina=historico_meus_dados">Historico de reservas</a></li>
+
 	</ul>
 
  </nav>

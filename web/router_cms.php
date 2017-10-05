@@ -42,8 +42,9 @@ if(isset($_GET['pagina_cms'])){
         require_once('views/cms/gerenciar_home.php');
         break;
 
-
-
+    case 'gerenciar_enquete':
+        require_once('views/cms/cms_enquete.php');
+        break;
 
   }
 
