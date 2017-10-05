@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `dbtheribs_ws` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `dbtheribs_ws`;
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dbtheribs_ws
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,35 @@ USE `dbtheribs_ws`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `new_table`
+--
+
+DROP TABLE IF EXISTS `new_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_table` (
+  `id_votacao_enquete` int(11) NOT NULL AUTO_INCREMENT,
+  `id_enquete` int(11) NOT NULL,
+  `id_voto_enquete` int(11) NOT NULL,
+  `dt_votacao` date NOT NULL,
+  PRIMARY KEY (`id_votacao_enquete`),
+  KEY `fk_id_enquete_votacao_idx` (`id_enquete`),
+  KEY `fk_id_votacao_enquete_idx` (`id_voto_enquete`),
+  CONSTRAINT `fk_id_votacao_enquete` FOREIGN KEY (`id_voto_enquete`) REFERENCES `tbl_voto_enquete` (`id_voto_enquete`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_id_enquete_votacao` FOREIGN KEY (`id_enquete`) REFERENCES `tbl_enquete` (`id_enquete`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_table`
+--
+
+LOCK TABLES `new_table` WRITE;
+/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tbl_avaliacao_garcom`
@@ -658,6 +687,30 @@ INSERT INTO `tbl_enderecos` VALUES (1,'06720','Rua: Ciro Monteiro','A','Parque M
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_enquete`
+--
+
+DROP TABLE IF EXISTS `tbl_enquete`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_enquete` (
+  `id_enquete` int(11) NOT NULL AUTO_INCREMENT,
+  `enquete` text NOT NULL,
+  PRIMARY KEY (`id_enquete`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_enquete`
+--
+
+LOCK TABLES `tbl_enquete` WRITE;
+/*!40000 ALTER TABLE `tbl_enquete` DISABLE KEYS */;
+INSERT INTO `tbl_enquete` VALUES (1,'Larissa Emily?'),(2,'Larissa Emily?'),(3,'Larissa Emily?'),(4,'Larissa Emily?'),(5,'Larissa Emily?'),(6,'Larissa Emily?'),(7,'Larissa Emily?'),(8,'Larissa Emily?'),(9,'Larissa Emily?'),(10,'Larissa Emily?');
+/*!40000 ALTER TABLE `tbl_enquete` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_entrada`
 --
 
@@ -822,7 +875,7 @@ CREATE TABLE `tbl_home` (
   PRIMARY KEY (`id_home`),
   KEY `fk_id_processo_home_idx` (`id_processo_reserva`),
   CONSTRAINT `fk_id_processo_home` FOREIGN KEY (`id_processo_reserva`) REFERENCES `tbl_processo_home` (`id_processo_home`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -831,6 +884,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
+INSERT INTO `tbl_home` VALUES (2,7,'arquivos_enviados/cab.png',0),(3,7,'arquivos_enviados/cab.png',0),(5,7,'arquivos_enviados/cab.png',0);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1189,8 +1243,9 @@ CREATE TABLE `tbl_processo_home` (
   `txt_passo_dois` text NOT NULL,
   `txt_passo_tres` text NOT NULL,
   `txt_passo_quatro` text NOT NULL,
+  `nome_processo` varchar(50) NOT NULL,
   PRIMARY KEY (`id_processo_home`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1199,6 +1254,7 @@ CREATE TABLE `tbl_processo_home` (
 
 LOCK TABLES `tbl_processo_home` WRITE;
 /*!40000 ALTER TABLE `tbl_processo_home` DISABLE KEYS */;
+INSERT INTO `tbl_processo_home` VALUES (7,'mama','msm','msmsm','mssm','pascoa'),(8,'texto','texto','0','texto','natal');
 /*!40000 ALTER TABLE `tbl_processo_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1274,40 +1330,39 @@ LOCK TABLES `tbl_produto_ingredientes` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_reservas`
+-- Table structure for table `tbl_reserva`
 --
 
-DROP TABLE IF EXISTS `tbl_reservas`;
+DROP TABLE IF EXISTS `tbl_reserva`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_reservas` (
+CREATE TABLE `tbl_reserva` (
   `id_reserva` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
-  `id_mesa` int(11) NOT NULL,
-  `id_periodo` int(11) NOT NULL,
   `id_status_reserva` int(11) NOT NULL,
-  `id_nota` int(11) NOT NULL,
+  `id_periodo` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
   `data_requisicao` date NOT NULL,
-  `data_agendada` date NOT NULL,
+  `data_agendada` date DEFAULT NULL,
+  `id_nota` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_reserva`),
   KEY `fk_cliente_reserva_idx` (`id_cliente`),
   KEY `fk_periodo_reserva_idx` (`id_periodo`),
   KEY `fk_status_reserva_idx` (`id_status_reserva`),
   KEY `fk_nota_reserva_idx` (`id_nota`),
-  CONSTRAINT `fk_cliente_reserva` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_notas_reserva` FOREIGN KEY (`id_nota`) REFERENCES `tbl_notas` (`id_nota`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cliente_reserva_idcliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_nota_reserva` FOREIGN KEY (`id_nota`) REFERENCES `tbl_nota_garcom` (`id_nota_garcom`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_periodo_reserva` FOREIGN KEY (`id_periodo`) REFERENCES `tbl_periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_reserva` FOREIGN KEY (`id_status_reserva`) REFERENCES `tbl_status_reserva` (`id_status_reserva`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_reservas`
+-- Dumping data for table `tbl_reserva`
 --
 
-LOCK TABLES `tbl_reservas` WRITE;
-/*!40000 ALTER TABLE `tbl_reservas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_reservas` ENABLE KEYS */;
+LOCK TABLES `tbl_reserva` WRITE;
+/*!40000 ALTER TABLE `tbl_reserva` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_reserva` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1340,6 +1395,89 @@ LOCK TABLES `tbl_saida` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_slider`
+--
+
+DROP TABLE IF EXISTS `tbl_slider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_slider` (
+  `id_slider` int(11) NOT NULL AUTO_INCREMENT,
+  `imagem` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_slider`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+LOCK TABLES `tbl_slider` WRITE;
+/*!40000 ALTER TABLE `tbl_slider` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_slider` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_slider_home`
+--
+
+DROP TABLE IF EXISTS `tbl_slider_home`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_slider_home` (
+  `id_slider_home` int(11) NOT NULL AUTO_INCREMENT,
+  `id_home` int(11) NOT NULL,
+  `id_slider` int(11) NOT NULL,
+  PRIMARY KEY (`id_slider_home`),
+  KEY `fk_slider_home_idx` (`id_home`),
+  KEY `fk_id_slider_home_idx` (`id_slider`),
+  CONSTRAINT `fk_id_home_slider` FOREIGN KEY (`id_home`) REFERENCES `tbl_home` (`id_home`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_id_slider_home` FOREIGN KEY (`id_slider`) REFERENCES `tbl_slider` (`id_slider`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_slider_home`
+--
+
+LOCK TABLES `tbl_slider_home` WRITE;
+/*!40000 ALTER TABLE `tbl_slider_home` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_slider_home` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_sobre_empresa`
+--
+
+DROP TABLE IF EXISTS `tbl_sobre_empresa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_sobre_empresa` (
+  `id_sobre_empresa` int(11) NOT NULL AUTO_INCREMENT,
+  `missao` text NOT NULL,
+  `valores` text NOT NULL,
+  `objetivos` text NOT NULL,
+  `historia` varchar(45) NOT NULL,
+  `img_missao` varchar(105) NOT NULL,
+  `img_valores` varchar(105) NOT NULL,
+  `img_objetivo` varchar(45) NOT NULL,
+  `img_historia` varchar(105) NOT NULL,
+  `img_sobre` varchar(105) NOT NULL,
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_sobre_empresa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_sobre_empresa`
+--
+
+LOCK TABLES `tbl_sobre_empresa` WRITE;
+/*!40000 ALTER TABLE `tbl_sobre_empresa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_sobre_empresa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_status_mesa`
 --
 
@@ -1363,6 +1501,29 @@ LOCK TABLES `tbl_status_mesa` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_status_pedido`
+--
+
+DROP TABLE IF EXISTS `tbl_status_pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_status_pedido` (
+  `id_status_pedido` int(11) NOT NULL AUTO_INCREMENT,
+  `status_pedido` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_status_pedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_status_pedido`
+--
+
+LOCK TABLES `tbl_status_pedido` WRITE;
+/*!40000 ALTER TABLE `tbl_status_pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_status_pedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_status_reserva`
 --
 
@@ -1383,6 +1544,29 @@ CREATE TABLE `tbl_status_reserva` (
 LOCK TABLES `tbl_status_reserva` WRITE;
 /*!40000 ALTER TABLE `tbl_status_reserva` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_status_reserva` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_tipo_despesa`
+--
+
+DROP TABLE IF EXISTS `tbl_tipo_despesa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipo_despesa` (
+  `id_tipo_saida` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_tipo` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_tipo_saida`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipo_despesa`
+--
+
+LOCK TABLES `tbl_tipo_despesa` WRITE;
+/*!40000 ALTER TABLE `tbl_tipo_despesa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_tipo_despesa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1440,9 +1624,9 @@ DROP TABLE IF EXISTS `tbl_unidades`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_unidades` (
   `id_unidade` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_unidade` varchar(45) DEFAULT NULL,
+  `nome_unidade` varchar(45) NOT NULL,
   PRIMARY KEY (`id_unidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1451,8 +1635,31 @@ CREATE TABLE `tbl_unidades` (
 
 LOCK TABLES `tbl_unidades` WRITE;
 /*!40000 ALTER TABLE `tbl_unidades` DISABLE KEYS */;
-INSERT INTO `tbl_unidades` VALUES (1,'Jandira'),(2,'Alphaville');
+INSERT INTO `tbl_unidades` VALUES (1,'Jandira');
 /*!40000 ALTER TABLE `tbl_unidades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_voto_enquete`
+--
+
+DROP TABLE IF EXISTS `tbl_voto_enquete`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_voto_enquete` (
+  `id_voto_enquete` int(11) NOT NULL AUTO_INCREMENT,
+  `voto` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_voto_enquete`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_voto_enquete`
+--
+
+LOCK TABLES `tbl_voto_enquete` WRITE;
+/*!40000 ALTER TABLE `tbl_voto_enquete` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_voto_enquete` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1464,4 +1671,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-04 14:28:10
+-- Dump completed on 2017-10-05 17:01:35
