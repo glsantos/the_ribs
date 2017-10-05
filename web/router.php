@@ -127,7 +127,22 @@
                               $controller_home = new ControllerHome();
                               $controller_home->Atualizar();
                           break;
-
+                     case 'salvar_valores':
+                              $controller_home = new ControllerHome();
+                              $controller_home->SalvarFotoValores();
+                            break;
+                     case 'excluir_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->ExcluirDois();
+                            break;
+                    case 'alterar_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->AlterarDois();
+                            break;
+                    case 'editar_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->EditarDois();
+                            break;
               break;
 
               }
