@@ -127,10 +127,40 @@
                               $controller_home = new ControllerHome();
                               $controller_home->Atualizar();
                           break;
-
+                     case 'salvar_valores':
+                              $controller_home = new ControllerHome();
+                              $controller_home->SalvarFotoValores();
+                            break;
+                     case 'excluir_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->ExcluirDois();
+                            break;
+                    case 'alterar_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->AlterarDois();
+                            break;
+                    case 'editar_dois':
+                            $controller_home = new ControllerHome();
+                            $controller_home->EditarDois();
+                            break;
               break;
 
               }
+
+              case 'controller_enquete':
+
+                  require_once('controllers/controller_enquete.php');
+                  require_once('models/enquete_models_class.php');
+
+                   switch($modo){
+                      case 'novo':
+                      $controller_faq = new ControllerEnquete();
+                      $controller_faq->Novo();
+
+
+                    }
+                  break;
+
           } // fechando if $controller
         } // fechando isset $controller
 

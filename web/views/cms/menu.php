@@ -9,6 +9,5 @@
         <li><a href="router_cms.php?pagina_cms=gerenciar_cardapios">Gerenciar Pagina de cardapios</a></li>
         <li><a href="router_cms.php?pagina_cms=fale_conosco">Fale Conosco</a></li>
         <li><a href="router_cms.php?pagina_cms=sobre_nos">Sobre nos</a></li>
-
     </ul>
 </div>
