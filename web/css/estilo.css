@@ -85,13 +85,12 @@ ul {
 	padding: 0;
 	list-style: none;
 	width: 100%;
-
-
 }
 ul li {
 	position: relative;
 	height:50px;
 	line-height:15px;
+
 }
 li ul {
 	position: absolute;
@@ -105,6 +104,7 @@ ul li a {
 	color: white;
 	padding: 10px;
 	border-bottom: 3px solid white;
+  text-align: center;
 }
 .btn-close {
   color: #fff;
@@ -285,6 +285,7 @@ ul li a {
 	min-height: 200px;
   height: auto;
   overflow: hidden;
+
 }
 
 .main-content div{
