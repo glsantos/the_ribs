@@ -119,9 +119,6 @@ class Galeria{
             }else{
               echo("erro no script de insert no banco de dados <br> Erro: </br>".mysql_error());
             }
-
-
-
           }
 
 
