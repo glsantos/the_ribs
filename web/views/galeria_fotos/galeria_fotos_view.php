@@ -27,13 +27,40 @@
                     <div class="espaco_fotos_unidades">
                         <div class="linha_imagem">
                           <div class="img_unidade">
-
+                             <ul class="demo-3">
+                                <li>
+                                    <figure>
+                                        <img src="img/img-restaurante-1.jpg" alt=""/>
+                                        <figcaption>
+                                            <div class="titulo-galeria">Restaurante Jandira</div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
                           </div>
                           <div class="img_unidade">
-
+                              <ul class="demo-3">
+                                <li>
+                                    <figure>
+                                        <img src="img/img-restaurante-1.jpg" alt=""/>
+                                        <figcaption>
+                                            <div class="titulo-galeria">Restaurante Jandira</div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
                           </div>
                           <div class="img_unidade">
-
+                                <ul class="demo-3">
+                                <li>
+                                    <figure>
+                                        <img src="img/img-restaurante-1.jpg" alt=""/>
+                                        <figcaption>
+                                            <div class="titulo-galeria">Restaurante Jandira</div>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
                           </div>
                         </div>
                     </div>
