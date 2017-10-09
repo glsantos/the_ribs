@@ -45,4 +45,22 @@
         android:layout_height="50dp"
         android:id="@+id/spn_classificacao"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:gravity="top"
+        android:hint="Escreva aqui seu comentário..."
+        android:id="@+id/txt_comentario"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Enviar Comentário"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:id="@+id/btn_enviarComentario"
+        android:textSize="18dp"
+        />
+
 </LinearLayout>
