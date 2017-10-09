@@ -99,7 +99,20 @@
                       $controller_faq->Cadastrar();
 
                   break;
+
+                  case 'apagar':
+
+                      $controller_faq = new controllerFaq();
+                      @$controller_faq->Apagar($id_faq);
+                  break;
+
+                  case 'alterar':
+                      $controller_faq = new controllerFaq();
+                      @$controller_faq->Buscar();
+                  break;
+
                 }
+                break;
 
                   case 'controller_home':
 
