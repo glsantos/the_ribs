@@ -81,6 +81,15 @@
                         $controller_galeria = new ControllerGaleria();
                         $controller_galeria->Atualizar();
                       break;
+                  case 'ativar':
+                        $controller_galeria = new ControllerGaleria();
+                        $controller_galeria->Ativar();
+                      break;
+                  case 'desativar':
+                        $controller_galeria = new ControllerGaleria();
+                        $controller_galeria->Desativar();
+                      break;                          
+                
 
                 }
 
@@ -172,13 +181,36 @@
                       case 'novo':
                       $controller_enquete = new ControllerEnquete();
                       $controller_enquete->Novo();
+                      break;
+            
+
+                      case 'excluir':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Apagar();
+
+                      break;
+
+                      case 'alterar':
 
 
-<<<<<<< HEAD
-                    }
-                  break;
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Alterar();
+
+                      break;
+
+                      case 'editar':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Atualizar();
+
+                      break;
                 
-               case 'controller_sobre':
+                   }
+                  break;  
+             
+                
+            case 'controller_sobre':
 
                   require_once('controllers/controller_sobre.php');
                   require_once('models/sobre_model.php');
@@ -193,32 +225,7 @@
                   break;
                 
                 
-                
-=======
-                      break;
-
-                      case 'excluir':
-
-                      $controller_enquete = new ControllerEnquete();
-                      $controller_enquete->Apagar();
-
-                      break;
-
-                      case 'alterar':
->>>>>>> 499150e4cfb61fc2bba44b050be6d888b0df54a0
-
-                      $controller_enquete = new ControllerEnquete();
-                      $controller_enquete->Alterar();
-
-                      break;
-
-                      case 'editar':
-
-                      $controller_enquete = new ControllerEnquete();
-                      $controller_enquete->Atualizar();
-
-                      break;
-              }
+              
           } // fechando if $controller
         } // fechando isset $controller
 
@@ -233,8 +240,6 @@
       }
 
 }
-
-
-    ?>
+?>
 </body>
 </html>

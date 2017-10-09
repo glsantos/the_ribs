@@ -13,40 +13,40 @@
 <?php
 
 session_start();
-
-      $modo="";
-      $nome_unidade="";
-      $imagem_unidade="";
-      $id_foto="";
-      $id_unidade="";
+    
+      @$status="";
+      @$modo="";
+      @$nome_unidade="";
+      @$imagem_unidade="";
+      @$id_foto="";
+      @$id_unidade="";
       $action="salvar";
       $idEditar="";
 
       if (isset($_GET["modo"])=='alterar') {
-          $id_foto=$listGaleria->id_foto;
-          $nome_unidade=$listGaleria->nome_unidade;
-          $imagem_unidade=$listGaleria->imagem_unidade;
-          $id_unidade=$listGaleria->id_unidade;
+          @$id_foto=$listGaleria->id_foto;
+          @$nome_unidade=$listGaleria->nome_unidade;
+          @$imagem_unidade=$listGaleria->imagem_unidade;
+          @$id_unidade=$listGaleria->id_unidade;
           $action="editar";
-          $idEditar="&id=".$id_foto;
+          $idEditar="&id=".$id_foto;    
       }
-
 ?>
 
 <div id="container-cms">
 
-    <?php require_once('views/cms/header.php'); ?>
+    <?php require_once('header.php'); ?>
 
     <section>
 
-        <?php require_once('views/cms/menu.php'); ?>
+        <?php require_once('menu.php'); ?>
 
         <div id="conteudo-cms">
 
-          <form method="post" name="frmgaleria" action="../../router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
+          <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=<?php echo($action); echo($idEditar); ?>" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
-              aqui vai a foto
+                <img <?php echo("src = '".$imagem_unidade."'") ?>>
             </div>
                     <div id="caixa-inputs">
 
@@ -103,7 +103,7 @@ session_start();
                     </div>
 
                     <div id="escolha">
-                    <p>Escolha a foto da unidade<input type="file" name="flefotos" value="<?php $imagem_unidade ?>"></p>
+                    <p>Escolha a foto da unidade<input type="file" name="flefotos"></p>
 
 
 
@@ -139,13 +139,26 @@ session_start();
 
                          <td class="tblcadastro_td"><?php echo($rsImagens[$cont]->nome_unidade) ?></td>
                           <td class="tblcadastro_td">
-                  <?php echo($rsImagens[$cont]->imagem_unidade) ?>
-                  <img <?php echo("src = '".$rsImagens[$cont]->imagem_unidade."'") ?>>
-                  </td>
+            
+                          <img <?php echo("src = '".$rsImagens[$cont]->imagem_unidade."'") ?>>
+                          </td>
 
                           <td class="tblcadastro_td"><a href="router.php?controller=controller_galeria&modo=apagar&id=<?php echo($rsImagens[$cont]->id_foto)?>">excluir</a></td>
-                          <td class="tblcadastro_td"><a href="router.php?controller=controller_galeria&modo=alterar&id=<?php echo($rsImagens[$cont]->id_foto)?>">editar</a></td></a></td>
-                          <td class="tblcadastro_td"></a></td>
+                          <td class="tblcadastro_td"><a href="router.php?controller=controller_galeria&modo=alterar&id=<?php echo($rsImagens[$cont]->id_foto)?>">editar</a></td>
+                         <td class="tblcadastro_td"><a href="router.php?controller=controller_galeria&modo=ativar&id=<?php echo($rsImagens[$cont]->id_foto)?>">ativar</a></td>
+                          <td class="tblcadastro_td"><a href="router.php?controller=controller_galeria&modo=desativar&id=<?php echo($rsImagens[$cont]->id_foto)?>">desativar</a></td>
+                          <td class="tblcadastro_td">
+                            <?php
+								if($rsImagens[$cont]->status==1){
+									echo('Item ativado');
+								}else{
+									echo('Item desativado');
+								}
+							?>
+                          
+                          </td>
+                          
+                          
                        </tr>
 
                        <?php

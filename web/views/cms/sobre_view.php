@@ -10,7 +10,7 @@
 		$img_objetivo="";
 		$img_historia="";
 		$img_sobre="";
-        $action="salvar_sobre"
+        $action="salvar_sobre";
   if(isset($_GET['modo'])){
 
 

@@ -29,7 +29,7 @@
       $action="salvar";
       $action_dois="salvar_valores";
       $idEditar="";
-       $idEditar_dois="";
+      $idEditar_dois="";
 
       if (isset($_GET["modo"])=='alterar') {
 
