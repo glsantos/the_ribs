@@ -10,11 +10,14 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,8 +32,13 @@ public class EntreEmContatoFragment extends Fragment {
     Spinner spn_classificacao;
     SharedPreferences preferences;
     Button btn_enviarComentario;
+    EditText nome_cliente_contato, telefone_cliente_contato, email_cliente_contato, txt_comentario_contato;
     List<String> lstClassificacao = new ArrayList<>();
-    String url, parametros;
+    String url, parametros, retorno;
+    String id_classificacao;
+    ArrayAdapter<String> adapterClassificacao;
+    String link;
+    String classificacaoContato;
 
     public EntreEmContatoFragment(){
     }
@@ -42,7 +50,7 @@ public class EntreEmContatoFragment extends Fragment {
         View rootView;
         rootView = inflater.inflate(R.layout.fragment_entre_em_contato, container, false);
         findViews(rootView);
-        getAplication();
+
         preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         lstClassificacao.add("Sugestão"); //TODO: Vim do banco
@@ -50,7 +58,7 @@ public class EntreEmContatoFragment extends Fragment {
         lstClassificacao.add("Crítica");
         lstClassificacao.add("Outro");
 
-        ArrayAdapter<String> adapterClassificacao = new ArrayAdapter<String>(
+        final ArrayAdapter<String> adapterClassificacao = new ArrayAdapter<String>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 lstClassificacao);
@@ -59,12 +67,32 @@ public class EntreEmContatoFragment extends Fragment {
 
         spn_classificacao.setAdapter(adapterClassificacao);
 
+        spn_classificacao.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                classificacaoContato = adapterClassificacao.getItem(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        getAplication();
+
         return rootView;
     }
 
     private void findViews(View rootView) {
+
         spn_classificacao = (Spinner) rootView.findViewById(R.id.spn_classificacao);
         btn_enviarComentario = (Button) rootView.findViewById(R.id.btn_enviarComentario);
+        nome_cliente_contato = (EditText) rootView.findViewById(R.id.nome_cliente_contato);
+        telefone_cliente_contato = (EditText) rootView.findViewById(R.id.telefone_cliente_contato);
+        email_cliente_contato = (EditText) rootView.findViewById(R.id.email_cliente_contato);
+        txt_comentario_contato = (EditText) rootView.findViewById(R.id.txt_comentario_contato);
     }
 
     public void getAplication() {
@@ -73,29 +101,34 @@ public class EntreEmContatoFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                String url = getContext()+"localhost:8888/enviar";
+                String nome ,telefone, email, comentario;
 
-                parametros = "teste=teste";
+                nome = nome_cliente_contato.getText().toString();
+                telefone = telefone_cliente_contato.getText().toString();
+                email = email_cliente_contato.getText().toString();
+                comentario = txt_comentario_contato.getText().toString();
 
-                new EntreEmContatoFragment.SolicitaDados().execute(url);
+                link = "http://10.0.2.2/enviar?nome="+nome+"&telefone="+telefone+"&email="+email+"&classificacao="+classificacaoContato+"&comentario="+comentario;
 
+                new EntreEmContatoFragment.SolicitaDados().execute();
+                Log.d("aqui", link);
             }
         });
     }
 
-    private class SolicitaDados extends AsyncTask<String, Void, String> {
+    private class SolicitaDados extends AsyncTask<Void, Void, Void> {
 
 
         @Override
-        protected String doInBackground(String... url) {
-            return Conexao.postDados(url[0], parametros);
+        protected Void doInBackground(Void... params) {
+            retorno = HttpConnection.get(link);
+            return null;
         }
 
         @Override
-        protected void onPostExecute(String s) {
-
-            Toast.makeText(getContext(), "Passou mininu", Toast.LENGTH_LONG).show();
-
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(getContext(), retorno, Toast.LENGTH_LONG).show();
         }
     }
 }

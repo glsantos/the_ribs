@@ -3,7 +3,6 @@
 
         public $id_enquete;
         public $enquete;
-        public $status;
 
         public function __construct(){
 
@@ -42,6 +41,49 @@
         }
 
         return $list_enquete;
+
+      }
+
+      public function Delete($apagar_enquete){
+          $sql="delete from tbl_enquete where id_enquete=".$apagar_enquete->id_enquete;
+
+          if(mysql_query($sql)){
+
+            require_once('views/cms/cms_enquete.php');
+
+          }else{
+              echo('Erro'.mysql_error());
+          }
+
+      }
+      public function SelectById($buscarenquete){
+
+        $sql="select * from tbl_enquete where id_enquete=".$buscarenquete->id_enquete;
+
+        $select= mysql_query($sql);
+
+        if($rs=mysql_fetch_array($select)){
+
+            $list_enquete = new Enquete();
+
+            $list_enquete->id_enquete=$rs['id_enquete'];
+            $list_enquete->enquete=$rs['enquete'];
+
+            return $list_enquete;
+
+        }
+
+      }
+      public function Update($update_enquete){
+
+        $sql = "update tbl_enquete set enquete='".$update_enquete->enquete."' where id_enquete=".$update_enquete->id_enquete;
+        if (mysql_query($sql))
+        {
+            require_once('views/cms/cms_enquete.php');
+        }else
+        {
+            echo("Erro no Script de Update no Banco de Dados <br> Erro:". mysql_error());
+        }
 
       }
   }

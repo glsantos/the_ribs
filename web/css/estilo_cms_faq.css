@@ -1,5 +1,5 @@
 #principal{
-  width:100%;
+  width:auto;
   height:100%;
   margin:auto;
   background-color: #c0c0c0;
@@ -9,13 +9,40 @@
   width:200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: magenta;
+  background-color: yellow;
 }
 .formulario select{
   font-size: 15px;
 }
 .consulta_faq{
-  height:20px;
-  width:100%;
+  height:400px;
+  width:700px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: magenta;
+}
+.titulo_consulta{
+    width:100%;
+    height:15%;
+    background-color: red;
+}
+.faq_consulta{
+  width:100%;
+  background-color: black;
+}
+.tabela_faq_consulta{
+  width:100%;
+  height:;
+  background-color: magenta;
+}
+.titulo_tabela_faq_consulta{
+  background-color: black;
+  color: white;
+}
+.tabela_faq_consulta tr{
+  background-color: white;
+  text-align: center;
+}
+.tabela_faq_consulta td{
+  width:10px;
 }

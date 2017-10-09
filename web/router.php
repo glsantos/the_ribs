@@ -99,7 +99,25 @@
                       $controller_faq->Cadastrar();
 
                   break;
+
+                  case 'apagar':
+
+                      $controller_faq = new controllerFaq();
+                      @$controller_faq->Apagar($id_faq);
+                  break;
+
+                  case 'alterar':
+                      $controller_faq = new controllerFaq();
+                      @$controller_faq->Buscar();
+                  break;
+
+                  case 'editar':
+                      $controller_faq = new controllerFaq();
+                      $controller_faq->Atualizar();
+                  break;
+
                 }
+                break;
 
                   case 'controller_home':
 
@@ -152,10 +170,11 @@
 
                    switch($modo){
                       case 'novo':
-                      $controller_faq = new ControllerEnquete();
-                      $controller_faq->Novo();
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Novo();
 
 
+<<<<<<< HEAD
                     }
                   break;
                 
@@ -175,7 +194,31 @@
                 
                 
                 
+=======
+                      break;
 
+                      case 'excluir':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Apagar();
+
+                      break;
+
+                      case 'alterar':
+>>>>>>> 499150e4cfb61fc2bba44b050be6d888b0df54a0
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Alterar();
+
+                      break;
+
+                      case 'editar':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Atualizar();
+
+                      break;
+              }
           } // fechando if $controller
         } // fechando isset $controller
 
