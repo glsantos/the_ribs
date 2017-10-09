@@ -82,9 +82,20 @@
               $listFaq->pergunta=$rs['pergunta'];
               $listFaq->resposta=$rs['resposta'];
               $listFaq->status=$rs['status'];
-              
+
+
               return $listFaq;
           }
+      }
+
+      public function Update($faq){
+
+          $sql = "update tbl_faq set  pergunta = '".$faq->pergunta."',
+                                      resposta = '".$faq->resposta."',
+                                      status = ".$faq->status."
+                                      where id_faq = ".$faq->id_faq;
+
+          //TODO SE mysql_query($sql);x
       }
   }
 

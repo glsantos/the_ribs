@@ -4,7 +4,7 @@
     $pergunta="";
     $resposta="";
     $status="0";
-    $nome_status="Desativada";
+    $action="salvar";
 
     if(isset($_GET['modo'])){
 
@@ -15,11 +15,8 @@
             $resposta=$list->resposta;
             $status=$list->status;
 
-            if($status=$list->status=1){
-                $nome_status="Ativada";
-            }else{
-              $nome_status="Desativada";
-            }
+            $action="editar&id_faq=".$id_faq;
+
         }
     }
 
@@ -39,14 +36,12 @@
         <?php require_once('menu.php'); ?>
 
         <section id="principal">
-              <form name="frm_faq" action="router.php?controller=controller_faq&modo=salvar" method="post">
+              <form name="frm_faq" action="router.php?controller=controller_faq&modo=<?php echo($action);?>" method="post">
                 <div class="formulario">
                     Pergunta<input type="text" name="txt_pergunta" value="<?php echo($pergunta);?>"><br>
                     Respota<input type="text" name="txt_resposta" value="<?php echo($resposta);?>"><br>
-                    Status:<select name="slt_status">
-                      <option value="<?php echo($status);?>" selected=""><?php echo($nome_status); ?></option>
-                      <option value="1">Ativada</option>
-                    </select>
+                      <input type="radio" name="slt_status" value="0" >Desativada</option>
+                      <input type="radio" name="slt_status" value="1" >Ativada</option>
                     <input type="submit" name="btn_faq">
                 </div>
               </form>

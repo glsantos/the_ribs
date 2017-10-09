@@ -58,6 +58,27 @@
         $list = $listFaq_Controller->SelectById($listFaq_Controller);
         require_once('views/cms/faq.php');
     }
+
+    public function Atualizar(){
+
+      $txt_pergunta=$_POST['txt_pergunta'];
+      $txt_reposta=$_POST['txt_resposta'];
+      $slt_status=$_POST['slt_status'];
+
+      $id_faq=$_GET['id_faq'];
+
+      $faq_class = new Faq();
+
+      $faq_class->pergunta=$txt_pergunta;
+      $faq_class->resposta=$txt_reposta;
+      $faq_class->status=$slt_status;
+
+      $faq_class->id_faq=$id_faq;
+
+
+      $faq_class->Update($faq_class);
+    }
+
   }
 
  ?>

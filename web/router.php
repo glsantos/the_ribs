@@ -111,6 +111,11 @@
                       @$controller_faq->Buscar();
                   break;
 
+                  case 'editar':
+                      $controller_faq = new controllerFaq();
+                      $controller_faq->Atualizar();
+                  break;
+
                 }
                 break;
 
