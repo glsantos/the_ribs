@@ -45,7 +45,7 @@
                 <form action="router.php?controller=controller_enquete&modo=<?php echo($action);?>" method="post">
                     <tr>
                       <td>Escreva sua nova pergunta:</td>
-                      <td><input type="text" name="txt_pergunta_enquete" value=""></td>
+                      <td><input type="text" name="txt_pergunta_enquete" value="<?php echo($enquete)?>"></td>
                     </tr>
                     <!-- -->
                     <tr>
@@ -69,16 +69,14 @@
                     <td>Enquete</td>
                   </tr>
                   <tr>
-                    <td><?php echo($rsEnquete[$cont]->enquete);?></td>
+                    <td><?php echo($rsEnquete[$cont]->enquete);?>***************************</td>
+                    <td><a href="router.php?controller=controller_enquete&modo=editar">Editar</a></td>
+                    <td><a href="router.php?controller=controller_enquete&modo=excluir&id=<?php echo($rsEnquete[$cont]->id_enquete)?>">Excluir</a></td>
                   </tr>
                     <?php
                       $cont+=1;
                         }
                      ?>
-                     <tr>
-                       <td><a href="router.php?controller=controller_enquete&modo=editar">Editar</a></td>
-                       <td><a href="router.php?controller_enquete&modo=ecluir&id=<?php echo($rsEnquete[$cont]->id_enquete)?>">Excluir</a></td>
-                     </tr>
                 </table>
               </div>
           </section>

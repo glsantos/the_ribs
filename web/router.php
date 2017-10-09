@@ -154,13 +154,33 @@
 
                    switch($modo){
                       case 'novo':
-                      $controller_faq = new ControllerEnquete();
-                      $controller_faq->Novo();
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Novo();
 
 
-                    }
-                  break;
+                      break;
 
+                      case 'excluir':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Apagar();
+
+                      break;
+
+                      case 'alterar':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Alterar();
+
+                      break;
+
+                      case 'editar':
+
+                      $controller_enquete = new ControllerEnquete();
+                      $controller_enquete->Atualizar();
+
+                      break;
+              }
           } // fechando if $controller
         } // fechando isset $controller
 
