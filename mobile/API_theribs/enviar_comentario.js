@@ -2,11 +2,14 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 
-var io = require('socket.io').listen(http);
+var mysql = require('mysql');
 
-io.sockets.on('connection', function(cliente){
+var conexao = mysql.createConnection({
 
-		console.log("Usuário Conectado");
+	host:"10.107.144.52",
+	user:"root",
+	password:"bcd127",
+	database:"dbtheribs_ws"
 });
 
 app.get('/', function(req, res){
@@ -14,23 +17,26 @@ app.get('/', function(req, res){
 	res.send("Olá!");
 });
 
-app.post('/enviar', function(req, res){
-		
-    if(req.method=='POST') {
-			console.log("POST");
-            var body='';
-            req.on('data', function (data) {
-                body +=data;
-            });
-            req.on('end',function(){
-                var POST =  qs.parse(body);
-                console.log(POST);
-            });
-    }
-    else if(req.method=='GET') {
-        var url_parts = url.parse(req.url,true);
-        console.log(url_parts.query);
-    }
+app.get('/enviar', function(req, res){
+
+
+	var _nome = req.query.nome;
+	var _telefone = req.query.telefone;
+	var _email = req.query.email;
+	var _classificacao = req.query.classificacao;
+	var _comentario = req.query.comentario;
+
+	conexao.connect(function(err){
+
+		var _valores = "'"+_nome+"','"+_telefone+"','"+_email+"','"+_classificacao+"','"+_comentario+"'";
+		var insert = "insert into tbl_entre_contato(nome, telefone, email, classificacao, comentario) values("+_valores+");";
+		res.send(insert);
+		conexao.query(insert, function(err, result) {
+			console.log("Inseriu no banco! :)");
+			//res.send("Inseriu");
+		})
+
+	});
 
 });
 
