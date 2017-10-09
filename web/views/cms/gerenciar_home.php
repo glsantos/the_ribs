@@ -14,20 +14,22 @@
 
       session_start();
 
-      $modo="";
-      $passoum="";
-      $passodois="";
-      $passotres="";
-      $passoquatro="";
-      $nome_processo="";
-      $id_processo_home="";
-      $imagem_valores="";
-      $id_titulo="";
-      $nome_processo2="";
-     
-
+      @$modo="";
+      @$passoum="";
+      @$passodois="";
+      @$passotres="";
+      @$passoquatro="";
+      @$nome_processo="";
+      @$id_processo_home="";
+      @$imagem_valores="";
+      @$id_titulo="";
+      @$nome_processo2="";
+      
+        
       $action="salvar";
+      $action_dois="salvar_valores";
       $idEditar="";
+       $idEditar_dois="";
 
       if (isset($_GET["modo"])=='alterar') {
 
@@ -47,11 +49,12 @@
 
         if (isset($_GET["modo"])=='alterar_dois') {
 
-         
+          @$id_home=$listHome->id_home;
           @$id_titulo_home=$listHome->id_titulo;
           @$imagem_valores=$listHome->imagem_valores;
-          $action_dois="editar";
-          $idEditar_dois="&id=".$id_titulo;
+          @$nome_processo2=$listHome->nome_processo;  
+          $action_dois="editar_dois";
+          $idEditar_dois="&id=".$id_home;
           
          
        }
@@ -130,31 +133,23 @@
             </table>
 
         </div></p>
-               </form> 
+            </form>
             
-              
-           <form method="post" name="frmhome"  action="router.php?controller=controller_home&modo=<?php echo($action_dois); echo($idEditar_dois); ?>" enctype="multipart/form-data">     
+            
+            
+             <form method="post" name="frmhome" action="router.php?controller=controller_home&modo=<?php echo($action_dois); echo($idEditar_dois); ?>" enctype="multipart/form-data">  
             <div id="div-home-gerenciar">
                 <div id="foto-valores">
                      <img <?php echo("src = '".$imagem_valores."'") ?>>
                 </div>  
                         
-                
-                
-                
-                
-                
-                
                      <select name="slttitulos">
-                        <option value="" selected>
-                            Escolha um titulo
-                        </option>
-                             
+                      
                        <?php
-                          if($modo=="alterar"){
+                          if($nome_processo2 !=""){
                        ?>
 
-                          <option value="<?php echo($id_processo_home)?>" selected><?php echo($nome_processo2)?></option>
+                          <option value="<?php echo($id_titulo_home)?>" selected><?php echo($nome_processo2)?></option>
 
                        <?php
 
@@ -165,7 +160,7 @@
 
                         <?php
 
-                             }
+                         }
 
                          ?>          
                         <?php
@@ -199,10 +194,10 @@
                           
              
             
-                   <p>Escolha a foto da faixa de valores<input type="file" name="flefotos"></p>
-                   <p><input class="btn-salvar-home" type="submit" value="Salvar"></p> 
+           <p>Escolha a foto da faixa de valores<input type="file" name="flefotos_dois"></p>
+           <p><input type="submit" value="Salvar" name="btnSalvarValores"></p> 
                 
-                     <p><div id="consulta-frases">
+             <p><div id="consulta-frases">
         	<table id="tblconsulta">
               <tr>
                 <td colspan="5" class="titulo_tabela">Consulta de Passos Cadastrados</td>
@@ -243,16 +238,18 @@
                   ?>
             </table>
 
-        </div></p>
+        </div>
+        </p>
             </div>      
 
             </form>
-
+            
+            
             </section>
-        
-
         </div>
     </section>
+
+
     <footer>
         <?php require_once('rodape.php'); ?>
     </footer>

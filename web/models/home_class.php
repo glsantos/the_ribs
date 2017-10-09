@@ -235,30 +235,30 @@ class Home_class{
     
     
             
-        public function SelecionarPorId($home_class){
+        public function SelecionarPorIdHome($home_class){
 
             $sql="
-            select ho.id_home,ho.foto_valores as foto, ho.id_processo_reserva, pro.nome_processo as titulo
+            select ho.id_home,ho.foto_valores as foto, ho.id_processo_reserva, pro.nome_processo
             from tbl_home as ho
             inner join  tbl_processo_home as pro 
             on ho.id_processo_reserva = pro.id_processo_home
             where id_home=".$home_class->id_home;
 
             $select = mysql_query($sql);
-
+           
 
             if($rs=mysql_fetch_array($select)){
 
                 $listHome = new Home_class;
 
-               
+                $listHome->id_home=$rs['id_home'];
                 $listHome->id_titulo=$rs['id_processo_reserva'];
-                $listHome->imagem_unidade=$rs['foto'];
-                $listHome->nome_titulo=$rs['titulo'];
+                $listHome->imagem_valores=$rs['foto'];
+                $listHome->nome_processo=$rs['nome_processo'];
                 
-               
+              
                 return $listHome;
-                var_dump($listHome);
+               
             }
 
 
@@ -272,12 +272,15 @@ class Home_class{
             foto_valores = '".$home_class->imagem_valores."'
             where id_home= ".$home_class->id_home;
           
+            echo $sql;
+            
+            
             if(mysql_query($sql)){
                   require_once('views/cms/gerenciar_home.php');
             }else{
               echo("erro no script de Update no banco de dados <br> Erro: </br>".mysql_error());
             }
-          }    
+       }    
         
 
 

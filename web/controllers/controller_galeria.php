@@ -19,7 +19,7 @@ class ControllerGaleria{
 
            //Resgatando os dados do form
            $id_unidade=$_POST['sltunidade'];
-
+		   //echo $id_unidade;
            /*CAMINHO DA PASTA ARQUIVO*/
            $caminho_arquivo = "arquivos_enviados/";
            /*PEGANDO O NOME DA IMAGEM*/
@@ -45,15 +45,13 @@ class ControllerGaleria{
 
 				if($retorno_ == 'ok'){
 
-          require_once('views/cms/cms_galeria_fotos.php');
+          header('location:views/cms/cms_galeria_fotos.php');
 
 				}else {
 					echo "erro";
 				}
-
-       }
-
-       }
+      }
+}
 
 
        public function ListarImagens(){
@@ -81,12 +79,12 @@ class ControllerGaleria{
        }
 
 
-        
+        //Metodo Buscar um Registro pelo ID
         public function Buscar(){
             require_once('models/galeria_class.php');
 
             $id_foto = $_GET['id'];
-
+            echo $id_foto;
             $galeria_class = new Galeria;
 
 
@@ -98,36 +96,6 @@ class ControllerGaleria{
 
 
         }
-
-
-        //Metodo Atualizar um Registro
-       public function Atualizar(){
-
-         require_once('models/galeria_class.php');
-
-              $id_foto=$_GET['id'];
-              $id_unidade=$_POST['sltunidade'];
-
-              if(isset($_FILES['flefotos'])){
-                  $caminho_arquivo = "arquivos_enviados/";
-                  $foto = basename($_FILES['flefotos']['name']);
-                  $up = $caminho_arquivo . $foto;
-              }
-
-              $galeria_class = new Galeria();
-
-              $galeria_class->id_foto=$id_foto;
-              $galeria_class->id_unidade=$id_unidade;
-              $galeria_class->imagem_unidade=$up;
-
-
-
-              $galeria_class->Update($galeria_class);
-
-
-
-
-       }
 
 
 

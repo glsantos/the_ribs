@@ -27,10 +27,7 @@
             /*$this->server="10.107.134.33";*/
             /*$this->server="10.107.134.11";*/
             $this->server="10.107.144.52";
-<<<<<<< HEAD
-=======
             /*$this->server="localhost";*/
->>>>>>> c716e4cd4f0c4aaada5dee109540376813c4912a
             $this->user="root";
             $this->password="bcd127";
 
@@ -42,7 +39,7 @@
             //Estabelece a conexao com o BD, caso a conexao seja realizada com sucesso
             //seleciona o database, caso contrário mostra uma msg de erro e mata a conexao
             try{
-				        $conexao = mysql_connect($this->server,$this->user,$this->password);
+                $conexao = mysql_connect($this->server,$this->user,$this->password);
                 mysql_select_db("dbtheribs_ws");
             }catch(Exception $e){
                 echo("Erro na conexão com o Banco de Dados, Favor entrar em contato com o Administrador!<br> ERRO:". $e);

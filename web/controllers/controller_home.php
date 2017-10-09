@@ -90,13 +90,10 @@ class ControllerHome{
          
            $nome_processo=$_POST['nome_processo'];
            
-           $passoum=$_POST['txtpassoum'];
-           $passodois=$_POST['txtpassodois'];
-           $passotres=$_POST['txtpassotres'];
-           $passoquatro=$_POST['txtpassoquatro'];
-           
-           
-           
+            $passoum=$_POST['txtpassoum'];
+            $passodois=$_POST['txtpassodois'];
+            $passotres=$_POST['txtpassotres'];
+            $passoquatro=$_POST['txtpassoquatro'];
             $model_home->codigo_passo=$id_processo_home;
             $model_home->nome_processo=$nome_processo;
             $model_home->passoum=$passoum;
@@ -129,7 +126,7 @@ class ControllerHome{
                   
                    $caminho_arquivo = "arquivos_enviados/";
                  
-                   $nome_imagem = basename($_FILES['flefotos']['name']);
+                   $nome_imagem = basename($_FILES['flefotos_dois']['name']);
                    
                    $uploadfile = $caminho_arquivo . $nome_imagem;
 
@@ -138,7 +135,7 @@ class ControllerHome{
 
                  
 
-                       if(move_uploaded_file ($_FILES['flefotos']['tmp_name'],$uploadfile)){
+                       if(move_uploaded_file ($_FILES['flefotos_dois']['tmp_name'],$uploadfile)){
 
                         
                          $home_class = new Home_class();
@@ -173,7 +170,7 @@ class ControllerHome{
     
           public function ExcluirDois(){
               
-              require_once('models/galeria_class.php');
+              require_once('models/home_class.php');
               $id_home=$_GET['id'];
 
               $model_home = new Home_class;
@@ -187,17 +184,45 @@ class ControllerHome{
         public function AlterarDois(){
 
             $id = $_GET['id'];
-
+           
             $model_home = new Home_class;
 
 
             $model_home->id_home = $id;
 
 
-            $listHome=$model_home->SelecionarPorId($model_home);
+            $listHome=$model_home->SelecionarPorIdHome($model_home);
 
           require_once('views/cms/gerenciar_home.php');
 
+       }
+    
+    
+    
+       
+       public function EditarDois(){
+
+             require_once('models/home_class.php');
+
+              $id_home=$_GET['id'];
+              
+              $id_titulo=$_POST['slttitulos'];
+           
+              if(isset($_FILES['flefotos_dois'])){
+                  $caminho_arquivo = "arquivos_enviados/";
+                  $foto = basename($_FILES['flefotos_dois']['name']);
+                  $up = $caminho_arquivo . $foto;
+              }
+
+              $home_class = new Home_class();
+
+              $home_class->id_home=$id_home;
+              $home_class->id_titulo=$id_titulo;
+              $home_class->imagem_valores=$up;
+
+
+
+              $home_class->UpdateEdicao($home_class);
        }
     
 

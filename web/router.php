@@ -15,7 +15,7 @@
 
         switch ($controller) {
           case 'cliente':
-            //echo('clienteeee');
+         
             require_once('controllers/controller_cliente.php');
             require_once('models/cliente_class.php');
 
@@ -108,17 +108,14 @@
 
                     switch ($modo) {
                       case 'salvar':
-
                           $controller_home = new ControllerHome();
                           $controller_home->SalvarPassoApasso();
-
                       break;
 
                       case 'excluir':
                             $controller_home = new ControllerHome();
                             $controller_home->Deletar();
                         break;
-
                       case 'alterar':
                               $controller_home = new ControllerHome();
                               $controller_home->Buscar();
@@ -143,9 +140,10 @@
                             $controller_home = new ControllerHome();
                             $controller_home->EditarDois();
                             break;
-              break;
-
+             
               }
+             break;
+
 
               case 'controller_enquete':
 
@@ -160,6 +158,23 @@
 
                     }
                   break;
+                
+               case 'controller_sobre':
+
+                  require_once('controllers/controller_sobre.php');
+                  require_once('models/sobre_model.php');
+
+                   switch($modo){
+                      case 'novo':
+                      $controller_sobre = new ControllerCadastroSobre();
+                      $controller_sobre->Novo();
+
+
+                    }
+                  break;
+                
+                
+                
 
           } // fechando if $controller
         } // fechando isset $controller

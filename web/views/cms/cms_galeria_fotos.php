@@ -12,7 +12,7 @@
 -->
 <?php
 
-      session_start();
+session_start();
 
       $modo="";
       $nome_unidade="";
@@ -21,16 +21,12 @@
       $id_unidade="";
       $action="salvar";
       $idEditar="";
-      
+
       if (isset($_GET["modo"])=='alterar') {
-
-          @$modo = "alterar";
-          @$id_foto=$listGaleria->id_foto;
-          @$nome_unidade=$listGaleria->nome_unidade;
-          @$imagem_unidade=$listGaleria->imagem_unidade;
-          @$id_unidade=$listGaleria->id_unidade;
-
-
+          $id_foto=$listGaleria->id_foto;
+          $nome_unidade=$listGaleria->nome_unidade;
+          $imagem_unidade=$listGaleria->imagem_unidade;
+          $id_unidade=$listGaleria->id_unidade;
           $action="editar";
           $idEditar="&id=".$id_foto;
       }
@@ -39,18 +35,18 @@
 
 <div id="container-cms">
 
-    <?php require_once('header.php'); ?>
+    <?php require_once('views/cms/header.php'); ?>
 
     <section>
 
-        <?php require_once('menu.php'); ?>
+        <?php require_once('views/cms/menu.php'); ?>
 
         <div id="conteudo-cms">
 
-          <form method="post" name="frmgaleria" action="router.php?controller=controller_galeria&modo=<?php echo($action); echo($idEditar); ?>" enctype="multipart/form-data">
+          <form method="post" name="frmgaleria" action="../../router.php?controller=controller_galeria&modo=salvar" enctype="multipart/form-data">
           <section id="conteudo-galeria">
             <div id="caixa-ver-imagem">
-                  <img <?php echo("src = '".$imagem_unidade."'") ?>>
+              aqui vai a foto
             </div>
                     <div id="caixa-inputs">
 
@@ -70,11 +66,11 @@
                         ?>
                           <option value="" selected>Escolha uma unidade</option>
 
-                        <?php
+                          <?php
 
                              }
 
-                         ?>
+                           ?>
                         <?php
                             //incluindo o arquivo da controller para fazer o select
                             require_once('controllers/controller_galeria.php');
@@ -107,14 +103,17 @@
                     </div>
 
                     <div id="escolha">
-                    <p>Escolha a foto da unidade<input type="file" name="flefotos"></p>
+                    <p>Escolha a foto da unidade<input type="file" name="flefotos" value="<?php $imagem_unidade ?>"></p>
+
+
 
                       <input type='submit' autofocus required name="btnimagem">
+
 
                     </div>
 
                     <div id="consulta">
-                   <table id="tblconsulta" colspan="5" border="1">
+                   <table id="tblconsulta" border="1" colspan="5">
                        <tr>
                          <td colspan="5" class="titulo_tabela">Consulta da Galeria de fotos</td>
                        </tr>
