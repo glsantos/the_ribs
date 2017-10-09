@@ -5,12 +5,12 @@ class ControllerEnquete{
   public function Novo(){
 
 
-        $enquete = $_POST['txt_pergunta_enquete'];
+        $enquete_pergunta = $_POST['txt_pergunta_enquete'];
 
 
         $cadastro_enquete = new Enquete();
 
-        $cadastro_enquete->enquete=$enquete;
+        $cadastro_enquete->enquete=$enquete_pergunta;
 
       $retorno= $cadastro_enquete->Insert($cadastro_enquete);
 
@@ -60,13 +60,13 @@ class ControllerEnquete{
 
 
   }
-  public function Editar(){
+  public function Atualizar(){
 
     if($_SERVER['REQUEST_METHOD']== 'POST'){
 
         $enquete = $_POST['txt_pergunta_enquete'];
 
-        $codigo = $_POST['id'];
+        $codigo = $_GET['id'];
 
         $enquete_class = new Enquete();
 

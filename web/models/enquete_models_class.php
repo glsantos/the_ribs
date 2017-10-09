@@ -74,5 +74,17 @@
         }
 
       }
+      public function Update($update_enquete){
+
+        $sql = "update tbl_enquete set enquete='".$update_enquete->enquete."' where id_enquete=".$update_enquete->id_enquete;
+        if (mysql_query($sql))
+        {
+            require_once('views/cms/cms_enquete.php');
+        }else
+        {
+            echo("Erro no Script de Update no Banco de Dados <br> Erro:". mysql_error());
+        }
+
+      }
   }
 ?>

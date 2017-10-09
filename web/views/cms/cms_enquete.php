@@ -70,7 +70,7 @@
                   </tr>
                   <tr>
                     <td><?php echo($rsEnquete[$cont]->enquete);?>***************************</td>
-                    <td><a href="router.php?controller=controller_enquete&modo=editar">Editar</a></td>
+                    <td><a href="router.php?controller=controller_enquete&modo=alterar&id=<?php echo($rsEnquete[$cont]->id_enquete)?>">Editar</a></td>
                     <td><a href="router.php?controller=controller_enquete&modo=excluir&id=<?php echo($rsEnquete[$cont]->id_enquete)?>">Excluir</a></td>
                   </tr>
                     <?php
