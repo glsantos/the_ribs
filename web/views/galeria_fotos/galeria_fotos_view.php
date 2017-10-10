@@ -14,8 +14,6 @@
                       <div class="busque_unidade">
                         <select class="cbo_unidade" name="cbo_unidade">
                             <option value="#" selected><a href="#">Selecione algum restaurante </a></option>
-                            <option value="#">SP Capital</option>
-                            <option value="#">Jandira City</option>
                         </select>
                         <div class="btn_buscar">
                           <input type="button" name="btn_buscar_unidade" value="BUSCAR">
