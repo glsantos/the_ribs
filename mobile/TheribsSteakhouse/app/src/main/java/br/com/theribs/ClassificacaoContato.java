@@ -6,14 +6,14 @@ package br.com.theribs;
 
 public class ClassificacaoContato {
 
-    private String id_classificacao;
+    private int id_classificacao;
     private String nomeClassificacao;
 
-    public String getId_classificacao() {
+    public int getId_classificacao() {
         return id_classificacao;
     }
 
-    public void setId_classificacao(String id_classificacao) {
+    public void setId_classificacao(int id_classificacao) {
         this.id_classificacao = id_classificacao;
     }
 
@@ -24,4 +24,10 @@ public class ClassificacaoContato {
     public void setNomeClassificacao(String nomeClassificacao) {
         this.nomeClassificacao = nomeClassificacao;
     }
+
+    @Override
+    public String toString() {
+        return nomeClassificacao;
+    }
+
 }

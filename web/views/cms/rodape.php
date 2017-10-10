@@ -1,5 +1,5 @@
 <footer class="footer_cms">
 
-  rodape
+  <b>CMS - Desenvolvido por WiseOn Software</b>
 
 </footer>

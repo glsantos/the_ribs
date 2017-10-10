@@ -1,13 +1,8 @@
 package br.com.theribs;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,15 +28,12 @@ public class EntreEmContatoFragment extends Fragment {
     SharedPreferences preferences;
     Button btn_enviarComentario;
     EditText nome_cliente_contato, telefone_cliente_contato, email_cliente_contato, txt_comentario_contato;
-    List<String> lstClassificacao = new ArrayList<>();
-    String url, parametros, retorno;
-    String id_classificacao;
-    ArrayAdapter<String> adapterClassificacao;
-    String link;
-    String classificacaoContato;
 
-    public EntreEmContatoFragment(){
-    }
+    List<ClassificacaoContato> lstClassificacao = new ArrayList<>();
+    ArrayAdapter<ClassificacaoContato> adapterClassificacao;
+
+    String url, parametros, retorno, link;
+    int id_classificacao;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,12 +45,29 @@ public class EntreEmContatoFragment extends Fragment {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        lstClassificacao.add("Sugestão"); //TODO: Vim do banco
-        lstClassificacao.add("Elogio");
-        lstClassificacao.add("Crítica");
-        lstClassificacao.add("Outro");
+        ClassificacaoContato classificacaoContato1 = new ClassificacaoContato();
+        ClassificacaoContato classificacaoContato2 = new ClassificacaoContato();
+        ClassificacaoContato classificacaoContato3 = new ClassificacaoContato();
+        ClassificacaoContato classificacaoContato4 = new ClassificacaoContato();
 
-        final ArrayAdapter<String> adapterClassificacao = new ArrayAdapter<String>(
+        //TODO: Vim do banco
+        classificacaoContato1.setId_classificacao(1);
+        classificacaoContato1.setNomeClassificacao("Sugestão");
+        lstClassificacao.add(classificacaoContato1);
+
+        classificacaoContato2.setId_classificacao(2);
+        classificacaoContato2.setNomeClassificacao("Elogio");
+        lstClassificacao.add(classificacaoContato2);
+
+        classificacaoContato3.setId_classificacao(3);
+        classificacaoContato3.setNomeClassificacao("Crítica");
+        lstClassificacao.add(classificacaoContato3);
+
+        classificacaoContato4.setId_classificacao(4);
+        classificacaoContato4.setNomeClassificacao("Outro");
+        lstClassificacao.add(classificacaoContato4);
+
+        final ArrayAdapter<ClassificacaoContato> adapterClassificacao = new ArrayAdapter<ClassificacaoContato>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 lstClassificacao);
@@ -71,7 +80,7 @@ public class EntreEmContatoFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                classificacaoContato = adapterClassificacao.getItem(position);
+                id_classificacao = adapterClassificacao.getItem(position).getId_classificacao();
             }
 
             @Override
@@ -108,7 +117,13 @@ public class EntreEmContatoFragment extends Fragment {
                 email = email_cliente_contato.getText().toString();
                 comentario = txt_comentario_contato.getText().toString();
 
-                link = "http://10.0.2.2/enviar?nome="+nome+"&telefone="+telefone+"&email="+email+"&classificacao="+classificacaoContato+"&comentario="+comentario;
+                link = "http://10.0.0.2/enviar?nome="+nome+"&telefone="+telefone+"&email="+email+"&classificacao="+id_classificacao+"&comentario="+comentario;
+                //TODO: SPLIT PRA RESOLVER O PROBLEMA!!! - GIOVANNA
+                if(link.contains(" ")){
+                    Log.d("if","Espaço");
+                }else{
+                    Log.d("if","Sem espaço");
+                }
 
                 new EntreEmContatoFragment.SolicitaDados().execute();
                 Log.d("aqui", link);
