@@ -27,7 +27,7 @@
             $this->server="10.107.134.33";
             /*$this->server="10.107.134.11";*/
             //$this->server="10.107.144.52";
-            $this->server="localhost";
+            //$this->server="localhost";
             $this->user="root";
             $this->password="bcd127";
 

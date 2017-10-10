@@ -95,7 +95,13 @@
                                       status = ".$faq->status."
                                       where id_faq = ".$faq->id_faq;
 
-          //TODO SE mysql_query($sql);x
+          if(mysql_query($sql)){
+
+              ?><script>alert('FAQ Atualizado!');</script><?php
+              require_once('views/cms/faq.php');
+          }else{
+              echo('não foi');
+          }
       }
   }
 
