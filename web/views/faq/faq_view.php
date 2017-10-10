@@ -12,31 +12,30 @@
 				<div id="container_perguntas">
 					<div id="perguntas">
 						<div class = "alinhamento">
-							<div class="pergunta">
-								<div ><a class="exibir">Pergunta?</a></div>
-							</div>
-							<div class = "resposta">
-								<div > Resposta </div>
-							</div>
-							<div class="pergunta">
-								<div ><a class="exibir">Pergunta?</a></div>
-							</div>
-							<div class = "resposta">
-								<div > Resposta </div>
-							</div>
-							<div class="pergunta">
-								<div ><a class="exibir">Pergunta?</a></div>
-							</div>
-							<div class = "resposta">
-								<div > Resposta </div>
-							</div>
-							<div class="pergunta">
-								<div ><a class="exibir">Pergunta?</a></div>
-							</div>
-							<div class = "resposta">
-								<div > Resposta </div>
-							</div>
 
+							<?php
+
+									require_once('controllers/controller_faq.php');
+
+									$controller_faq = new ControllerFaq();
+
+									$rsFaq = $controller_faq->ListarSite();
+
+									$cont=0;
+
+									while($cont<count($rsFaq)){
+							 ?>
+
+							<div class="pergunta">
+								<div ><a class="exibir"><?php echo($rsFaq[$cont]->pergunta); ?></a></div>
+							</div>
+							<div class = "resposta">
+								<div ><?php echo($rsFaq[$cont]->resposta); ?></div>
+							</div>
+							<?php
+										$cont+=1;
+									}
+							 ?>
 							<div class="fechar_resposta"><a class="esconder">Fechar X </a></div>
 						</div>
 					</div>

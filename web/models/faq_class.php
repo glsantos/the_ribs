@@ -55,6 +55,24 @@
           return $listFaq;
       }
 
+      public function SelectOnSite(){
+
+          $sql = "select * from tbl_faq where status = 1";
+          $select = mysql_query($sql);
+
+          $cont=0;
+
+          while($rs=mysql_fetch_array($select)){
+
+              $listFaq[] = new Faq();
+              $listFaq[$cont]->pergunta=$rs['pergunta'];
+              $listFaq[$cont]->resposta=$rs['resposta'];
+              $cont+=1;
+          }
+
+          return $listFaq;
+      }
+
       public function Delete($deleteFaq){
 
           $sql="delete from tbl_faq where id_faq = ".$deleteFaq->id_faq.";";
