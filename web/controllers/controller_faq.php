@@ -31,6 +31,15 @@
         return $listFaq_Controller->SelectAll();
     }
 
+    public function ListarSite(){
+
+        require_once('models/faq_class.php');
+        
+        $listFaq_Controller = new Faq();
+
+        return $listFaq_Controller->SelectOnSite();
+    }
+
     public function Apagar(){
 
         if($_SERVER['REQUEST_METHOD']=='GET'){
