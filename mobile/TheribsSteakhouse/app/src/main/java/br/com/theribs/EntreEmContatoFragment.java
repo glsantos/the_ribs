@@ -117,7 +117,7 @@ public class EntreEmContatoFragment extends Fragment {
                 email = email_cliente_contato.getText().toString();
                 comentario = txt_comentario_contato.getText().toString();
 
-                link = "http://10.0.0.2/enviar?nome="+nome+"&telefone="+telefone+"&email="+email+"&classificacao="+id_classificacao+"&comentario="+comentario;
+                link = "http://10.0.2.2:8888/enviar?nome="+nome+"&telefone="+telefone+"&email="+email+"&classificacao="+id_classificacao+"&comentario="+comentario;
                 //TODO: SPLIT PRA RESOLVER O PROBLEMA!!! - GIOVANNA
                 if(link.contains(" ")){
                     Log.d("if","Espaço");
@@ -144,6 +144,7 @@ public class EntreEmContatoFragment extends Fragment {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             Toast.makeText(getContext(), retorno, Toast.LENGTH_LONG).show();
+            Log.d("retorno", "retorno = "+retorno);
         }
     }
 }

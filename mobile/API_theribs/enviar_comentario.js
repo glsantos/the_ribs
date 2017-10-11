@@ -18,9 +18,10 @@ app.get('/', function(req, res){
 });
 
 app.get('/enviar', function(req, res){
+	
+	res.send("merdaaa");
 
-
-	var _nome = req.query.nome;
+	/*var _nome = req.query.nome;
 	var _telefone = req.query.telefone;
 	var _email = req.query.email;
 	var _classificacao = req.query.classificacao;
@@ -36,7 +37,7 @@ app.get('/enviar', function(req, res){
 			//res.send("Inseriu");
 		})
 
-	});
+	});*/
 
 });
 
