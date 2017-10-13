@@ -30,6 +30,4 @@
   <script type="text/javascript" src="js/script_sobre_empresa.js"></script>
   <script type="text/javascript" src="js/faq_js.js"></script>
   <script type="text/javascript" src="js/jquery_efeito_toggle.js"></script>
-  <script type="text/javascript" src="js/jump.js"></script>
-
 </head>

@@ -174,8 +174,37 @@ class Galeria{
         }
 
 
+        //METODO PARA LISTAGEM DE FOTOS NA PAGINA 
+        //GALERIA_VIEW_FOTOS.PHP
+         public function SelecionarTodasImagensViews($galeria_class){
+
+             $sql="select uni.nome_unidade, gal.imagem_unidade, gal.status, uni.id_unidade, gal.id_galeria_fotos
+                  from tbl_unidades as uni
+                  inner join tbl_galeria_fotos as gal
+                  on uni.id_unidade = gal.id_unidade
+                  WHERE status =1 and id_unidade=".$galeria_class->id_unidade;
+              
+     		    $select = mysql_query($sql);
+
+             $cont=0;
+
+             while($rs=mysql_fetch_array($select)){
+
+                 $listImagens[] = new Galeria();
+
+                 $listImagens[$cont]->id_foto=$rs['id_galeria_fotos'];
+                 $listImagens[$cont]->id_unidade=$rs['id_unidade'];
+                 $listImagens[$cont]->nome_unidade=$rs['nome_unidade'];
+                 $listImagens[$cont]->status=$rs['status'];
+                 $listImagens[$cont]->imagem_unidade=$rs['imagem_unidade'];
+                 $cont+=1;
+
+             }
 
 
+             return $listImagens;
+
+         }
 
 
 

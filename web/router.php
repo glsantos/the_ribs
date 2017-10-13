@@ -223,7 +223,16 @@
 
                     }
                   break;
+            case 'controller_pagina_galeria':
                 
+                require_once('controllers/controller_view_galeria.php');
+                require_once('models/galeria_class.php');    
+                
+                switch($modo){
+                      case 'PreencherPaginaComDadosDoBanco':   
+                        $controller_view_galeria = new ControllerViewGaleria();
+                        $controller_view_galeria->PreencherPagina();        
+                }
                 
               
           } // fechando if $controller
