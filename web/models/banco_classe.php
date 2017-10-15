@@ -29,9 +29,9 @@
             //$this->server="10.107.144.52";
             $this->server="localhost";
             $this->user="root";
-            $this->password="";
+            $this->password="bcd127";
             //$this->password="bcd127";
-            
+
         }
 
         //Metodo para Conectar no Bando de Dados

@@ -9,14 +9,14 @@
      <div id="slide">
 
        <ul>
-         <li><img src="img/img1.jpg"></li>
-         <li><img src="img/img3.jpg"></li>
-         <li><img src="img/img4.jpg"></li>
+         <li><img alt="img1" src="img/img1.jpg"></li>
+         <li><img alt="img2" src="img/img3.jpg"></li>
+         <li><img alt="img3" src="img/img4.jpg"></li>
        </ul>
 
        <div id="setas">
-         <a href="#" id="antes"><img src="img/antes.png"></a>
-         <a href="#" id="proximo"><img src="img/proximo.png"></a>
+         <a href="#" id="antes"><img alt="Seta Anterior" src="img/antes.png"></a>
+         <a href="#" id="proximo"><img alt="Seta Próximo" src="img/proximo.png"></a>
        </div>
 
      </div>
@@ -49,7 +49,7 @@
          </div>
        </div>
      </div>
-     
+
      <div id="faixa_valores">
        <div id="imagem-valores">
          <img src="img/banner2.jpg" alt="">

@@ -2,7 +2,7 @@
 
 	<a href="#" class="toggle-nav btn-close">x</a>
 
-	<ul id="nav-lista">
+	<ul>
 
 		<li><a href="index.php?pagina=sobre"> Sobre o the Ribs </a></li>
 
@@ -16,14 +16,11 @@
 
 		<li><a href="index.php?pagina=avaliacao_prato">Avalie nossos Pratos</a></li>
 
-		<li><a href="index.php?pagina=nossas_unidades">Nossas unidades</a>
-			<ul class="sub-menu">
-					<li><a href="#">Item</a></li>
-					<li><a href="#">Item</a></li>
-					<li><a href="#">Item</a></li>
-					<li><a href="#">Item</a></li>
-			</ul>
-		</li>
+		<li> <a href="#">Nossas unidades</a> </li>
+
+		<div class="sub_menu">
+				jhsdh
+		</div>
 
 		<li><a href="index.php?pagina=galeria">Galeria de Fotos</a></li>
 

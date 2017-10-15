@@ -80,25 +80,23 @@
   background: #B22222;
   color: #fff;
 }
-ul {
+#nav ul{
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	width: 100%;
 }
-ul li {
+
+#nav ul li {
 	position: relative;
-	height:50px;
+	min-height:50px;
+  height: auto;
 	line-height:15px;
 
 }
-li ul {
-	position: absolute;
-	left: 149px;
-	top: 0;
-	display: none;
-}
-ul li a {
+
+#nav ul li a {
+
 	display: block;
 	text-decoration: none;
 	color: white;
@@ -106,6 +104,18 @@ ul li a {
 	border-bottom: 3px solid white;
   text-align: center;
 }
+
+#nav ul .sub_menu{
+
+	position: relative;
+	min-height:50px;
+  height: auto;
+	line-height: 20px;
+  background-color: green;
+  margin-top: -10px;
+  text-align: center;
+}
+
 .btn-close {
   color: #fff;
   font-size: 25px;
@@ -149,13 +159,14 @@ ul li a {
 }
 #proximo{
 	width:80px;
-	height:30px;
+	min-height:30px;
+  height: auto;
 	position:relative;
 	color:#333;
-	float:right;
 	padding:1px;
 	line-height:30px;
 	text-align:center;
+  float: right;
 }
 
 #proximo img{
