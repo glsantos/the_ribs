@@ -1,53 +1,50 @@
-<!-- Models class cms_sobre -->
 	<?php
-		class cadastro_conteudo_sobre{
+		class Sobre{
 
-			public $id_sobre_empresa;
+			public $id;
 			public $missao;
 			public $valores;
-			public $objetivos;
+			public $objetivo;
 			public $historia;
-			public $img_missao;
-			public $img_valores;
-			public $img_objetivo;
-			public $img_historia;
-			public $img_sobre;
+            public $fraseEfeito;
+            public $imagemEfeito;
+            public $imagemHistoria;
+            
+            
+            
+			public function __construct(){
+				require_once('models/banco_classe.php');
 
-			public function__construct(){
-				require_once('models/#.php');
 
+                $conexao_bd = new Mysql_db();
 
-			$conexao_bd = new Mysql_db();
-
-			$conexao_bd->conectar();
+                $conexao_bd->conectar();
 			}
-		}
+		
 
-		public function Insert($sobre_empresa){
+            public function Insert($sobre){
 
-		$sql="insert into tbl_sobre_empresa(missao, valores, objetivos, historia, img_missao, img_valores, img_objetivo, img_historia, img_sobre)
-		values('".$sobre_empresa->missao."',
-			'".$sobre_empresa->valores."',
-            '".$sobre_empresa->objetivos."',
-            '".$sobre_empresa->historia."'
-			'".$sobre_empresa->img_missao."',
-			'".$sobre_empresa->img_valores."',
-            '".$sobre_empresa->img_objetivo."',
-            '".$sobre_empresa->img_historia."'
-			'".$sobre_empresa->img_sobre."'
-            );";
+            $sql="insert into tbl_sobre_empresa(missao, valores, objetivos, historia,frase_efeito,img_efeito, img_historia, status)
+            values('".$sobre->missao."',
+                   '".$sobre->valores."',
+                   '".$sobre->objetivo."',
+                   '".$sobre->historia."',
+                   '".$sobre->fraseEfeito."',
+                   '".$sobre->imagemEfeito."',
+                   '".$sobre->imagemHistoria."', 
+                   0);";
+
+                
+                
+                if(mysql_query($sql)){
+                    echo("<script>alert('Modelo Inserido com sucesso!')</script>"); 
+                    return 'ok';
+                }else{
+                    echo("Erro no Script de insert do banco de dados");
+                }
 
 
-			if(mysql_query($sql)){
-
-                ?><script>alert('Inserido'); window.location="index.php";</script>
-								<?php
-            }else{
-                echo("Erro no Script de insert do banco de dados");
             }
-
-
-		}
 
         public function Delete($deleteCadastro){
 
@@ -63,30 +60,28 @@
 
         //Método para Selecionar todos os Registros
         public function SelectAll(){
-
-            //Script de select no banco de dados
+            
+            
             $sql="select * from tbl_sobre_empresa order by id_sobre_empresa desc";
             $select = mysql_query($sql);
 
             $cont=0;
 
-            //Repetição para guardar os registros em um Array de Objetos
+            
             while($rs=mysql_fetch_array($select)){
 
-                //Instância da classe Contato, criando uma coleção de Objetos
-                $sobreEmpresa[] = new cadastro_conteudo_sobre();
+                
+                $sobre_empresa[] = new Sobre();
 
-                //Guardando em cada Objeto um Registro diferente do BD
-                $sobreEmpresa[$cont]->id_sobre_empresa=$rs['id_sobre_empresa'];
+            
+                $sobre_empresa[$cont]->id=$rs['id_sobre_empresa'];
 				$sobre_empresa[$cont]->missao=$rs['missao'];
 				$sobre_empresa[$cont]->valores=$rs['valores'];
 				$sobre_empresa[$cont]->objetivos=$rs['objetivos'];
 				$sobre_empresa[$cont]->historia=$rs['historia'];
-				$sobre_empresa[$cont]->img_missao=$rs['img_missao'];
-				$sobre_empresa[$cont]->img_valores=$rs['img_valores'];
-				$sobre_empresa[$cont]->img_objetivo=$rs['img_objetivo'];
-				$sobre_empresa[$cont]->img_historia=$rs['img_historia'];
-				$sobre_empresa[$cont]->img_sobre=$rs['img_sobre'];
+                $sobre_empresa[$cont]->fraseEfeito=$rs['frase_efeito'];
+				$sobre_empresa[$cont]->imagemHistoria=$rs['img_historia'];
+				$sobre_empresa[$cont]->imagemEfeito=$rs['img_efeito'];
 
 
                 $cont+=1;

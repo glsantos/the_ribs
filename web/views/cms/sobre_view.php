@@ -1,108 +1,97 @@
+
 <?php
 
-		$id_sobre_empresa="";
-		$missao="";
-		$valores="";
-		$objetivos="";
-		$historia="";
-		$img_missao="";
-		$img_valores="";
-		$img_objetivo="";
-		$img_historia="";
-		$img_sobre="";
-        $action="salvar_sobre";
-  if(isset($_GET['modo'])){
-
-
-      if($_GET['modo'] =='alterar'){
-
-				$id_sobre_empresa->$list->id_sobre_empresa;
-				$missao->$list->missao;
-				$valores->$list->valores;
-				$objetivos->$list->objetivos;
-				$historia->$list->historia;
-				$img_missao->$list->img_missao;
-				$img_valores->$list->img_valores;
-				$img_objetivo->$list->img_objetivo;
-				$img_historia->$list->img_historia;
-				$img_sobre->$list->img_sobre;
-
-
-	      $action="editar&id=".$id_sobre_empresa;
-
-      }
-  }
-
+session_start();
+    
 ?>
 
 <div id="container-cms">
 
     <?php require_once('header.php'); ?>
-
-    <section>
-
         <?php require_once('menu.php'); ?>
 
         <div id="conteudo-cms">
 
-					<form name="frmsobre" action="router?controller=cms_sobre&modo=<?php echo($action)?>" ></form>
-						<table>
-							<tr>
-								<td>Cadastro de Conteudo d pagina Sobre a The Ribs</td>
-							</tr>
-							<tr>
-								<td>Imagem Principal:</td>
-								<td><input type="file" name="file_imagem_principal" value=""></td>
-							</tr>
-							<tr>
-								<td>Frase de efeito:</td>
-								<td><input type="text" name="txtfrase" value=""></td>
-							</tr>
-							<tr>
-								<td>Imagem Missão:</td>
-								<td><input type="file" name="file_missao" value=""></td>
-							</tr>
-							<tr>
-								<td>Missão:</td>
-								<td><input type="file" name="file_missao" value=""></td>
-							</tr>
+          <form method="post" name="frmsobre" action="router.php?controller=controller_sobre&modo=salvar_sobre" enctype="multipart/form-data" id="frmsobre">
+              
+                  <p><label>Frase de efeito:</label></p>
+                  <p><input type="text" placeholder="Frase de efeito da pagina:"
+                    name="txtefeito"></p>
+                  <p><label>imagem de efeito:</label></p>
+                  <p>
+                    <input type="file" name="fleimagemdeEfeito">
+                  </p>
+                  <p><label>Escreva uma texto para a area de missão:</label></p>
+                  <p><input type="text" name="txtmissao" placeholder="Nossa missão é:"></p> 
+                  <p><label>Escreva uma texto para a area de Valores:</label></p>
+                  <p><input type="text" name="txtvalores" placeholder="Nossos valores são:"></p>  
+                  <p><label>Escreva uma texto para a area de Objetivo:</label></p>
+                  <p><input type="text" name="txtobjetivo" placeholder="Nosso objetivo é:"></p>  
+                   
+                  
+                  
+                  <p><label>Escreva uma texto para a Historia da empresa:</label></p>
+                  <p><input type="text" name="txthistoria" placeholder="A the Ribs foi fundada...:"></p>  
+                   <p><label>imagem de fundo historia:</label></p>
+                  <p>
+                    <input type="file" name="fleimagemHistoria">
+                  </p>
+                  
+                  <p>
+                     <input class="btn-salvar-cms" type="submit" value="salvar modelo">       
+                  </p>
+                  
+                
+             
+             
+            </form>
+            <div id="consulta-sobre">
+                <table  id="table-consulta" cellspacing="30">
+                    <th>Frase efeito</th>
+                    <th>Imagem Efeito</th>
+                    <th>Missão</th>
+                    <th>Valores</th>
+                    <th>Objetivo</th>
+                    <th>Historia</th>
+                    <th>Imagem Historia</th>
+                    
+                     <?php
+                       
+                       require_once('controllers/controller_sobre.php');
 
-							<tr>
-								<td>Imagem Valores:</td>
-								<td><input type="file" name="file_valores" value=""></td>
-							</tr>
-							<tr>
-								<td>Valores:</td>
-								<td><input type="file" name="file_missao" value=""></td>
-							</tr>
-							<tr>
-								<td>Imagem Objetivos:</td>
-								<td><input type="file" name="file_objetivos" value=""></td>
-							</tr>
-							<tr>
-								<td>Objetivo:</td>
-								<td><input type="file" name="file_missao" value=""></td>
-							</tr>
-							<tr>
-								<td>Imagem de fundo falando da história:</td>
-								<td><input type="file" name="file_fundo_historia" value=""></td>
-							</tr>
-							<tr>
-								<td>Titulo:</td>
-								<td><input type="text" name="titulo_hitoria" value=""></td>
-							</tr>
-							<tr>
-								<td>Texto explicativo:</td>
-								<td><input type="text" name="hitoria_ribs" value=""></td>
-							</tr>
-						</table>
-					</form>
+                        
+                       $controller_sobre = new ControllerSobre();
 
+                      $rs=$controller_sobre->ListarRegistros();
+
+                        $cont=0;
+                        while ($cont<count($rs)){
+                      ?>
+                    <tr>
+                          <td><?php echo $rs[$cont]->fraseEfeito ?></td>
+                          <td class="reduzirImagem"><img  <?php echo("src = '".$rs[$cont]->imagemEfeito."'") ?>></td>
+                          <td><?php  echo $rs[$cont]->missao ?></td>
+                          <td><?php  echo $rs[$cont]->valores ?></td>
+                          <td><?php  echo $rs[$cont]->objetivo ?></td>
+                          <td><?php  echo $rs[$cont]->historia ?></td>
+                          <td class="reduzirImagem"><img  <?php echo("src = '".$rs[$cont]->imagemEfeito."'") ?>></td>
+                          <td>Editar</td>
+                          <td>Apagar</td>      
+                          <td>Ativar</td>
+                          <td>Desativar</td>
+                          <td>Ativado</td>
+                    </tr>
+                    <?php
+                        $cont+=1;
+                        }
+                    ?>
+                    
+                </table>
+                
+            
+            </div>
         </div>
-    </section>
     <footer>
         <?php require_once('rodape.php'); ?>
     </footer>
-
-
 </div>

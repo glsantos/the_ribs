@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="css/estilo_pagina_principal_cms.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_home_cms.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_sobre_empresa.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo_sobre_empresa_cms.css">    
   <link rel="stylesheet" type="text/css" href="css/estilo_faq.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_adquirir_reserva.css">
   <link rel="stylesheet" type="text/css" href="css/estilo_historico_de_reservas.css">

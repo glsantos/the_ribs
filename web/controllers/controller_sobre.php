@@ -1,27 +1,47 @@
-<!--Controller carastro_conteudo_sobre -->
-	
+
 	<?php 
-		class ControllerCadastroSobre{
+		class ControllerSobre{
 			
 			public function Novo(){
 				
-			  if($_SERVER['REQUEST_METHOD']=='POST'){
-
-					$cadastroSobre_classe = new ControllerCadastroSobre();
+                
+                require_once('models/sobre_model.php');
+                require_once('controllers/controller_upload.php');
+                
+                
+			        $txt_efeito=$_POST['txtefeito'];
+                    $txt_missao=$_POST['txtmissao'];
+                    $txt_valores=$_POST['txtvalores'];
+                    $txt_objetivo=$_POST['txtobjetivo'];
+                    $txt_historia=$_POST['txthistoria'];
+                
+                    $controllerUpload = new controllerUpload();
+         
+                    $uploadfile_efeito = $controllerUpload->UploadFoto($_FILES['fleimagemdeEfeito']); 
+                    $uploadfile_historia = $controllerUpload->UploadFoto($_FILES['fleimagemHistoria']);   
+                        
+					$modelsobre = new Sobre();
 					
-					$cadastroSobre_classe->missao=$missao;
-					$cadastroSobre_classe->valores=$valores;
-					$cadastroSobre_classe->objetivos=$objetivos;
-					$cadastroSobre_classe->historia=$historia;
-					$cadastroSobre_classe->img_missao=$img_missao;
-					$cadastroSobre_classe->img_valores=$img_valores;
-					$cadastroSobre_classe->img_objetivo=$img_objetivo;
-					$cadastroSobre_classe->img_historia=$img_historia;
-					$cadastroSobre_classe->img_sobre=$img_sobre;
+					$modelsobre->missao=$txt_missao;
+					$modelsobre->valores=$txt_valores;
+                    $modelsobre->objetivo=$txt_objetivo;
+                    $modelsobre->fraseEfeito=$txt_efeito;
+                    $modelsobre->historia=$txt_historia;
+                    $modelsobre->imagemEfeito=$uploadfile_efeito;
+                    $modelsobre->imagemHistoria=$uploadfile_historia;
 					
-					
-					$cadastroSobre_classe->Insert($cadastroSobre_classe);
-			  }
+					$retorno = $modelsobre->Insert($modelsobre);
+			         
+                
+                
+                    if($retorno = 'ok'){
+                        require_once('views/cms/sobre_view.php');
+                    }else{
+                      require_once('views/cms/sobre_view.php');
+                    }
+			  
+			  
+			  
 			}
 
 			 public function Apagar(){
@@ -37,14 +57,17 @@
 				}
 			}
 			
-			public function Listar(){
+			public function ListarRegistros(){
            
-				require_once('models/#.php');
+				require_once('models/sobre_model.php');
 
-				$listCadastroSobre_Controller = new ControllerCadastroSobre();
+				$list = new Sobre();
 
-				return $listCadastroSobre_Controller->SelectAll();
+				return $list->SelectAll();
 			}
+            
+            
+            
 			public function Buscar(){
 
 				  //Recebe o ID enviado na View no click do Editar!

@@ -216,13 +216,15 @@
                   require_once('models/sobre_model.php');
 
                    switch($modo){
-                      case 'novo':
-                      $controller_sobre = new ControllerCadastroSobre();
+                      case 'salvar_sobre':
+                      $controller_sobre = new ControllerSobre();
                       $controller_sobre->Novo();
 
 
                     }
                   break;
+                
+                
             case 'controller_pagina_galeria':
                 
                 require_once('controllers/controller_view_galeria.php');
