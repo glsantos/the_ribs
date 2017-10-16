@@ -20,7 +20,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 700px;
-    height: 600px;
+    height: 800px;
     text-align: center;
     padding: 10px 10px;
     margin-top: 10px;
@@ -36,4 +36,24 @@
 .reduzirImagem img{
     width: 100px;
     height:100px;
+}
+.mostrar-imagem-sobre{
+    width: 100px;
+    float: left;
+    height:100px;   
+}
+.mostrar-imagem-sobre img{
+    width: 100px;
+    height:100px;
+    
+}
+.mostrar-imagem-sobre-2{
+    width: 100px;
+    height:100px;   
+    float: left;;
+}
+.mostrar-imagem-sobre-2 img{
+    width: 100px;
+    height:100px;
+    
 }

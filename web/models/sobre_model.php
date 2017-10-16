@@ -9,6 +9,7 @@
             public $fraseEfeito;
             public $imagemEfeito;
             public $imagemHistoria;
+            public $status;
             
             
             
@@ -37,7 +38,6 @@
                 
                 
                 if(mysql_query($sql)){
-                    echo("<script>alert('Modelo Inserido com sucesso!')</script>"); 
                     return 'ok';
                 }else{
                     echo("Erro no Script de insert do banco de dados");
@@ -48,11 +48,10 @@
 
         public function Delete($deleteCadastro){
 
-            $sql="delete from tbl_sobre_empresa where id_sobre_empresa = ".$deleteCadastro->id_sobre_empresa.";";
+            $sql="delete from tbl_sobre_empresa where id_sobre_empresa = ".$deleteCadastro->id.";";
 
             if(mysql_query($sql)){
-
-                ?><script>alert('Apagado com Sucesso'); window.location="index.php";</script><?php
+                return 'ok'; 
             }else{
                 echo('Falha ao Apagar');
             }
@@ -82,7 +81,7 @@
                 $sobre_empresa[$cont]->fraseEfeito=$rs['frase_efeito'];
 				$sobre_empresa[$cont]->imagemHistoria=$rs['img_historia'];
 				$sobre_empresa[$cont]->imagemEfeito=$rs['img_efeito'];
-
+                $sobre_empresa[$cont]->status=$rs['status'];
 
                 $cont+=1;
             }
@@ -90,31 +89,130 @@
             return $sobre_empresa;
         }
 
-        //Método para Selecionar Registro pelo ID
+       
         public function SelectById($buscaCadastro){
 
-            $sql="select * from tbl_sobre_empresa where id_sobre_empresa = ".$buscaCadastro->id_sobre_empresa;
+            $sql="select * from tbl_sobre_empresa where id_sobre_empresa = ".$buscaCadastro->id;
             $select = mysql_query($sql);
 
-            //Verifica se existe algum registro no BD
+            
             if($rs=mysql_fetch_array($select)){
-
-                //Instancia da Model Contato
-                $listCadastro = new cadastro_conteudo_sobre();
-				$listCadastro->id_sobre_empresa=$rs['id_sobre_empresa'];
-				$listCadastro->missao=$rs['missao'];
-				$listCadastro->valores=$rs['valores'];
-				$listCadastro->objetivos=$rs['objetivos'];
-				$listCadastro->historia=$rs['historia'];
-				$listCadastro->img_missao=$rs['img_missao'];
-				$listCadastro->img_valores=$rs['img_valores'];
-				$listCadastro->img_objetivo=$rs['img_objetivo'];
-				$listCadastro->img_historia=$rs['img_historia'];
-				$listCadastro->img_sobre=$rs['img_sobre'];
-
-
-                return $listCadastro;
+                $modelsobre = new Sobre();
+				$modelsobre->id=$rs['id_sobre_empresa'];
+				$modelsobre->missao=$rs['missao'];
+				$modelsobre->valores=$rs['valores'];
+				$modelsobre->objetivo=$rs['objetivos'];
+				$modelsobre->historia=$rs['historia'];
+                $modelsobre->fraseEfeito=$rs['frase_efeito'];
+				$modelsobre->imagemHistoria=$rs['img_historia'];
+				$modelsobre->imagemEfeito=$rs['img_efeito'];
+                
+                return $modelsobre;
             }
         }
+            
+        public function Update($modelsobre){
+            
+            
+            $sql="update tbl_sobre_empresa set
+            missao='".$modelsobre->missao."',
+            valores='".$modelsobre->valores."',
+            objetivos='".$modelsobre->objetivo."',
+            historia='".$modelsobre->historia."',
+            frase_efeito='".$modelsobre->fraseEfeito."',
+            img_historia='".$modelsobre->imagemHistoria."',
+            img_efeito='".$modelsobre->imagemEfeito."'
+            where id_sobre_empresa=".$modelsobre->id;
+            
+       
+            
+              if(mysql_query($sql)){
+                   require_once('views/cms/sobre_view.php');
+              }else{
+              echo("erro no script de update no banco de dados <br> Erro: </br>".mysql_error());
+              }
+            
+        }
+            
+            
+        
+        public function Ativar(){
+            
+        require_once('models/sobre_model.php');
+
+              $id=$_GET['id'];
+              
+              $modelsobre = new Sobre();
+
+              $modelsobre->id=$id;
+             
+
+              $modelsobre->AtivarItem($modelsobre);
+            
+        }
+    
+        
+        public function Desativar(){
+            
+        require_once('models/sobre_model.php');
+
+              $id=$_GET['id'];
+              
+              $modelsobre = new Sobre();
+
+              $modelsobre->id=$id;
+             
+
+              $modelsobre->DesativarItem($modelsobre);
+            
+        }
+            
+            
+        
+        public function AtivarItem($modelsobre){
+            
+            
+            $sql="update tbl_sobre_empresa set
+            status = 1
+            where id_sobre_empresa=".$modelsobre->id;
+        
+            
+            if(mysql_query($sql)){
+                   echo("<script>alert('ATIVADO!')</script>");
+                   require_once('views/cms/sobre_view.php');
+              }else{
+              echo("erro no script de update no banco de dados <br> Erro: </br>".mysql_error());
+              }
+              
+            
+            
+        }
+    
+    
+        public function DesativarItem($modelsobre){
+            
+               
+            $sql="update tbl_sobre_empresa set
+            status = 0
+            where id_sobre_empresa=".$modelsobre->id;
+            
+         
+           
+            if(mysql_query($sql)){
+                   echo("<script>alert('DESATIVADO!')</script>");
+                   require_once('views/cms/sobre_view.php');
+              }else{
+              echo("erro no script de update no banco de dados <br> Erro: </br>".mysql_error());
+              }
+              
+            
+            
+        }
+
+        
+            
+            
+            
+            
     }
-	?>
+?>

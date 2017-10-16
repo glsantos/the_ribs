@@ -2,6 +2,33 @@
 <?php
 
 session_start();
+
+     @$id="";
+     @$missao="";
+     @$valores="";
+     @$objetivo="";
+     @$historia="";
+     @$fraseEfeito="";
+    @ $imagemEfeito="";
+    @ $imagemHistoria="";
+     @ $action="salvar_sobre";
+    @$idEditar="";
+
+      if (isset($_GET["modo"])=='alterar') {
+          @$id=$list->id;
+          @$missao=$list->valores;
+          @$objetivo=$list->objetivo;
+          @$historia=$list->historia;
+          @$valores=$list->valores;
+          @$fraseEfeito=$list->fraseEfeito;
+          @$imagemHistoria=$list->imagemHistoria;
+          @$imagemEfeito=$list->imagemEfeito;
+          $action="editar";
+          $idEditar="&id=".$id;    
+      }
+
+
+
     
 ?>
 
@@ -12,31 +39,42 @@ session_start();
 
         <div id="conteudo-cms">
 
-          <form method="post" name="frmsobre" action="router.php?controller=controller_sobre&modo=salvar_sobre" enctype="multipart/form-data" id="frmsobre">
+          <form method="post" name="frmsobre" action="router.php?controller=controller_sobre&modo=<?php echo($action); echo($idEditar); ?>" enctype="multipart/form-data" id="frmsobre">
               
                   <p><label>Frase de efeito:</label></p>
                   <p><input type="text" placeholder="Frase de efeito da pagina:"
-                    name="txtefeito"></p>
+                    name="txtefeito" value="<?php echo $fraseEfeito?>"></p>
                   <p><label>imagem de efeito:</label></p>
                   <p>
                     <input type="file" name="fleimagemdeEfeito">
                   </p>
+                      <p>
+                         <label>imagem de efeito do modelo:</label>
+                            <div class="mostrar-imagem-sobre-2">
+                                           <img <?php echo("src = '".$imagemEfeito."'") ?>>
+                            </div>
+
+                    </p>
                   <p><label>Escreva uma texto para a area de missão:</label></p>
-                  <p><input type="text" name="txtmissao" placeholder="Nossa missão é:"></p> 
-                  <p><label>Escreva uma texto para a area de Valores:</label></p>
-                  <p><input type="text" name="txtvalores" placeholder="Nossos valores são:"></p>  
+                  <p><input type="text" name="txtmissao" placeholder="Nossa missão é:" value="<?php echo $missao?>"></p> 
+                  <p><label>Escreva uma texto para a area de Valores:</label></p> 
+                  <p><input type="text" name="txtvalores" value="<?php echo $valores ?>" placeholder="Nossos valores são:"></p>  
                   <p><label>Escreva uma texto para a area de Objetivo:</label></p>
-                  <p><input type="text" name="txtobjetivo" placeholder="Nosso objetivo é:"></p>  
-                   
-                  
-                  
+                  <p><input type="text" name="txtobjetivo" placeholder="Nosso objetivo é:" value="<?php echo $objetivo?>"></p>  
                   <p><label>Escreva uma texto para a Historia da empresa:</label></p>
-                  <p><input type="text" name="txthistoria" placeholder="A the Ribs foi fundada...:"></p>  
+                  <p><input type="text" name="txthistoria" placeholder="A the Ribs foi fundada...:" value="<?php  echo $historia ?>"></p>  
                    <p><label>imagem de fundo historia:</label></p>
                   <p>
                     <input type="file" name="fleimagemHistoria">
                   </p>
-                  
+                  <p> 
+                     <label>imagem de efeito do modelo:</label>
+                    <div class="mostrar-imagem-sobre">
+                           <img <?php echo("src = '".$imagemHistoria."'") ?>>
+                    </div>
+                  </p>
+              
+                    
                   <p>
                      <input class="btn-salvar-cms" type="submit" value="salvar modelo">       
                   </p>
@@ -74,12 +112,20 @@ session_start();
                           <td><?php  echo $rs[$cont]->valores ?></td>
                           <td><?php  echo $rs[$cont]->objetivo ?></td>
                           <td><?php  echo $rs[$cont]->historia ?></td>
-                          <td class="reduzirImagem"><img  <?php echo("src = '".$rs[$cont]->imagemEfeito."'") ?>></td>
-                          <td>Editar</td>
-                          <td>Apagar</td>      
-                          <td>Ativar</td>
-                          <td>Desativar</td>
-                          <td>Ativado</td>
+                          <td class="reduzirImagem"><img  <?php echo("src = '".$rs[$cont]->imagemHistoria."'") ?>></td>
+                          <td><a href="router.php?controller=controller_sobre&modo=alterar&id=<?php echo($rs[$cont]->id)?>">Editar</a></td>
+                          <td><a href="router.php?controller=controller_sobre&modo=apagar&id=<?php echo($rs[$cont]->id)?>">Apagar</a></td>      
+                          <td><a href="router.php?controller=controller_sobre&modo=ativar&id=<?php echo($rs[$cont]->id)?>">Ativar</a></td>
+                          <td><a href="router.php?controller=controller_sobre&modo=desativar&id=<?php echo($rs[$cont]->id)?>">Desativar</a></td>
+                           <td>
+                                  <?php
+								if($rs[$cont]->status==1){
+									echo('Item ativado');
+								}else{
+									echo('Item desativado');
+								}
+							?>
+                           </td>
                     </tr>
                     <?php
                         $cont+=1;

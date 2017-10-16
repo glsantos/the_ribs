@@ -217,10 +217,30 @@
 
                    switch($modo){
                       case 'salvar_sobre':
-                      $controller_sobre = new ControllerSobre();
-                      $controller_sobre->Novo();
-
-
+                        $controller_sobre = new ControllerSobre();
+                        $controller_sobre->Novo();
+                      break;
+                           
+                      case 'apagar':
+                         $controller_sobre = new ControllerSobre();
+                         $controller_sobre->Apagar();  
+                      break;
+                      case 'alterar':
+                           $controller_sobre = new ControllerSobre();
+                           $controller_sobre->Buscar();   
+                           break;
+                      case 'editar':
+                            $controller_sobre = new ControllerSobre();
+                            $controller_sobre->Atualizar();
+                          break;
+                      case 'ativar':
+                            $controller_sobre = new ControllerSobre();
+                            $controller_sobre->Ativar();
+                          break;
+                      case 'desativar':
+                            $controller_sobre = new ControllerSobre();
+                            $controller_sobre->Desativar();
+                          break;                          
                     }
                   break;
                 

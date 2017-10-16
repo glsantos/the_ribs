@@ -45,48 +45,17 @@
                     </div>
                 </div>
                 <div class="segunda_faixa">
-                    <div class="espaco_fotos_unidades">
-                        <div class="linha_imagem">
-                          <div class="img_unidade">
-                             <ul class="demo-3">
-                                <li>
-                                    <figure>
-                                        <img src="img/img-restaurante-1.jpg" alt=""/>
-                                        <figcaption>
-                                            <div class="titulo-galeria">Restaurante Jandira</div>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                            </ul>
-                          </div>
-                          <div class="img_unidade">
-                              <ul class="demo-3">
-                                <li>
-                                    <figure>
-                                        <img src="img/img-restaurante-1.jpg" alt=""/>
-                                        <figcaption>
-                                            <div class="titulo-galeria">Restaurante Jandira</div>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                            </ul>
-                          </div>
-                          <div class="img_unidade">
-                                <ul class="demo-3">
-                                <li>
-                                    <figure>
-                                        <img src="img/img-restaurante-1.jpg" alt=""/>
-                                        <figcaption>
-                                            <div class="titulo-galeria">Restaurante Jandira</div>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                            </ul>
-                          </div>
-                        </div>
+                    <div class="img-galeria-view">
+                         <ul class="demo-2 effect">
+                            <li>
+                               <h2 class="zero">Restaurante jandira</h2>
+                               <p class="zero">Clique aqui para ver sobre esta unidade</p>
+                            </li>
+                            <li><img class="top" src="img/img-restaurante-1.jpg" alt=""/></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-         </section>
-      </section>
-    </section>
+                </div>
+</section>
+</section>
+</section>

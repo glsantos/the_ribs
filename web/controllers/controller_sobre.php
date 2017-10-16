@@ -38,23 +38,25 @@
                         require_once('views/cms/sobre_view.php');
                     }else{
                       require_once('views/cms/sobre_view.php');
-                    }
-			  
-			  
-			  
+                    }  
 			}
 
 			 public function Apagar(){
+					$id=$_GET['id'];
 
-				if($_SERVER['REQUEST_METHOD']=='GET'){
-					$id_pessoa=$_GET['id_sobre_empresa'];
+					require_once('models/sobre_model.php');
+					$modelsobre = new Sobre();
 
-					require_once('models/#.php');
-					$deleteCadastroSobre_Controller = new ControllerCadastroSobre();
-
-					$deleteCadastroSobre_Controller->id_sobre_empresa=$id_sobre_empresa;
-					$deleteCadastroSobre_Controller->Delete($deleteCadastroSobre_Controller);
-				}
+                    $modelsobre->id=$id;
+					$modelsobre->Delete($modelsobre);
+				
+                   if($retorno = 'ok'){
+                        
+                         echo("<script>alert('Modelo Deletado com sucesso!')</script>"); 
+                        require_once('views/cms/sobre_view.php');
+                    }else{
+                      require_once('views/cms/sobre_view.php');
+                   }
 			}
 			
 			public function ListarRegistros(){
@@ -69,19 +71,84 @@
             
             
 			public function Buscar(){
-
-				  //Recebe o ID enviado na View no click do Editar!
-				  $id_sobre_empresa=$_GET['id_sobre_empresa'];
-
-				  require_once('models/#.php');
-				  $listCadastroSobreEmpresa_Controller = new Contato();
-
-				  //Coloca o código selecionado no objeto instanciado
-				  $listCadastroSobreEmpresa_Controller->id_sobre_empresa=$id_sobre_empresa;
-				  //Chamada para o método que vai pesquisar no BD pelo ID
-				  $list = $listCadastroSobreEmpresa_Controller->SelectById($listCadastroSobreEmpresa_Controller);
-				  $list = $listCadastroSobreEmpresa_Controller->SelectById($listCadastroSobreEmpresa_Controller);
-				  require_once("index.php");
+				  $id=$_GET['id'];
+				  require_once('models/sobre_model.php');
+				  $modelsobre = new Sobre();
+				  $modelsobre->id=$id;
+				  $list = $modelsobre->SelectById($modelsobre);
+			
+				   require_once('views/cms/sobre_view.php');
 			}
+            public function Atualizar(){
+            
+             require_once('models/sobre_model.php');
+
+             $id=$_GET['id'];
+             $txt_efeito=$_POST['txtefeito'];
+             $txt_missao=$_POST['txtmissao'];
+             $txt_valores=$_POST['txtvalores'];
+             $txt_objetivo=$_POST['txtobjetivo'];
+             $txt_historia=$_POST['txthistoria'];
+            
+              if(isset($_FILES['fleimagemdeEfeito'])){
+                  $caminho_arquivoEfeito = "arquivos_enviados/";
+                  $fotoEfeito = basename($_FILES['fleimagemdeEfeito']['name']);
+                  $upEfeito = $caminho_arquivoEfeito . $fotoEfeito;
+              }
+              if(isset($_FILES['fleimagemHistoria'])){
+                  $caminho_arquivoHistoria = "arquivos_enviados/";
+                  $fotoHistoria = basename($_FILES['fleimagemdeEfeito']['name']);
+                  $upHistoria = $caminho_arquivoHistoria . $fotoHistoria;
+              }
+
+                $modelsobre = new Sobre();
+                $modelsobre->id=$id;
+                $modelsobre->missao=$txt_missao;
+                $modelsobre->valores=$txt_valores;
+                $modelsobre->objetivo=$txt_objetivo;
+                $modelsobre->fraseEfeito=$txt_efeito;
+                $modelsobre->historia=$txt_historia;
+                $modelsobre->imagemEfeito=$upEfeito;
+                $modelsobre->imagemHistoria=$upHistoria;
+    
+                $modelsobre->Update($modelsobre);
+            
+        }
+    
+    
+        public function Ativar(){
+            
+        require_once('models/sobre_model.php');
+
+              $id=$_GET['id'];
+              
+              $modelsobre = new Sobre();
+
+              $modelsobre->id=$id;
+             
+
+              $modelsobre->AtivarItem($modelsobre);
+            
+        }
+    
+        
+        public function Desativar(){
+            
+        require_once('models/sobre_model.php');
+
+              $id=$_GET['id'];
+              
+              $modelsobre = new Sobre();
+
+              $modelsobre->id=$id;
+             
+
+              $modelsobre->DesativarItem($modelsobre);
+            
+        }
+            
+            
+            
+            
 		}	
-		?>
+?>
